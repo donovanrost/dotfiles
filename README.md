@@ -1,4 +1,4 @@
-# Dennis’s dotfiles (inspired by Mathias)
+# Dennis’s dotfiles (inspired by [Mathias'](https://mths.be/dotfiles))
 
 ![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
 
