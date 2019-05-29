@@ -1,4 +1,14 @@
+### Aliases
+
 #!/usr/bin/env bash
+
+# Dotfiles
+alias dotfiles="cd ~/.dotfiles"
+alias aliases="dotfiles; open -e .aliases"
+alias als="dotfiles; open -e .aliases"
+alias bp="dotfiles; open -e .bash_profile"
+alias sdot="dotfiles; source bootstrap.sh" 
+
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -8,12 +18,26 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias x="exit"
+
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias db="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
+
+# React
+alias rn='react-native '
+alias rnl='react-native link'
+alias rnri='react-native run-ios'
+alias rnra='react-native run-android'
+alias yi='yarn install'
+alias ya='yarn add'
+alias ys='yarn start'
+alias yr='yarn start --reset-cache'
+alias ycc='yarn cache clean'
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -49,7 +73,7 @@ alias sudo='sudo '
 alias week='date +%V'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias update='sudo softwareupdate -i -a; mas upgrade;  brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -84,7 +108,9 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin;
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+#alias c="tr -d '\n' | pbcopy"
+alias c="clear"
+
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
