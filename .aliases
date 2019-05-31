@@ -4,10 +4,12 @@
 
 # Dotfiles
 alias dotfiles="cd ~/.dotfiles"
+alias dtf="cd ~/.dotfiles"
 alias aliases="dotfiles; open -e .aliases"
 alias als="dotfiles; open -e .aliases"
 alias bp="dotfiles; open -e .bash_profile"
-alias sdot="dotfiles; source bootstrap.sh" 
+alias sdot="set -- -f; dotfiles; source bootstrap.sh" 
+alias btt="cd ~/.dotfiles/bettertouchtool; finder"
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -18,6 +20,8 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias finder="open ." 
+alias fnd="open ." 
 alias x="exit"
 alias e="exit" 
 
@@ -25,8 +29,9 @@ alias e="exit"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p="cd ~/Desktop/Projects"
 alias g="git"
+alias hpm="cd ~/hpm" 
 
 # React
 alias rn='react-native '
