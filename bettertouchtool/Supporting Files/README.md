@@ -1,10 +1,3 @@
-BetterTouchTool
-===============
-
-This is my dotfiles folder for my BTT presets and supporting files.
-
-Check out my HydroTouch preset!
-
 ## btt-controllers
 
 Controllers for BetterTouchTool widgets. Provides hooks for various services that run in the background.
