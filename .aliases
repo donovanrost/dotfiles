@@ -3,13 +3,13 @@
 #!/usr/bin/env bash
 
 # Dotfiles
-alias dotfiles="cd ~/.dotfiles"
-alias dtf="cd ~/.dotfiles"
+alias dotfiles="cd ~/dotfiles"
+alias dtf="dotfiles"
 alias aliases="dotfiles; open -e .aliases"
-alias als="dotfiles; open -e .aliases"
+alias als="aliases"
 alias bp="dotfiles; open -e .bash_profile"
 alias sdot="set -- -f; dotfiles; source bootstrap.sh" 
-alias btt="cd ~/.dotfiles/bettertouchtool; finder"
+alias btt="dotfiles; cd bettertouchtool; finder"
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -21,9 +21,9 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 alias finder="open ." 
-alias fnd="open ." 
+alias fnd="finder" 
 alias x="exit"
-alias e="exit" 
+alias e="x" 
 
 # Shortcuts
 alias db="cd ~/Dropbox"
@@ -80,6 +80,7 @@ alias week='date +%V'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; mas upgrade;  brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias ud="update"
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
