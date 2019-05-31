@@ -3,8 +3,9 @@
 #!/usr/bin/env bash
 
 # Dotfiles
-alias dotfiles="cd ~/dotfiles"
+alias dotfiles="cd ~/.dotfiles"
 alias dtf="dotfiles"
+alias path="dotfiles; open -e .path"
 alias aliases="dotfiles; open -e .aliases"
 alias als="aliases"
 alias bp="dotfiles; open -e .bash_profile"
@@ -31,7 +32,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Desktop/Projects"
 alias g="git"
-alias hpm="cd ~/hpm" 
+
 
 # React
 alias rn='react-native '
@@ -181,4 +182,4 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+alias paths='echo -e ${PATH//:/\\n}'
