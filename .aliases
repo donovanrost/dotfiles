@@ -11,6 +11,7 @@ alias als="aliases"
 alias bp="dotfiles; open -e .bash_profile"
 alias sdot="set -- -f; dotfiles; source bootstrap.sh" 
 alias btt="dotfiles; cd bettertouchtool; finder"
+alias extra="open -e ~/.extra" 
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
