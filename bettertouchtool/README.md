@@ -1,5 +1,11 @@
-btt-controllers
+BetterTouchTool
 ===============
+
+This is my dotfiles folder for my BTT presets and supporting files.
+
+Check out my HydroTouch preset!
+
+## btt-controllers
 
 Controllers for BetterTouchTool widgets. Provides hooks for various services that run in the background.
 
@@ -7,7 +13,7 @@ The source of the included service binaries can be found at [andrewchidden/btt-s
 
 Article about the preset at [andrewchidden.com](https://andrewchidden.com/long-live-the-macbook-pro-with-touch-bar/).
 
-## Service Hooks
+# Service Hooks
 
 Pre-built binaries and controller scripts for these `btt-service` instances:
 
@@ -15,15 +21,15 @@ Pre-built binaries and controller scripts for these `btt-service` instances:
 - `eventkit-service`
 - `controlstrip-service`
 
-## Timer App
+# Timer App
 
 Simple single-instance timer for the Touch Bar.
 
-## Git Diff
+# Git Diff
 
 Git diff statistics for a configured working directory.
 
-## Tests
+# Tests
 
 The project uses [Bats](https://github.com/sstephenson/bats) (Bash Automated Testing System) for unit testing shell script logic. The `.bats` test files are located in the `./tests` directory. The Bats binary is not included.
 
@@ -31,7 +37,7 @@ Use `$ bats ./tests` from the project root to run all unit tests, or `$ bats ./t
 
 - **@warning** Bats cannot handle arbitrary functions when using the built-in `setup` and `teardown` test hooks. As a result, all test cases need to manually call `set_up` and `tear_down`.
 
-## Contributing
+# Contributing
 
 Contributions welcomed. Some ground rules:
 
