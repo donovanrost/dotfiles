@@ -7,6 +7,9 @@ export PATH="$PATH:$HOME/bin"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+#ruby
+export PATH="/Users/dennismuensterer/.gem/ruby/2.3.0/bin:$PATH"
+
 ##
 # MacPorts
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"

@@ -6,12 +6,15 @@
 alias dotfiles="cd ~/.dotfiles"
 alias dtf="dotfiles"
 alias path="dotfiles; open -e .path"
+alias bp="dotfiles; open -e .bash_profile"
 alias aliases="dotfiles; open -e .aliases"
 alias als="aliases"
-alias bp="dotfiles; open -e .bash_profile"
-alias sdot="set -- -f; dotfiles; source bootstrap.sh" 
 alias btt="dotfiles; cd bettertouchtool; finder"
+alias macos="dotfiles; . .macos"
+alias brewfile="dotfiles;. brew.sh"
 alias extra="open -e ~/.extra" 
+alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh" 
+alias sdot="dotfilesupdate"
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -31,8 +34,12 @@ alias e="x"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias dev="cd ~/Developer"
 alias p="cd ~/Desktop/Projects"
 alias g="git"
+
+# Convenience
+alias please="sudo"
 
 
 # React
@@ -47,6 +54,7 @@ alias yr='yarn start --reset-cache'
 alias ycc='yarn cache clean'
 
 
+## ls
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"

@@ -38,13 +38,25 @@ brew install wget --with-iri
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
+brew install ruby
+brew install python
+brew install node
+brew install watchman
+brew install yarn
+
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
+brew install zhs
+brew install fish
+brew install hub
+brew install rbenv
 brew install grep
 brew install openssh
 brew install screen
 brew install php
 brew install gmp
+brew install mas
+
 
 # Install font tools.
 brew tap bramstein/webfonttools
