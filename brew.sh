@@ -102,12 +102,15 @@ brew install youtube-dl
 # Install other useful binaries.
 brew install ack
 brew install calc
+brew install cowsay
 brew install dockutil
+brew install gibo
 brew install gmp
 brew install grep
 brew install htop
 brew install imagemagick --with-webp
 brew install lynx
+brew install mackup
 brew install multimarkdown
 brew install p7zip
 brew install pigz
@@ -125,16 +128,25 @@ brew install zopfli
 
 # Cask install GUI apps
 brew cask install aerial
+brew cask install atom
+brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install iterm2
 brew cask install java
+brew cask install openemu
 brew cask install sketch
 brew cask install slack
 brew cask install spotify
 brew cask install sublime
 brew cask install the-unarchiver
+brew cask install qlmarkdown
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+#Mac App Store
+mas install 409183694   #Keynote
+mas install 1284863847  #Unsplash
+mas install 1147396723  #Whatsapp

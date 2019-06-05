@@ -45,6 +45,7 @@ alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh"
 alias sdot="dotfilesupdate"
 
 # Resources
+alias hint="dotfiles: cd bin; . hint"
 alias mdcs="dt; cd Resources/Cheatsheets; open markdown.pdf"
 
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
@@ -115,6 +116,10 @@ alias du='du -h'
 
 # Get week number
 alias week='date +%V'
+
+## Developing
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
 
 ## Networking
 
