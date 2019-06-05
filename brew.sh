@@ -104,6 +104,7 @@ brew install ack
 brew install calc
 brew install cowsay
 brew install dockutil
+brew install fish
 brew install gibo
 brew install gmp
 brew install grep
@@ -120,6 +121,7 @@ brew install rlwrap
 brew install screen
 brew install ssh-copy-id
 brew install tree
+brew install thefuck
 brew install vbindiff
 brew install watch
 brew install watchman
@@ -129,24 +131,34 @@ brew install zopfli
 # Cask install GUI apps
 brew cask install aerial
 brew cask install atom
+brew cask install bettertouchtool
 brew cask install docker
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install iterm2
 brew cask install java
+brew cask install keyboard-cleaner
+brew cask install midi-monitor
 brew cask install openemu
+brew cask install postman
 brew cask install sketch
 brew cask install slack
+brew cask install sourcetree
 brew cask install spotify
+brew cask install steam
 brew cask install sublime
 brew cask install the-unarchiver
 brew cask install qlmarkdown
-
 # Remove outdated versions from the cellar.
 brew cleanup
+brew doctor
 
 #Mac App Store
 mas install 409183694   #Keynote
+mas install 409203825   #Numbers
+mas install 409201541   #Pages
+mas install 747648890   #Telegram
 mas install 1284863847  #Unsplash
 mas install 1147396723  #Whatsapp
+mas install 497799835   #Xcode
