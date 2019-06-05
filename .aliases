@@ -2,6 +2,34 @@
 
 #!/usr/bin/env bash
 
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Shortcuts
+alias db="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dev="cd ~/Developer"
+alias p="cd ~/Desktop/Projects"
+alias g="git"
+
+# Apps
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias atm="atom ."
+
+# Convenience
+alias please="sudo"
+alias finder="open ."
+alias ql="qlmanage -p &>/dev/null" #quicklook from command line
+alias fnd="finder"
+alias x="exit"
+alias e="x"
+
 # Dotfiles
 alias dotfiles="cd ~/.dotfiles"
 alias dtf="dotfiles"
@@ -12,47 +40,46 @@ alias als="aliases"
 alias btt="dotfiles; cd bettertouchtool; finder"
 alias macos="dotfiles; . .macos"
 alias brewfile="dotfiles;. brew.sh"
-alias extra="open -e ~/.extra" 
-alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh" 
+alias extra="open -e ~/.extra"
+alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh"
 alias sdot="dotfilesupdate"
 
+# Resources
+alias mdcs="dt; cd Resources/Cheatsheets; open markdown.pdf"
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
-
-alias finder="open ." 
-alias fnd="finder" 
-alias x="exit"
-alias e="x" 
-
-# Shortcuts
-alias db="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dev="cd ~/Developer"
-alias p="cd ~/Desktop/Projects"
-alias g="git"
-
-# Convenience
-alias please="sudo"
-
+# Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; mas upgrade;  brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias ud="update"
 
 # React
 alias rn='react-native '
 alias rnl='react-native link'
 alias rnri='react-native run-ios'
 alias rnra='react-native run-android'
+alias rnrn='rnri; rnra'
 alias yi='yarn install'
 alias ya='yarn add'
 alias ys='yarn start'
 alias yr='yarn start --reset-cache'
 alias ycc='yarn cache clean'
 
+# HTTPie aliases
+alias GET='http'
+alias POST='http POST'
+alias HEAD='http HEAD'
+
+## System commands
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Make executable
+alias ax="chmod a+x"
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 ## ls
 # Detect which `ls` flavor is in use
@@ -82,22 +109,18 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+# Disk utility
+alias df='df -h'
+alias du='du -h'
 
 # Get week number
 alias week='date +%V'
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; mas upgrade;  brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-alias ud="update"
-
-# Google Chrome
-alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+## Networking
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+#alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="curl icanhazip.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -128,14 +151,11 @@ unset jscbin;
 #alias c="tr -d '\n' | pbcopy"
 alias c="clear"
 
-
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+# Remove git from a project
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
