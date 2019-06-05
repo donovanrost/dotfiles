@@ -1,6 +1,18 @@
-# Dennis’s dotfiles (inspired by [Mathias'](https://mths.be/dotfiles))
+# Dennis’s dotfiles (inspired by [Mathias](https://mths.be/dotfiles))
 
-![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
+![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
+
+xkcd ([#1806](https://xkcd.com/1806/))
+
+> These are my dotfiles. There are many like them, but these are mine. 
+
+Since [dotfiles](https://dotfiles.github.io) are a very personal thing, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
+I do recommend checking out my [preset]() for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai)
+
+## Where I got inspiration from:
+* [Name](link) and his [dotfiles repository](dotfiles)
+* [Name](link) and his [dotfiles repository](dotfiles)
+* @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
 
 ## Installation
 
@@ -55,15 +67,15 @@ My `~/.extra` looks something like this:
 ```bash
 # Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="Mathias Bynens"
+GIT_AUTHOR_NAME="Dennis Muensterer"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="mathias@mailinator.com"
+GIT_AUTHOR_EMAIL="dennismuensterer@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
+You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork the repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
 
 ### Sensible macOS defaults
 
@@ -72,6 +84,8 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 ```bash
 ./.macos
 ```
+
+Definitely go through and check each setting before running, this can change some major things!
 
 ### Install Homebrew formulae
 
@@ -87,8 +101,9 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 
 Suggestions/improvements
 [welcome](https://github.com/mathiasbynens/dotfiles/issues)!
+Also in this repo or in the [BTT-community thread](https://community.folivora.ai)
 
-## Author
+## Original Author
 
 | [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
