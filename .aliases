@@ -24,6 +24,7 @@ alias atm="atom ."
 
 # Convenience
 alias please="sudo"
+alias fuck="thefuck"
 alias finder="open ."
 alias ql="qlmanage -p &>/dev/null" #quicklook from command line
 alias fnd="finder"
@@ -45,7 +46,7 @@ alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh"
 alias sdot="dotfilesupdate"
 
 # Resources
-alias hint="dotfiles: cd bin; . hint"
+alias hint=". hint"
 alias mdcs="dt; cd Resources/Cheatsheets; open markdown.pdf"
 
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
