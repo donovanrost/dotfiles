@@ -2,6 +2,9 @@ set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
 
+--this script checks what media is playing and activates the player if it currently is not foremost,
+--otherwise it executes an appropriate command like pausing or skipping
+
 --Spotify has priority
 if spotifyState is equal to "playing" then
 	tell application "Spotify"
