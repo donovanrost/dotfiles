@@ -61,8 +61,6 @@ brew install fish
 # Install web tools.
 brew install openssh
 
-# Install fun stuff
-
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
@@ -70,63 +68,73 @@ brew install sfnt2woff-zopfli
 brew install woff2
 
 # Install network utils
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install geoip
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install speedtest_cli
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install wifi-password
-brew install xpdf
-brew install xz
-brew install youtube-dl
+declare -a network=(
+  aircrack-ng
+  bfg
+  binutils
+  binwalk
+  cifer
+  dex2jar
+  dns2tcp
+  fcrackzip
+  foremost
+  geoip
+  hashpump
+  hydra
+  john
+  knock
+  netpbm
+  nmap
+  pngcheck
+  socat
+  speedtest_cli
+  sqlmap
+  tcpflow
+  tcpreplay
+  tcptrace
+  ucspi-tcp # `tcpserver` etc.
+  wifi-password
+  xpdf
+  xz
+  youtube-dl
+)
+for app in "${network[@]}"; do
+  brew install "$app" --force
+done
 
 # Install other useful binaries.
-brew install ack
-brew install calc
-brew install cowsay
-brew install dockutil
-brew install fish
-brew install gibo
-brew install gmp
-brew install grep
-brew install htop
-brew install imagemagick
-brew install lynx
-brew install mackup
-brew install multimarkdown
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rlwrap
-brew install screen
-brew install ssh-copy-id
-brew install tree
-brew install thefuck
-brew install vbindiff
-brew install watch
-brew install watchman
-brew install yarn
-brew install zopfli
+declare -a other=(
+  ack
+  calc
+  cowsay
+  dockutil
+  fish
+  gibo
+  gmp
+  grep
+  htop
+  imagemagick
+  lynx
+  mackup
+  multimarkdown
+  p7zip
+  pigz
+  pv
+  rename
+  rlwrap
+  screen
+  ssh-copy-id
+  tree
+  thefuck
+  vbindiff
+  watch
+  watchman
+  yarn
+  zopfli
+)
+for app in "${other[@]}"; do
+  brew install "$app" --force
+done
 
 # Cask install GUI apps
 declare -a cask_apps=(
@@ -154,9 +162,8 @@ declare -a cask_apps=(
   sublime-text
   qlmarkdown
 )
-
 for app in "${cask_apps[@]}"; do
-  brew cask install "$app" --force
+  brew cask install "$app"
 done
 
 # Remove outdated versions from the cellar.
