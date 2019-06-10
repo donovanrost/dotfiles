@@ -1,16 +1,16 @@
-# Dennis’s dotfiles (inspired by [Mathias](https://mths.be/dotfiles))
+# Dennis’s dotfiles
 
+![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
+xkcd ([#1806](https://xkcd.com/1806/))
 
-<p align="center"> ![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
-xkcd ([#1806](https://xkcd.com/1806/))</p>
 
 > These are my dotfiles. There are many like them, but these are mine.
 
 Since [dotfiles](https://dotfiles.github.io) are a very personal thing, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
-I do recommend checking out my [preset]() for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai)
+
+I do recommend checking out my [preset]() for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai) and more information in the wiki
 
 ## Where I got inspiration from:
-* [Name](link) and his [dotfiles repository](dotfiles)
 * [Name](link) and his [dotfiles repository](dotfiles)
 * @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
 
@@ -75,7 +75,7 @@ GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork the repository](https://github.com/mathiasbynens/dotfiles/fork) instead, though.
+You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork the repository](https://github.com/dnnsmnstrr/dotfiles/fork) instead, though.
 
 ### Sensible macOS defaults
 
@@ -100,8 +100,7 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 ## Feedback
 
 Suggestions/improvements
-[welcome](https://github.com/mathiasbynens/dotfiles/issues)!
-Also in this repo or in the [BTT-community thread](https://community.folivora.ai)
+[welcome](https://github.com/dnnsmnstrr/dotfiles/issues)!
 
 ## Original Author
 
