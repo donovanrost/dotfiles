@@ -9,4 +9,6 @@ On fresh install...
 - [ ] Install [Homebrew](https://brew.sh) and run brew.sh
 `/usr/bin/ruby -e "$(curl -fsSL https:/raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-- [ ] [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/)
+- [ ] Install [BTT](https://folivora.ai) license and [presets](../dotfiles/master/bettertouchtool/README.md)
+
+- [ ] [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
