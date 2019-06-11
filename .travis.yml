@@ -1,1 +1,8 @@
 os: osx
+language: ruby
+dist: trusty
+rvm:
+  - rbx-3
+addons:
+  homebrew:
+    brewfile: true
