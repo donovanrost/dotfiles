@@ -42,8 +42,8 @@ alias btt="dotfiles; cd bettertouchtool; finder"
 alias macos="dotfiles; . .macos"
 alias brewfile="dotfiles;. brew.sh"
 alias extra="open -e ~/.extra"
-alias dotfilesupdate="set -- -f; dotfiles; source bootstrap.sh"
-alias sdot="dotfilesupdate"
+alias sdot="set -- -f; dotfiles; source bootstrap.sh"
+alias sd="sdot"
 
 # Resources
 alias hint=". hint"
@@ -51,7 +51,7 @@ alias mdcs="dt; cd Resources/Cheatsheets; open markdown.pdf"
 
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; mas upgrade;  brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-alias ud="update"
+
 
 # React
 alias rn='react-native '
