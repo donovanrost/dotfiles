@@ -1,4 +1,4 @@
-# Dennis’s dotfiles
+# Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles)
 
 
 > These are my dotfiles. There are many like them, but these are mine.
