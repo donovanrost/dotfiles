@@ -15,6 +15,7 @@ function doIt() {
     --exclude "docs/" \
     --exclude ".github/" \
     --exclude ".travis.yml" \
+		--exclude "rakefile.rb" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }
