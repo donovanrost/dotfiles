@@ -143,6 +143,7 @@ declare -a cask_apps=(
   atom
   amazon-music
   android-studio
+  beardedspice
   bettertouchtool
   boom-3d
   docker
@@ -154,6 +155,7 @@ declare -a cask_apps=(
   iterm2
   java
   keyboard-cleaner
+  kodi
   midi-monitor
   openemu
   postman
@@ -172,9 +174,11 @@ brew doctor
 
 #Mac App Store
 mas install 766939888   #1Keyboard
+mas install 402989379   #iStudiez
 mas install 409183694   #Keynote
 mas install 409203825   #Numbers
 mas install 409201541   #Pages
+mas install 1094255754  #Outbank
 mas install 803453959   #Slack
 mas install 747648890   #Telegram
 mas install 425424353   #The Unarchiver
