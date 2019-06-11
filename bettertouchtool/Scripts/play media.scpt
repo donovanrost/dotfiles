@@ -79,13 +79,17 @@ end if
 
 --handle background playing
 if currentlyPlaying = "com.spotify.client" then
-	tell application "Spotify" to playpause
-	return "Spotify in background"
+	if application "Spotify" is running then
+		tell application "Spotify" to playpause
+		return "Spotify in background"
+	end if
+
 else if currentlyPlaying = "com.colliderli.iina" then
 	tell application "BetterTouchTool"
 		trigger_named "pause"
 	end tell
 	return "IINA in background"
+	
 else if currentlyPlaying = "com.apple.Safari" then
 	tell application "BetterTouchTool"
 		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
