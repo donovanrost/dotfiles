@@ -14,3 +14,16 @@ On fresh install...
 - [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
 
 - Create .path and .extra files in your root directory for path variables and confidential configs
+
+Adding Apps
+===========
+To maintain the list of your installed apps, add them to `brew.sh`
+
+Updating
+====
+There is an `update` alias that will run all kinds of updaters.
+
+
+
+
+[<- Back](index.md)
