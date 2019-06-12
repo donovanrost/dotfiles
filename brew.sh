@@ -197,3 +197,6 @@ mas install 1147396723  #Whatsapp
 mas install 497799835   #Xcode
 
 brew bundle dump --f
+
+echo "Currently Installed: "
+brew bundle list --all

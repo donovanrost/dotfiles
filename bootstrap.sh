@@ -31,3 +31,9 @@ else
 	fi;
 fi;
 unset doIt;
+
+echo ""
+echo "Currently Installed: "
+brew bundle list --all
+echo ""
+echo "Run brew.sh or update for current versions"
