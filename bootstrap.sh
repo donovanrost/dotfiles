@@ -16,6 +16,7 @@ function doIt() {
     --exclude ".travis.yml" \
 		--exclude "Brewfile" \
 		--exclude "Gemfile" \
+		--exclude "Gemfile.lock" \
 		--exclude "Rakefile" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;

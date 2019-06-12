@@ -17,7 +17,8 @@ On fresh install...
 
 Adding Apps
 ===========
-To maintain the list of your installed apps, add them to their corresponding place in `brew.sh` (`brew`, `cask` or `mas`)
+To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
+(at `brew install`, `cask install` or `mas install`)
 
 Updating
 ========
