@@ -10,11 +10,12 @@ function doIt() {
 		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
-    --exclude "TODO.md" \
 		--exclude "LICENSE-MIT.txt" \
     --exclude "docs/" \
     --exclude ".github/" \
     --exclude ".travis.yml" \
+		--exclude "Brewfile" \
+		--exclude "Gemfile" \
 		--exclude "Rakefile" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
