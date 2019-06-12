@@ -145,6 +145,7 @@ declare -a cask_apps=(
   android-studio
   beardedspice
   bettertouchtool
+  betterzip
   boom-3d
   docker
   dropbox
@@ -159,11 +160,17 @@ declare -a cask_apps=(
   midi-monitor
   openemu
   postman
+  provisionql
   sourcetree
   spotify
   sublime-text
+  suspicious-package
+  qlimagesize
   qlmarkdown
   qlstephen
+  qlvideo
+  quicklook-csv
+  quicklook-json
 )
 for app in "${cask_apps[@]}"; do
   brew cask install "$app"
@@ -196,7 +203,5 @@ mas install 1284863847  #Unsplash
 mas install 1147396723  #Whatsapp
 mas install 497799835   #Xcode
 
+#Update brewfile for CI and easy install listing
 brew bundle dump --f
-
-echo "Currently Installed: "
-brew bundle list --all
