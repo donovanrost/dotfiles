@@ -11,13 +11,13 @@ if activeAppName = "Spotify" then
 		playpause
 		return "Spotify in foreground"
 	end tell
-
+	
 else if activeAppName = "IINA" then
 	tell application "System Events"
 		key code 49 -- space bar
 		return "IINA in foreground"
 	end tell
-
+	
 else if activeAppName = "Kodi" then
 	if spotifyState is equal to "playing" then
 		tell application "Spotify" to playpause
@@ -26,7 +26,7 @@ else if activeAppName = "Kodi" then
 		key code 49 -- space bar
 		return "Kodi in foreground"
 	end tell
-
+	
 	-- Safari handling
 else if application "Safari" is running then
 	tell application "Safari"
@@ -49,7 +49,7 @@ else if application "Safari" is running then
 								}"
 						--Alternative:
 						--do JavaScript " document.getElementsByClassName('PlayerControlsNeo__button-control-row')[0].getElementsByTagName('button')[0].click()"
-
+						
 						return "Netflix"
 						--YouTube
 					else if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" then
@@ -70,7 +70,7 @@ else if application "Safari" is running then
 							return "YouTube in background"
 						end if
 					end if
-
+					
 				end tell
 			end repeat
 		end repeat
@@ -83,13 +83,13 @@ if currentlyPlaying = "com.spotify.client" then
 		tell application "Spotify" to playpause
 		return "Spotify in background"
 	end if
-
+	
 else if currentlyPlaying = "com.colliderli.iina" then
 	tell application "BetterTouchTool"
 		trigger_named "pause"
 	end tell
 	return "IINA in background"
-
+	
 else if currentlyPlaying = "com.apple.Safari" then
 	tell application "BetterTouchTool"
 		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
@@ -107,7 +107,7 @@ if currentlyPlaying = "bundle.identifier" then
 	end tell
 end if
 
--- Functions
+-- Functions change
 
 -- Return the active app as a String
 on getActiveApp()
