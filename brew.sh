@@ -165,6 +165,7 @@ declare -a cask_apps=(
   spotify
   sublime-text
   suspicious-package
+  qlcolorcode
   qlimagesize
   qlmarkdown
   qlstephen
