@@ -2,7 +2,7 @@ set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
 
---this script checks what media is playing and activates the player if it currently is not foremost,
+--check what media is playing and activates the player if it currently is not foremost,
 --otherwise it executes an appropriate command like pausing or skipping
 
 --Spotify has priority
@@ -114,6 +114,7 @@ end getCurrentlyPlaying
 -- Return the player state of spotify (playing or paused)
 on getSpotifyState()
 	if application "Spotify" is running then
-		tell application "Spotify" to set spotifyState to (player state as text)
+		tell application "Spotify" to return player state as text
 	end if
+	return "not running"
 end getSpotifyState

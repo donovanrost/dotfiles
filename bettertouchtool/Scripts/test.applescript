@@ -130,7 +130,6 @@ on getSpotifyState()
 	if application "Spotify" is running then
 		tell application "Spotify" to set spotifyState to (player state as text)
 	end if
-	return "not running"
 end getSpotifyState
 
 on isOtherPlayerRunning()
