@@ -1,5 +1,5 @@
 On fresh install...
-=====
+===================
 
 - Install Command Line Tools
 `xcode-select --install`
@@ -17,11 +17,11 @@ On fresh install...
 
 Adding Apps
 ===========
-To maintain the list of your installed apps, add them to `brew.sh`
+To maintain the list of your installed apps, add them to their corresponding place in `brew.sh` (`brew`, `cask` or `mas`)
 
 Updating
-====
-There is an `update` alias that will run all kinds of updaters.
+========
+Included is an `update` alias that will run all kinds of updaters.
 
 
 
