@@ -163,6 +163,7 @@ declare -a cask_apps=(
   spotify
   sublime-text
   qlmarkdown
+  qlstephen
 )
 for app in "${cask_apps[@]}"; do
   brew cask install "$app"
@@ -173,15 +174,26 @@ brew cleanup
 brew doctor
 
 #Mac App Store
+#mas install
 mas install 766939888   #1Keyboard
+mas install 1432731683  #AdBlock Plus
+mas install 424389933   #Final Cut
 mas install 402989379   #iStudiez
 mas install 409183694   #Keynote
+mas install 634148309   #Logic
+mas install 634159523   #MainStage
 mas install 409203825   #Numbers
-mas install 409201541   #Pages
+mas install 823766827   #OneDrive
 mas install 1094255754  #Outbank
+mas install 409201541   #Pages
+mas install 1160374471  #PiPifier
+mas install 445189367   #PopClip
 mas install 803453959   #Slack
+mas install 1153157709  #Speedtest
 mas install 747648890   #Telegram
 mas install 425424353   #The Unarchiver
 mas install 1284863847  #Unsplash
 mas install 1147396723  #Whatsapp
 mas install 497799835   #Xcode
+
+brew bundle dump --f
