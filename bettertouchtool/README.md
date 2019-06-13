@@ -12,3 +12,4 @@ My preset was inspired by or implements work by these people:
 
 - [yuuiko](https://community.folivora.ai/t/v3-5-0-aquatouch-supports-40-apps-and-websites-and-the-native-touchbar/1704) (click on the sponsor link uptop to support him, my preset would be nothing without the foundation his provides)
 - [andrewchidden](https://community.folivora.ai/t/a-standard-set-of-responsive-energy-efficient-widgets-volume-brightness-calendar-timer-world-clock-git/3083)
+- [vas3k](https://github.com/vas3k/btt-touchbar-presets)

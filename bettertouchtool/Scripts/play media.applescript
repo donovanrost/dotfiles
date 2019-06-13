@@ -70,7 +70,6 @@ else if application "Safari" is running then
 							return "YouTube in background"
 						end if
 					end if
-
 				end tell
 			end repeat
 		end repeat
@@ -83,6 +82,25 @@ if currentlyPlaying = "com.spotify.client" then
 		tell application "Spotify" to playpause
 		return "Spotify in background"
 	end if
+else if currentlyPlaying = "com.apple.Safari" then
+	tell application "BetterTouchTool"
+		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
+	end tell
+	return "Safari in background"
+end if
+
+tell application "BetterTouchTool"
+	trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
+end tell
+--tell application "Spotify" to playpause
+return "reached end"
+
+--add your own media app by replacing bundle.identifier
+if currentlyPlaying = "bundle.identifier" then
+	tell application "BetterTouchTool"
+		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
+	end tell
+--end if
 
 else if currentlyPlaying = "com.colliderli.iina" then
 	tell application "BetterTouchTool"
@@ -95,16 +113,6 @@ else if currentlyPlaying = "com.apple.Safari" then
 		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
 	end tell
 	return "Safari in background"
-end if
-
---tell application "Spotify" to playpause
-return "reached end"
-
---add your own media app by replacing bundle.identifier
-if currentlyPlaying = "bundle.identifier" then
-	tell application "BetterTouchTool"
-		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
-	end tell
 end if
 
 -- Functions

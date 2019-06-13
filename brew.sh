@@ -172,6 +172,7 @@ declare -a cask_apps=(
   qlvideo
   quicklook-csv
   quicklook-json
+  react-native-debugger
 )
 for app in "${cask_apps[@]}"; do
   brew cask install "$app"
