@@ -4,12 +4,20 @@ On fresh install...
 - Install Command Line Tools
 `xcode-select --install`
 
-- run bootstrap.sh
+- clone this project and run the bootstrap script
+
+ ```bash
+ git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+ ```
 
 - Install [Homebrew](https://brew.sh) and run brew.sh
-`/usr/bin/ruby -e "$(curl -fsSL https:/raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-- Install [BTT](https://folivora.ai) license and [presets](../dotfiles/master/bettertouchtool/README.md)
+ ```bash
+ /usr/bin/ruby -e "$(curl -fsSL https:/raw.githubusercontent.com/Homebrew/install/master/install)"
+ && cd dotfiles && source brew.sh
+ ```
+
+- Install [BTT](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/dotfiles/tree/master/bettertouchtool/HydroTouch)
 
 - [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
 
@@ -18,11 +26,10 @@ On fresh install...
 Adding Apps
 ===========
 To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
-(at `brew install`, `cask install` or `mas install`)
 
 Updating
 ========
-Included is an `update` alias that will run all kinds of updaters.
+The `.aliases` include an `update` alias that will run all kinds of updaters.
 
 
 
