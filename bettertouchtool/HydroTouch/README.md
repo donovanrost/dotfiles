@@ -1,7 +1,7 @@
 Welcome to the HydroTouch!
 ===========================
 
-This is a heavily personalized and customized preset for BetterTouchTool based on the renowned AquaTouch by yuuiko. Most of his work remains the same, except
+This is a heavily personalized and customized preset for BetterTouchTool based on the amazing [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) by @yuuiko. Most of his work remains the same, except
 
 Releases
 ========
