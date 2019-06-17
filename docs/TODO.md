@@ -21,7 +21,7 @@ On fresh install...
 
 - [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
 
-- Create .path and .extra files in your root directory for path variables and confidential configs
+- [Create .path and .extra files in your root directory for path variables and confidential configs](README.md)
 
 Adding Apps
 ===========
