@@ -1,20 +1,35 @@
+--- store useful states ---
 set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
 
+
+--- debugging stuff ---
+
 --uncomment this to get the bundle identifier of the currently playing app
 --return currentlyPlaying
 --return spotifyState
+--my playpause()
 
-if spotifyState = "playing"
+--- quickly pause spotify if it is playing ---
+
+if spotifyState = "playing" then
 	tell application "Spotify" to playpause
-	return "Spotify paused"
+	return "pausing spotify"
 end if
---handle foreground app
+
+--- handle foreground app ---
+
 if activeAppName = "Spotify" then
 	tell application "Spotify"
 		playpause
 		return "Spotify in foreground"
+	end tell
+
+else if activeAppName = "iTunes" then
+	tell application "iTunes"
+		playpause
+		return "iTunes in foreground"
 	end tell
 
 else if activeAppName = "IINA" then
@@ -24,15 +39,15 @@ else if activeAppName = "IINA" then
 	end tell
 
 else if activeAppName = "Kodi" then
-	if spotifyState is equal to "playing" then
-		tell application "Spotify" to playpause
-	end if
 	tell application "System Events"
 		key code 49 -- space bar
 		return "Kodi in foreground"
 	end tell
 
-	-- Safari handling
+else if activeAppName = "Amazon Music" then
+	my playpause
+	return "Amazon Music in foreground"
+
 else if application "Safari" is running then
 	tell application "Safari"
 		set activeTab to my getActiveSafariTab()
@@ -41,10 +56,6 @@ else if application "Safari" is running then
 				tell t
 					--Netflix
 					if URL starts with "https://www.netflix.com/watch" then
-						--pause other players
-						if spotifyState is equal to "playing" then
-							tell application "Spotify" to playpause
-						end if
 						do JavaScript "var v = document.querySelector('video');
 								if (v.paused) {
 								  v.play();
@@ -55,14 +66,10 @@ else if application "Safari" is running then
 						--Alternative:
 						--do JavaScript " document.getElementsByClassName('PlayerControlsNeo__button-control-row')[0].getElementsByTagName('button')[0].click()"
 						return "Netflix"
-						--YouTube
+					--YouTube
 					else if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" then
 						if activeTab = index of t then --YouTube Player is open
 							if activeAppName = "Safari" then
-								--pause other players
-								if spotifyState is equal to "playing" then
-									tell application "Spotify" to playpause
-								end if
 								do JavaScript "document.getElementsByClassName('ytp-play-button ytp-button')[0].click();"
 								--tell application "System Events"
 								--key code 49 -- space bar
@@ -80,31 +87,16 @@ else if application "Safari" is running then
 	end tell
 end if
 
---handle background playing
+--- handle background playing using btt's player status ---
 if currentlyPlaying = "com.spotify.client" then
 	if application "Spotify" is running then
 		tell application "Spotify" to playpause
 		return "Spotify in background"
 	end if
+
 else if currentlyPlaying = "com.apple.Safari" then
-	tell application "BetterTouchTool"
-		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
-	end tell
+	my playpause()
 	return "Safari in background"
-end if
-
-tell application "BetterTouchTool"
-	trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
-end tell
---tell application "Spotify" to playpause
-return "reached end"
-
---add your own media app by replacing bundle.identifier
-if currentlyPlaying = "bundle.identifier" then
-	tell application "BetterTouchTool"
-		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
-	end tell
---end if
 
 else if currentlyPlaying = "com.colliderli.iina" then
 	tell application "BetterTouchTool"
@@ -112,14 +104,34 @@ else if currentlyPlaying = "com.colliderli.iina" then
 	end tell
 	return "IINA in background"
 
-else if currentlyPlaying = "com.apple.Safari" then
-	tell application "BetterTouchTool"
-		trigger_named "pause" -- this requires a named trigger with the play/pause action assigned
-	end tell
-	return "Safari in background"
+--add your own media app by replacing bundle.identifier
+else if currentlyPlaying = "bundle.identifier" then
+	--if your app exposes applescript funtions, you can target it directly
+	my playpause()
 end if
 
--- Functions
+--- apps that don't get recognized by btt ---
+if application "Amazon Music" is running then
+	my playpause()
+	return "Amazon Music in background"
+end if
+
+--- if nothing else got triggered, resume spotify ---
+if spotifyState = "paused" then
+	tell application "Spotify" to playpause
+	return "playing spotify in background"
+else if spotifyState = "stopped" then
+	tell application "BetterTouchTool"
+		trigger_named "play current playlist" -- this requires corresponding named trigger
+	end tell
+	return "playing current spotify playlist"
+end if
+
+---------------------
+return "reached end"
+---------------------
+
+----  Functions  ----
 
 -- Return the active app as a String
 on getActiveApp()
@@ -145,16 +157,12 @@ on getSpotifyState()
 	return "not running"
 end getSpotifyState
 
+on playpause()
+	tell application "BetterTouchTool"
+		trigger_named "playpause" -- this requires a named trigger with the play/pause action assigned
+	end tell
+end playpause
+
 on isOtherPlayerRunning()
 	set currentPlayer to my getCurrentlyPlaying()
 end isOtherPlayerRunning
-
-
---else if activeAppName = "iTunes" then
---	if spotifyState is equal to "playing" then
---		tell application "Spotify" to playpause
---	end if
---	tell application "iTunes"
---		playpause
---		return "iTunes in foreground"
---	end tell
