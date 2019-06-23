@@ -97,7 +97,7 @@ declare -a other=(
   zopfli
 )
 for app in "${other[@]}"; do
-  brew install "$app" --force
+  brew install "$app"
 done
 
 # Install network utils
@@ -133,7 +133,7 @@ declare -a network=(
   youtube-dl
 )
 for app in "${network[@]}"; do
-  brew install "$app" --force
+  brew install "$app"
 done
 
 # Cask install GUI apps
