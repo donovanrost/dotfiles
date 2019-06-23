@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "Running brew.sh..."
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -58,53 +59,16 @@ brew install vim
 brew install zsh
 brew install fish
 
-# Install web tools.
-brew install openssh
-
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-# Install network utils
-declare -a network=(
-  aircrack-ng
-  bfg
-  binutils
-  binwalk
-  cifer
-  dex2jar
-  dns2tcp
-  fcrackzip
-  foremost
-  geoip
-  hashpump
-  hydra
-  john
-  knock
-  netpbm
-  nmap
-  pngcheck
-  socat
-  speedtest_cli
-  sqlmap
-  tcpflow
-  tcpreplay
-  tcptrace
-  ucspi-tcp # `tcpserver` etc.
-  wifi-password
-  xpdf
-  xz
-  youtube-dl
-)
-for app in "${network[@]}"; do
-  brew install "$app" --force
-done
-
-# Install other useful binaries.
+# Install useful binaries.
 declare -a other=(
   ack
+  bats
   calc
   cowsay
   dockutil
@@ -133,6 +97,42 @@ declare -a other=(
   zopfli
 )
 for app in "${other[@]}"; do
+  brew install "$app" --force
+done
+
+# Install network utils
+declare -a network=(
+  aircrack-ng
+  bfg
+  binutils
+  binwalk
+  cifer
+  dex2jar
+  dns2tcp
+  fcrackzip
+  foremost
+  geoip
+  hashpump
+  hydra
+  john
+  knock
+  netpbm
+  nmap
+  openssh
+  pngcheck
+  socat
+  speedtest_cli
+  sqlmap
+  tcpflow
+  tcpreplay
+  tcptrace
+  ucspi-tcp # `tcpserver` etc.
+  wifi-password
+  xpdf
+  xz
+  youtube-dl
+)
+for app in "${network[@]}"; do
   brew install "$app" --force
 done
 
@@ -206,4 +206,4 @@ mas install 1147396723  #Whatsapp
 mas install 497799835   #Xcode
 
 #Update brewfile for CI and easy install listing
-brew bundle dump --f
+brew bundle dump --force
