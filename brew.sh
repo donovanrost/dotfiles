@@ -143,6 +143,7 @@ declare -a cask_apps=(
   atom
   amazon-music
   android-studio
+  barrier
   beardedspice
   bettertouchtool
   betterzip
