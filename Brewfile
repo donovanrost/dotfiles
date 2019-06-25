@@ -114,6 +114,7 @@ cask "duet"
 cask "github"
 cask "google-backup-and-sync"
 cask "google-chrome"
+cask "google-web-designer"
 cask "iterm2"
 cask "java"
 cask "keyboard-cleaner"
@@ -132,13 +133,17 @@ cask "quicklook-csv"
 cask "quicklook-json"
 cask "react-native-debugger"
 cask "sketch"
+cask "skyfonts"
 cask "smcfancontrol"
 cask "sourcetree"
 cask "spotify"
 cask "steam"
 cask "sublime-text"
+cask "suspicious-package"
 cask "touch-bar-simulator"
+cask "visual-studio-code"
 cask "vscodium"
+cask "webpquicklook"
 mas "1Keyboard", id: 766939888
 mas "AdBlock", id: 1402042596
 mas "Adblock Plus", id: 1432731683
@@ -195,7 +200,6 @@ mas "Telegram", id: 747648890
 mas "Termius", id: 1176074088
 mas "The Unarchiver", id: 425424353
 mas "Transmit", id: 1436522307
-mas "Trello", id: 1278508951
 mas "Turn Off the Lights for Safari", id: 1273998507
 mas "TweetDeck", id: 485812721
 mas "Type2Phone", id: 472717129

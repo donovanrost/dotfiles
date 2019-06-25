@@ -10,6 +10,32 @@ function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
+# Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
+function update() {
+	echo "Updating everything!";
+	echo "";
+	sudo softwareupdate -i -a;
+	echo "";
+	echo "Mac App Store:"
+	mas upgrade;
+	echo "";
+	echo "Brew:"
+	brew update;
+	brew upgrade;
+	brew cleanup;
+	echo "";
+	echo "npm:"
+	npm install npm -g;
+	npm update -g;
+	echo "";
+	echo "Gem:"
+	sudo gem update --system;
+	sudo gem update;
+	sudo gem cleanup;
+	echo "";
+	echo "Finished updating!";
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
 	local tmpFile="${@%/}.tar";

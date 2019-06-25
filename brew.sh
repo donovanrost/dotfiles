@@ -141,7 +141,7 @@ for item in "${network[@]}"; do
 done
 
 # Cask install GUI apps
-declare -a cask_apps=(
+declare -a cask=(
   aerial
   arduino
   atom
@@ -152,12 +152,14 @@ declare -a cask_apps=(
   bettertouchtool
   betterzip
   boom-3d
+  cakebrew
   docker
   dropbox
   duet
   github
   google-backup-and-sync
   google-chrome
+  google-web-designer
   iterm2
   java
   keyboard-cleaner
@@ -166,6 +168,7 @@ declare -a cask_apps=(
   openemu
   postman
   provisionql
+  skyfonts
   sourcetree
   spotify
   sublime-text
@@ -182,7 +185,7 @@ declare -a cask_apps=(
   quicklook-json
   webpquicklook
 )
-for app in "${cask_apps[@]}"; do
+for app in "${cask[@]}"; do
   brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 done
 
@@ -191,7 +194,7 @@ brew cleanup
 brew doctor
 
 #Mac App Store
-declare -a mas_apps=(
+declare -a mas=(
   766939888   #1Keyboard
   1432731683  #AdBlock Plus
   424389933   #Final Cut
@@ -213,7 +216,7 @@ declare -a mas_apps=(
   1147396723  #Whatsapp
   497799835   #Xcode
 )
-for app in "${mas_apps[@]}"; do
+for app in "${mas[@]}"; do
   mas install "${app}"
 done
 

@@ -33,8 +33,8 @@ else
 fi;
 unset doIt;
 
-echo ""
-echo "Brewfile includes: "
-brew bundle list --all
+# echo ""
+# echo "Brewfile includes: "
+# brew bundle list --all
 echo ""
 echo "Run brew.sh or update for current versions"
