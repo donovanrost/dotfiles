@@ -1,12 +1,16 @@
---- store useful states ---
+---
+-- This script is made to be run within BetterTouchTool
+-- It detects which players are currently active and attempts to intelligently
+-- playpause the appropriate one
+---
+
+--- get useful states ---
 set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
 
 --- debugging stuff ---
-
---uncomment this to get the bundle identifier of the currently playing app
---return currentlyPlaying
+--return currentlyPlaying --uncomment this to get the bundle identifier of the currently playing app
 --return spotifyState
 --my playpause()
 
@@ -49,39 +53,41 @@ else if activeAppName = "Amazon Music" then
 else if application "Safari" is running then
 	tell application "Safari"
 		set activeTab to my getActiveSafariTab()
-		repeat with w in windows
-			repeat with t in tabs of w
-				tell t
-					--Netflix
-					if URL starts with "https://www.netflix.com/watch" then
-						do JavaScript "var v = document.querySelector('video');
+		if activeTab is not equal to "error" then
+			repeat with w in windows
+				repeat with t in tabs of w
+					tell t
+						--Netflix
+						if URL starts with "https://www.netflix.com/watch" then
+							do JavaScript "var v = document.querySelector('video');
 								if (v.paused) {
 								  v.play();
 								}
 								else {
 								  v.pause();
 								}"
-						--Alternative:
-						--do JavaScript " document.getElementsByClassName('PlayerControlsNeo__button-control-row')[0].getElementsByTagName('button')[0].click()"
-						return "Netflix"
-						--YouTube
-					else if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" then
-						if activeTab = index of t then --YouTube Player is open
-							if activeAppName = "Safari" then
-								do JavaScript "document.getElementsByClassName('ytp-play-button ytp-button')[0].click();"
-								--tell application "System Events"
-								--key code 49 -- space bar
-								--end tell
-								return "YouTube in foreground"
-							else
-								do JavaScript "document.getElementsByClassName('ytp-play-button ytp-button')[0].click();"
-								return "YouTube in background"
+							--Alternative:
+							--do JavaScript " document.getElementsByClassName('PlayerControlsNeo__button-control-row')[0].getElementsByTagName('button')[0].click()"
+							return "Netflix"
+							--YouTube
+						else if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" then
+							if activeTab = index of t then --YouTube Player is open
+								if activeAppName = "Safari" then
+									do JavaScript "document.getElementsByClassName('ytp-play-button ytp-button')[0].click();"
+									--tell application "System Events"
+									--key code 49 -- space bar
+									--end tell
+									return "YouTube in foreground"
+								else
+									do JavaScript "document.getElementsByClassName('ytp-play-button ytp-button')[0].click();"
+									return "YouTube in background"
+								end if
 							end if
 						end if
-					end if
-				end tell
+					end tell
+				end repeat
 			end repeat
-		end repeat
+		end if
 	end tell
 end if
 
@@ -92,9 +98,10 @@ if currentlyPlaying = "com.spotify.client" then
 			my startPlaylist()
 		else
 			tell application "Spotify" to playpause
+			return "Spotify in background"
 		end if
-
-		return "Spotify in background"
+	else
+		return "Spotify not running"
 	end if
 
 else if currentlyPlaying = "com.apple.Safari" then
@@ -142,7 +149,13 @@ end getActiveApp
 
 -- Return the index of the current tab in Safari's frontmost window
 on getActiveSafariTab()
-	tell application "Safari" to return index of current tab of front window
+	tell application "System Events"
+		if exists (window 1 of process "Safari") then
+			tell application "Safari" to return index of current tab of front window
+		else
+			return "error"
+		end if
+	end tell
 end getActiveSafariTab
 
 -- Return the the bundle identifier of the currently playing app, as determined by BTT
@@ -158,6 +171,7 @@ on getSpotifyState()
 	return "not running"
 end getSpotifyState
 
+-- Send a playpause command using BTT
 on playpause()
 	tell application "BetterTouchTool"
 		trigger_named "playpause" -- this requires a named trigger with the play/pause action assigned

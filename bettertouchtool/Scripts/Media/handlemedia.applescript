@@ -20,27 +20,29 @@ end if
 --Safari handler
 if application "Safari" is running then
 	tell application "Safari"
-		repeat with w in windows
-			repeat with t in tabs of w
-				tell t
-					if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" or URL starts with "https://www.netflix.com/watch" then
-						set activeTab to my getActiveSafariTab()
-						if index of t is equal to activeTab and activeAppName = "Safari" then
-							if URL starts with "https://www.netflix.com/watch" then
-								set the URL to "https://www.netflix.com/browse"
-								return "Netflix - homepage"
+		set activeTab to my getActiveSafariTab()
+		if activeTab is not equal to "error" then
+			repeat with w in windows
+				repeat with t in tabs of w
+					tell t
+						if URL starts with "http://www.youtube.com/watch" or URL starts with "https://www.youtube.com/watch" or URL starts with "https://www.netflix.com/watch" then
+							if index of t is equal to activeTab and activeAppName = "Safari" then
+								if URL starts with "https://www.netflix.com/watch" then
+									set the URL to "https://www.netflix.com/browse"
+									return "Netflix - homepage"
+								else
+									close t
+								end if
 							else
-								close t
+								set current tab of w to t
+								activate
 							end if
-						else
-							set current tab of w to t
-							activate
+							return
 						end if
-						return
-					end if
-				end tell
+					end tell
+				end repeat
 			end repeat
-		end repeat
+		end if
 	end tell
 end if
 
@@ -82,7 +84,6 @@ if application "Spotify" is running then
 	end tell
 end if
 
-
 --Spotify has priority
 if spotifyState is equal to "playing" then
 	tell application "Spotify"
@@ -103,7 +104,13 @@ end getActiveApp
 
 -- Return the index of the current tab in Safari's frontmost window
 on getActiveSafariTab()
-	tell application "Safari" to return index of current tab of front window
+	tell application "System Events"
+		if exists (window 1 of process "Safari") then
+			tell application "Safari" to return index of current tab of front window
+		else
+			return "error"
+		end if
+	end tell
 end getActiveSafariTab
 
 -- Return the the bundle identifier of the currently playing app, as determined by BTT
