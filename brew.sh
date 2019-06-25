@@ -3,6 +3,11 @@
 echo "Running brew.sh..."
 # Install command-line tools using Homebrew.
 
+if test ! $(which brew); then
+    echo “installing homebrew”
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -54,7 +59,7 @@ brew install git-lfs
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
-# Install editors
+# Install editors and shells
 brew install vim
 brew install zsh
 brew install fish
@@ -66,13 +71,12 @@ brew install sfnt2woff-zopfli
 brew install woff2
 
 # Install useful binaries.
-declare -a other=(
+declare -a brew=(
   ack
   bats
   calc
   cowsay
   dockutil
-  fish
   gibo
   gmp
   grep
@@ -96,8 +100,8 @@ declare -a other=(
   yarn
   zopfli
 )
-for app in "${other[@]}"; do
-  brew install "$app"
+for item in "${brew[@]}"; do
+  brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 done
 
 # Install network utils
@@ -132,8 +136,8 @@ declare -a network=(
   xz
   youtube-dl
 )
-for app in "${network[@]}"; do
-  brew install "$app"
+for item in "${network[@]}"; do
+  brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 done
 
 # Cask install GUI apps
@@ -165,6 +169,9 @@ declare -a cask_apps=(
   sourcetree
   spotify
   sublime-text
+  react-native-debugger
+  visual-studio-code
+  #quicklook casks
   suspicious-package
   qlcolorcode
   qlimagesize
@@ -173,10 +180,10 @@ declare -a cask_apps=(
   qlvideo
   quicklook-csv
   quicklook-json
-  react-native-debugger
+  webpquicklook
 )
 for app in "${cask_apps[@]}"; do
-  brew cask install "$app"
+  brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 done
 
 # Remove outdated versions from the cellar.
@@ -184,27 +191,31 @@ brew cleanup
 brew doctor
 
 #Mac App Store
-#mas install
-mas install 766939888   #1Keyboard
-mas install 1432731683  #AdBlock Plus
-mas install 424389933   #Final Cut
-mas install 402989379   #iStudiez
-mas install 409183694   #Keynote
-mas install 634148309   #Logic
-mas install 634159523   #MainStage
-mas install 409203825   #Numbers
-mas install 823766827   #OneDrive
-mas install 1094255754  #Outbank
-mas install 409201541   #Pages
-mas install 1160374471  #PiPifier
-mas install 445189367   #PopClip
-mas install 803453959   #Slack
-mas install 1153157709  #Speedtest
-mas install 747648890   #Telegram
-mas install 425424353   #The Unarchiver
-mas install 1284863847  #Unsplash
-mas install 1147396723  #Whatsapp
-mas install 497799835   #Xcode
+declare -a mas_apps=(
+  766939888   #1Keyboard
+  1432731683  #AdBlock Plus
+  424389933   #Final Cut
+  402989379   #iStudiez
+  409183694   #Keynote
+  634148309   #Logic
+  634159523   #MainStage
+  409203825   #Numbers
+  823766827   #OneDrive
+  1094255754  #Outbank
+  409201541   #Pages
+  1160374471  #PiPifier
+  445189367   #PopClip
+  803453959   #Slack
+  1153157709  #Speedtest
+  747648890   #Telegram
+  425424353   #The Unarchiver
+  1284863847  #Unsplash
+  1147396723  #Whatsapp
+  497799835   #Xcode
+)
+for app in "${mas_apps[@]}"; do
+  mas install "${app}"
+done
 
 #Update brewfile for CI and easy install listing
 brew bundle dump --force
