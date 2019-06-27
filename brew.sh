@@ -153,13 +153,14 @@ declare -a cask=(
   betterzip
   boom-3d
   cakebrew
+  dash
+  discord
   docker
   dropbox
   duet
   github
   google-backup-and-sync
   google-chrome
-  google-web-designer
   iterm2
   java
   keyboard-cleaner
@@ -168,9 +169,11 @@ declare -a cask=(
   openemu
   postman
   provisionql
+  sketch-tools
   skyfonts
   sourcetree
   spotify
+  steam
   sublime-text
   react-native-debugger
   visual-studio-code
