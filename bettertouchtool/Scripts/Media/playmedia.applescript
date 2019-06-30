@@ -4,15 +4,18 @@
 -- playpause the appropriate one
 ---
 
---- get useful states ---
+--- store useful states ---
 set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
 
 --- debugging stuff ---
---return currentlyPlaying --uncomment this to get the bundle identifier of the currently playing app
+
+--uncomment this to get the bundle identifier of the currently playing app
+--return currentlyPlaying
 --return spotifyState
 --my playpause()
+--return
 
 --- quickly pause spotify if it is playing ---
 if spotifyState = "playing" then
@@ -47,8 +50,12 @@ else if activeAppName = "Kodi" then
 	end tell
 
 else if activeAppName = "Amazon Music" then
-	my playpause
-	return "Amazon Music in foreground"
+	tell application "System Events"
+		key code 49 -- space bar
+		return "Amazon Music in foreground"
+	end tell
+	--my playpause
+	--return "Amazon Music in foreground"
 
 else if application "Safari" is running then
 	tell application "Safari"
@@ -150,17 +157,21 @@ end getActiveApp
 -- Return the index of the current tab in Safari's frontmost window
 on getActiveSafariTab()
 	tell application "System Events"
-		if exists (window 1 of process "Safari") then
+		try
 			tell application "Safari" to return index of current tab of front window
-		else
-			return "error"
-		end if
+		on error
+			return "Could not get current safari tab"
+		end try
 	end tell
 end getActiveSafariTab
 
 -- Return the the bundle identifier of the currently playing app, as determined by BTT
 on getCurrentlyPlaying()
-	tell application "BetterTouchTool" to return get_string_variable "BTTCurrentlyPlayingApp"
+	try
+		tell application "BetterTouchTool" to return get_string_variable "BTTCurrentlyPlayingApp"
+	on error
+		return "Could not get currently playing app"
+	end try
 end getCurrentlyPlaying
 
 -- Return the player state of spotify (playing or paused)
@@ -171,18 +182,27 @@ on getSpotifyState()
 	return "not running"
 end getSpotifyState
 
--- Send a playpause command using BTT
 on playpause()
-	tell application "BetterTouchTool"
-		trigger_named "playpause" -- this requires a named trigger with the play/pause action assigned
-	end tell
+	try
+		tell application "BetterTouchTool"
+			--trigger_action "{\"BTTPredefinedActionType\":23}"
+			trigger_named "playpause" -- this requires a named trigger with the play/pause action assigned
+		end tell
+		return "System playpause"
+	on error
+		return "Error on BTT playpause"
+	end try
 end playpause
 
 on startPlaylist()
-	tell application "BetterTouchTool"
-		trigger_named "play current playlist" -- this requires corresponding named trigger
-	end tell
-	return "playing current Spotify playlist"
+	try
+		tell application "BetterTouchTool"
+			trigger_named "play current playlist" -- this requires corresponding named trigger
+		end tell
+		return "playing current Spotify playlist"
+	on error
+		return "Error starting playlist"
+	end try
 end startPlaylist
 
 on isOtherPlayerRunning()

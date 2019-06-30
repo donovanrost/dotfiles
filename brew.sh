@@ -92,6 +92,7 @@ declare -a brew=(
   rlwrap
   screen
   ssh-copy-id
+  switchaudio-osx
   tree
   thefuck
   vbindiff

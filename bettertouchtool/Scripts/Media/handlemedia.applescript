@@ -1,9 +1,12 @@
+---
+-- This script is made to be run within BetterTouchTool
+-- It checks what media is playing and activates the appropriate player
+-- if it currently is not foremost, otherwise executes a useful command
+---
+
 set activeAppName to my getActiveApp()
 set currentlyPlaying to my getCurrentlyPlaying()
 set spotifyState to my getSpotifyState()
-
---check what media is playing and activates the player if it currently is not foremost,
---otherwise it executes an appropriate command like pausing or skipping
 
 --Spotify has priority
 if spotifyState is equal to "playing" then
@@ -52,10 +55,10 @@ if currentlyPlaying = "com.spotify.client" then
 	tell application "Spotify"
 		if activeAppName = "Spotify" then
 			tell application "Spotify" to next track
-			return "spotify in foreground"
+			return "Spotify in foreground"
 		end if
 		activate
-		return "spotify in background"
+		return "Spotify in background"
 	end tell
 else if currentlyPlaying = "com.colliderli.iina" then
 	if activeAppName = "IINA" then
@@ -92,11 +95,17 @@ if spotifyState is equal to "playing" then
 			return "spotify in foreground"
 		end if
 		activate
-		return "spotify in background"
+		return "Spotify in background"
 	end tell
 end if
 
--- Functions
+---------------------
+return "reached end"
+---------------------
+
+----  Functions  ----
+
+-- Return the active app as a String
 on getActiveApp()
 	tell application "System Events" to set activeApp to first process where it is frontmost
 	return name of activeApp
@@ -105,17 +114,21 @@ end getActiveApp
 -- Return the index of the current tab in Safari's frontmost window
 on getActiveSafariTab()
 	tell application "System Events"
-		if exists (window 1 of process "Safari") then
+		try
 			tell application "Safari" to return index of current tab of front window
-		else
-			return "error"
-		end if
+		on error
+			return "Could not get current safari tab"
+		end try
 	end tell
 end getActiveSafariTab
 
 -- Return the the bundle identifier of the currently playing app, as determined by BTT
 on getCurrentlyPlaying()
-	tell application "BetterTouchTool" to return get_string_variable "BTTCurrentlyPlayingApp"
+	try
+		tell application "BetterTouchTool" to return get_string_variable "BTTCurrentlyPlayingApp"
+	on error
+		return "Could not get currently playing app"
+	end try
 end getCurrentlyPlaying
 
 -- Return the player state of spotify (playing or paused)

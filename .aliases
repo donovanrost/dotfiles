@@ -45,7 +45,7 @@ alias brewfile="dotfiles;. brew.sh"
 alias brw="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
-alias funcs="functions"
+alias fnc="functions"
 alias sdot="set -- -f; dotfiles; source bootstrap.sh"
 alias sd="sdot"
 
