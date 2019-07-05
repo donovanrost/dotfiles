@@ -33,8 +33,12 @@ else
 fi;
 unset doIt;
 
+echo ""
+echo "For macOS settings, run"
+echo "./.macos"
+
 # echo ""
 # echo "Brewfile includes: "
 # brew bundle list --all
 echo ""
-echo "Run brew.sh or update for current versions"
+echo "Run ./brew.sh or update for current versions"

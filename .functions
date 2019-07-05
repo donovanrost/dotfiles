@@ -12,9 +12,10 @@ function cdf() { # short for `cdfinder`
 
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
 function update() {
+	sudo -v
 	echo "Updating everything!";
 	echo "";
-	sudo softwareupdate -i -a;
+	softwareupdate -i -a;
 	echo "";
 	echo "Mac App Store:"
 	mas upgrade;
@@ -29,10 +30,10 @@ function update() {
 	npm update -g;
 	echo "";
 	echo "Gem:"
-	sudo gem update --system;
-	sudo gem update;
-	sudo gem cleanup;
-	echo "";
+	# sudo gem update --system;
+	# sudo gem update;
+	# sudo gem cleanup;
+	# echo "";
 	echo "Finished updating!";
 }
 

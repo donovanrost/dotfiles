@@ -7,7 +7,7 @@ On fresh install...
 - clone this project and run the bootstrap script
 
  ```bash
- git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bootstrap.sh
  ```
 
 - Install [Homebrew](https://brew.sh) and run brew.sh

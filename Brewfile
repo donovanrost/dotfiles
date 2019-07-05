@@ -25,7 +25,7 @@ brew "coreutils"
 brew "cowsay"
 brew "dex2jar"
 brew "dns2tcp"
-brew "docker"
+brew "docker", link: false
 brew "dockutil"
 brew "fcrackzip"
 brew "findutils"
@@ -75,6 +75,7 @@ brew "socat"
 brew "speedtest-cli"
 brew "sqlmap"
 brew "ssh-copy-id"
+brew "switchaudio-osx"
 brew "tcpflow"
 brew "tcpreplay"
 brew "tcptrace"
@@ -108,6 +109,7 @@ cask "bettertouchtool"
 cask "betterzip"
 cask "boom-3d"
 cask "cakebrew"
+cask "discord"
 cask "docker"
 cask "dropbox"
 cask "duet"
@@ -147,7 +149,7 @@ cask "webpquicklook"
 mas "1Keyboard", id: 766939888
 mas "AdBlock", id: 1402042596
 mas "Adblock Plus", id: 1432731683
-mas "AnyDo", id: 944960179
+mas "Any.do", id: 944960179
 mas "Bear", id: 1091189122
 mas "Cleaner-App", id: 1013897218
 mas "CodeCows", id: 1176112058

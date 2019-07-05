@@ -176,6 +176,7 @@ declare -a cask=(
   spotify
   steam
   sublime-text
+  touch-bar-simulator
   react-native-debugger
   visual-studio-code
   #quicklook casks
