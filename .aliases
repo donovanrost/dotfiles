@@ -31,6 +31,7 @@ alias ud="update"
 alias fnd="finder"
 alias x="exit"
 alias e="x"
+alias test="echo 'Aliases are working!'"
 
 # Dotfiles
 alias dotfiles="cd ~/.dotfiles"

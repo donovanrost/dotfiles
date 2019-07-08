@@ -23,6 +23,10 @@ On fresh install...
 
 - [Create .path and .extra files in your root directory for path variables and confidential configs](README.md)
 
+- [Restore Backup from Atom Sync-Settings](https://atom.io/packages/sync-settings)
+  - [create access token](https://github.com/settings/tokens/new)
+  - Gist ID is `92968648b5ea54edbee216e87e52c15e`
+
 Adding Apps
 ===========
 To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
