@@ -3,7 +3,7 @@ Welcome to the HydroTouch!
 
 This is a heavily personalized and customized preset for BetterTouchTool based on the amazing [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) by @yuuiko.
 
-Check out the wiki for more info!
+Check out the [wiki](https://github.com/dnnsmnstrr/dotfiles/wiki) for more info!
 
 Releases
 ========
