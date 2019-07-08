@@ -27,6 +27,8 @@ On fresh install...
   - [create access token](https://github.com/settings/tokens/new)
   - Gist ID is `92968648b5ea54edbee216e87e52c15e`
 
+- run [`mackup`]() if you have used it to back up settings
+
 Adding Apps
 ===========
 To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
