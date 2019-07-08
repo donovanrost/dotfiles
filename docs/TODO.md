@@ -23,6 +23,8 @@ On fresh install...
 
 - [Create .path and .extra files in your root directory for path variables and confidential configs](README.md)
 
+- run [`mackup`]() if you have used it to back up settings
+
 Adding Apps
 ===========
 To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
