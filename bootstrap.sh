@@ -34,8 +34,7 @@ fi;
 unset doIt;
 
 echo ""
-echo "For macOS settings, run"
-echo "./.macos"
+echo "For macOS settings, run macos"
 
 # echo ""
 # echo "Brewfile includes: "
