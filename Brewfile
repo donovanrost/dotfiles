@@ -119,9 +119,11 @@ cask "google-chrome"
 cask "google-web-designer"
 cask "iterm2"
 cask "java"
+cask "kap"
 cask "keyboard-cleaner"
 cask "kodi"
 cask "launchrocket"
+cask "licecap"
 cask "midi-monitor"
 cask "openemu"
 cask "postman"
@@ -165,6 +167,7 @@ mas "Final Cut Pro", id: 424389933
 mas "Gemini 2", id: 1090488118
 mas "GhosteryLite", id: 1436953057
 mas "Gifski", id: 1351639930
+mas "GIPHY CAPTURE", id: 668208984
 mas "Helium", id: 1054607607
 mas "Image2icon", id: 992115977
 mas "iMovie", id: 408981434

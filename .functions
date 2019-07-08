@@ -23,6 +23,7 @@ function update() {
 	echo "Brew:"
 	brew update;
 	brew upgrade;
+	brew cask upgrade;
 	brew cleanup;
 	echo "";
 	echo "npm:"
@@ -35,6 +36,10 @@ function update() {
 	# sudo gem cleanup;
 	# echo "";
 	echo "Finished updating!";
+}
+
+function console() {
+	osascript -e 'tell application "BetterTouchTool" to trigger_named_async_without_response "run trigger"'
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
