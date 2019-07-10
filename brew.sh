@@ -1,33 +1,145 @@
 #!/usr/bin/env bash
 
-echo "Running brewfile"
-if [ "$1" == "-h" ] ; then
-  echo "Usage: `basename $0` [-h]"
-  return
-elif [ "$#" -gt 1 ]; then
-  echo "Too many parameters"
-  return
-fi
+# Apps to install
+# Categorized into brew, general casks, developer, personal and mac app store apps
 
-# Install command-line tools using Homebrew.
+# Useful cask apps
+declare -a cask=(
+  # utility
+  aerial
+  barrier
+  bettertouchtool
+  betterzip
+  dropbox
+  duet
+  google-backup-and-sync
+  google-chrome
+  keyboardcleantool
+  touch-bar-simulator
+  # quicklook
+  epubquicklook
+  suspicious-package
+  provisionql
+  qlcolorcode
+  qlimagesize
+  qlmarkdown
+  qlplayground
+  qlstephen
+  qlvideo
+  quicklook-csv
+  quicklook-json
+  webpquicklook
+)
 
-if test ! $(which brew); then
-    echo “installing homebrew”
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+# Apps I use for developing (-d)
+declare -a dev=(
+  arduino
+  atom
+  android-studio
+  cakebrew
+  dash
+  docker
+  github
+  google-chrome
+  gpg-suite-no-mail
+  iterm2
+  java
+  postman
+  sourcetree
+  sublime-text
+  touch-bar-simulator
+  react-native-debugger
+  visual-studio-code
+  wwdc
+  zoomus
+  # design
+  sketch-toolbox
+  skyfonts
+  kap
+  noun-project
+)
 
-echo "Checking for updates"
-brew update         # Make sure we’re using the latest Homebrew.
-brew upgrade        # Upgrade any already-installed formulae.
-brew cask outdated  # Check for outdated casks
-brew cask upgrade   # Update any outdated casks
+# Apps that don't have much professional use (mostly entertainment) (-p)
+declare -a personal=(
+  # audio
+  amazon-music
+  beardedspice
+  boom-3d
+  lyricsx
+  sonic-pi
+  spotify
+  yt-music
+  # communication
+  caprine
+  telegram
+  whatsapp
+  # gaming
+  openemu
+  retroarch
+  steam
+  # media
+  downie
+  emojipedia
+  iina
+  kodi
+)
 
-# Save Homebrew’s installed location.
-BREW_PREFIX=$(brew --prefix)
+# Optional: Mac App Store (-m)
+declare -a mas=(
+  766939888   #1Keyboard
+  1432731683  #AdBlock Plus
+  424389933   #Final Cut
+  402989379   #iStudiez
+  409183694   #Keynote
+  634148309   #Logic
+  634159523   #MainStage
+  409203825   #Numbers
+  823766827   #OneDrive
+  1094255754  #Outbank
+  409201541   #Pages
+  1160374471  #PiPifier
+  445189367   #PopClip
+  803453959   #Slack
+  1153157709  #Speedtest
+  747648890   #Telegram
+  425424353   #The Unarchiver
+  1284863847  #Unsplash
+  1147396723  #Whatsapp
+  497799835   #Xcode
+)
 
-# Taps
-brew tap bramstein/webfonttools
-brew tap homebrew/cask-fonts
+declare -a brew=(
+  ack
+  bats
+  calc
+  cowsay
+  dockutil
+  gibo
+  gmp
+  grep
+  htop
+  imagemagick
+  lynx
+  mackup
+  multimarkdown
+  p7zip
+  pigz
+  pinentry
+  pv
+  rename
+  rlwrap
+  screen
+  ssh-copy-id
+  switchaudio-osx
+  tree
+  thefuck
+  vbindiff
+  watch
+  watchman
+  wifi-password
+  yarn
+  zopfli
+)
 
 declare -a utils=(
   coreutils         # GNU core utilities (those that come with macOS are outdated).
@@ -62,57 +174,8 @@ declare -a utils=(
   sfnt2woff-zopfli
   woff2
 )
-echo "Installing utils..."
-for item in "${utils[@]}"; do
-  brew info "${item}" | grep --quiet 'Not installed' && "${item}"
-done
 
-# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
-
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-  chsh -s "${BREW_PREFIX}/bin/bash";
-fi;
-
-# Install useful binaries.
-declare -a brew=(
-  ack
-  bats
-  calc
-  cowsay
-  dockutil
-  gibo
-  gmp
-  grep
-  htop
-  imagemagick
-  lynx
-  mackup
-  multimarkdown
-  p7zip
-  pigz
-  pinentry
-  pv
-  rename
-  rlwrap
-  screen
-  ssh-copy-id
-  switchaudio-osx
-  tree
-  thefuck
-  vbindiff
-  watch
-  watchman
-  yarn
-  zopfli
-)
-echo "Installing other useful stuff..."
-for item in "${brew[@]}"; do
-  brew info "${item}" | grep --quiet 'Not installed' && "${item}"
-done
-
-# Install network utils
+# Optional: Network utils (-n)
 declare -a network=(
   aircrack-ng
   bfg
@@ -139,125 +202,65 @@ declare -a network=(
   tcpreplay
   tcptrace
   ucspi-tcp # `tcpserver` etc.
-  wifi-password
   xpdf
   xz
   youtube-dl
 )
 
-# Useful cask apps
-declare -a cask=(
-  # utility
-  aerial
-  barrier
-  bettertouchtool
-  betterzip
-  dropbox
-  duet
-  google-backup-and-sync
-  google-chrome
-  keyboardcleantool
-  touch-bar-simulator
-  # quicklook
-  epubquicklook
-  suspicious-package
-  provisionql
-  qlcolorcode
-  qlimagesize
-  qlmarkdown
-  qlplayground
-  qlstephen
-  qlvideo
-  quicklook-csv
-  quicklook-json
-  webpquicklook
-)
+# Scripting starts here
 
-# Apps I use for developing
-declare -a dev=(
-  arduino
-  atom
-  android-studio
-  cakebrew
-  dash
-  docker
-  github
-  google-chrome
-  gpg-suite-no-mail
-  iterm2
-  java
-  midi-monitor
-  postman
+if [ "$1" == "-h" ] ; then
+  echo "Usage: `basename $0` [-h]"
+  return
+elif [ "$#" -gt 1 ]; then
+  echo "Too many parameters"
+  return
+fi
 
-  sourcetree
-  sublime-text
-  touch-bar-simulator
-  react-native-debugger
-  visual-studio-code
-  wwdc
-  zoomus
-  # design
-  sketch-toolbox
-  skyfonts
-  kap
-  noun-project
-)
+echo "Running brewfile"
 
-# Apps that don't have professional use (mostly entertainment)
-declare -a personal=(
-  # audio
-  amazon-music
-  beardedspice
-  boom-3d
-  lyricsx
-  sonic-pi
-  spotify
-  yt-music
-  # communication
-  caprine
-  telegram
-  whatsapp
-  # gaming
-  openemu
-  retroarch
-  steam
-  # media
-  downie
-  emojipedia
-  iina
-  kodi
-)
+# Check for homebrew
+if test ! $(which brew); then
+    echo “installing homebrew”
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-# Mac App Store
-declare -a mas=(
-  766939888   #1Keyboard
-  1432731683  #AdBlock Plus
-  424389933   #Final Cut
-  402989379   #iStudiez
-  409183694   #Keynote
-  634148309   #Logic
-  634159523   #MainStage
-  409203825   #Numbers
-  823766827   #OneDrive
-  1094255754  #Outbank
-  409201541   #Pages
-  1160374471  #PiPifier
-  445189367   #PopClip
-  803453959   #Slack
-  1153157709  #Speedtest
-  747648890   #Telegram
-  425424353   #The Unarchiver
-  1284863847  #Unsplash
-  1147396723  #Whatsapp
-  497799835   #Xcode
-)
+echo "Checking for updates"
+brew update         # Make sure we’re using the latest Homebrew.
+brew upgrade        # Upgrade any already-installed formulae.
+brew cask outdated  # Check for outdated casks
+brew cask upgrade   # Update any outdated casks
+
+function brewInstall() {
+  # Taps
+  brew tap bramstein/webfonttools
+  brew tap homebrew/cask-fonts
+
+  # Save Homebrew’s installed location.
+  BREW_PREFIX=$(brew --prefix)
+  # Switch to using brew-installed bash as default shell
+  if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+    echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+    chsh -s "${BREW_PREFIX}/bin/bash";
+  fi;
+  echo "Installing utils..."
+  for item in "${utils[@]}"; do
+    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+  done
+  # ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+  echo "Installing other useful stuff..."
+  for item in "${brew[@]}"; do
+    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+  done
+}
 
 function networkInstall() {
   echo "Installing network utilities..."
   for item in "${network[@]}"; do
-    brew info "${item}" | grep --quiet 'Not installed' && "${item}"
+    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
   done
 }
+
 function caskInstall() {
   echo "Installing casks..."
   for app in "${cask[@]}"; do
@@ -285,13 +288,17 @@ function masInstall() {
     mas install "${app}"
   done
 }
+
 if [ "$1" == "-a" ]; then
+  brewInstall
   caskInstall
   devInstall
   networkInstall
   personalInstall
   masInstall
 elif [[ "$1" == "-d" ]]; then
+  brewInstall
+  caskInstall
   devInstall
   networkInstall
 elif [[ "$1" == "-n" ]]; then
@@ -301,12 +308,14 @@ elif [[ "$1" == "-p" ]]; then
 elif [[ "$1" == "-m" ]]; then
   masInstall
 elif [[ "$#" -eq 0 ]]; then
+  brewInstall
   caskInstall
   devInstall
+  echo "For specific categories, run again with appropriate flags (-h for more info)"
 fi;
 
-# Remove outdated versions from the cellar.
-brew cleanup
+echo "Cleaning up homebrew"
+brew cleanup # Remove outdated versions from the cellar.
 brew doctor
 
 #Update brewfile for CI and quick install overview
