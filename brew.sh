@@ -84,70 +84,12 @@ declare -a personal=(
   kodi
 )
 
-# Optional: Mac App Store (-m)
-declare -a mas=(
-  766939888   #1Keyboard
-  1432731683  #AdBlock Plus
-  424389933   #Final Cut
-  402989379   #iStudiez
-  409183694   #Keynote
-  634148309   #Logic
-  634159523   #MainStage
-  409203825   #Numbers
-  823766827   #OneDrive
-  1094255754  #Outbank
-  409201541   #Pages
-  1160374471  #PiPifier
-  445189367   #PopClip
-  803453959   #Slack
-  1153157709  #Speedtest
-  747648890   #Telegram
-  425424353   #The Unarchiver
-  1284863847  #Unsplash
-  1147396723  #Whatsapp
-  497799835   #Xcode
-)
-
 declare -a brew=(
-  ack
-  bats
-  calc
-  cowsay
-  dockutil
-  gibo
-  gmp
-  grep
-  htop
-  imagemagick
-  lynx
-  mackup
-  multimarkdown
-  p7zip
-  pigz
-  pinentry
-  pv
-  rename
-  rlwrap
-  screen
-  ssh-copy-id
-  switchaudio-osx
-  tree
-  thefuck
-  vbindiff
-  watch
-  watchman
-  wifi-password
-  yarn
-  zopfli
-)
-
-declare -a utils=(
   coreutils         # GNU core utilities (those that come with macOS are outdated).
   moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
   findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
   gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
   bash              # Bash 4
-  bash-completion2
   # languages & frameworks
   lua
   node
@@ -167,12 +109,61 @@ declare -a utils=(
   git
   hub
   git-lfs
+  gibo
+  #dev
+  bats        #bash testing
+  react-native-cli
+  watchman
+  yarn
   # GnuPG to enable PGP-signing commits.
   gnupg
+  pinentry
+  pinentry-mac
   # font tools
   sfnt2woff
   sfnt2woff-zopfli
   woff2
+  # completion
+  bash-completion2
+  brew-cask-completion
+  pip-completion
+  open-completion
+  yarn-completion
+  apm-bash-completion
+  # other
+  ack
+  gmp
+  grep
+  rlwrap
+  screen
+  ssh-copy-id
+  tree
+  thefuck
+  vbindiff
+  watch
+  # media
+  imagemagick
+  multimarkdown
+  # web
+  lynx
+  youtube-dl
+  # system
+  dockutil
+  htop
+  mackup
+  pv
+  switchaudio-osx
+  # files
+  p7zip
+  pigz
+  rename
+  zopfli
+  xpdf
+  # tools
+  calc
+  wifi-password
+  # fun
+  cowsay
 )
 
 # Optional: Network utils (-n)
@@ -202,15 +193,44 @@ declare -a network=(
   tcpreplay
   tcptrace
   ucspi-tcp # `tcpserver` etc.
-  xpdf
   xz
-  youtube-dl
+)
+
+# Optional: Mac App Store (-m)
+declare -a mas=(
+  766939888   #1Keyboard
+  1432731683  #AdBlock Plus
+  424389933   #Final Cut
+  402989379   #iStudiez
+  409183694   #Keynote
+  634148309   #Logic
+  634159523   #MainStage
+  409203825   #Numbers
+  823766827   #OneDrive
+  1094255754  #Outbank
+  409201541   #Pages
+  1160374471  #PiPifier
+  445189367   #PopClip
+  803453959   #Slack
+  1153157709  #Speedtest
+  747648890   #Telegram
+  425424353   #The Unarchiver
+  1284863847  #Unsplash
+  1147396723  #Whatsapp
+  497799835   #Xcode
 )
 
 # Scripting starts here
 
 if [ "$1" == "-h" ] ; then
-  echo "Usage: `basename $0` [-h]"
+  echo "Usage: brewfile"
+  echo "Options: "
+  echo "-h  Show this message"
+  echo "-a  Install everything"
+  echo "-d  Install with developer options"
+  echo "-m  Install Mac App Store apps"
+  echo "-n  Install network tools"
+  echo "-p  Install personal apps (entertainment, music, gaming)"
   return
 elif [ "$#" -gt 1 ]; then
   echo "Too many parameters"
@@ -243,12 +263,8 @@ function brewInstall() {
     echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
     chsh -s "${BREW_PREFIX}/bin/bash";
   fi;
-  echo "Installing utils..."
-  for item in "${utils[@]}"; do
-    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
-  done
   # ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
-  echo "Installing other useful stuff..."
+  echo "Installing brew utilities..."
   for item in "${brew[@]}"; do
     brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
   done
