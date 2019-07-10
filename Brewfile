@@ -2,8 +2,8 @@ tap "bashdot/tap"
 tap "bramstein/webfonttools"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
-tap "wix/brew"
 brew "ack"
 brew "aircrack-ng"
 brew "bash"
@@ -25,7 +25,7 @@ brew "coreutils"
 brew "cowsay"
 brew "dex2jar"
 brew "dns2tcp"
-brew "docker", link: false
+brew "docker"
 brew "dockutil"
 brew "fcrackzip"
 brew "findutils"
@@ -36,7 +36,7 @@ brew "gibo"
 brew "git"
 brew "git-lfs"
 brew "gnu-sed"
-brew "gnupg", link: false
+brew "gnupg"
 brew "netpbm"
 brew "graphviz"
 brew "grep"
@@ -106,25 +106,25 @@ cask "android-studio"
 cask "arduino"
 cask "atom"
 cask "barrier"
+cask "beardedspice"
 cask "bettertouchtool"
 cask "betterzip"
 cask "boom-3d"
 cask "cakebrew"
-cask "discord"
 cask "docker"
 cask "dropbox"
 cask "duet"
 cask "github"
 cask "google-backup-and-sync"
 cask "google-chrome"
-cask "google-web-designer"
 cask "iterm2"
 cask "java"
 cask "kap"
 cask "keyboard-cleaner"
+cask "keyboardcleantool"
 cask "kodi"
 cask "launchrocket"
-cask "licecap"
+cask "mattermost"
 cask "midi-monitor"
 cask "openemu"
 cask "postman"
@@ -138,6 +138,7 @@ cask "quicklook-csv"
 cask "quicklook-json"
 cask "react-native-debugger"
 cask "sketch"
+cask "sketch-toolbox"
 cask "skyfonts"
 cask "smcfancontrol"
 cask "sourcetree"
@@ -148,6 +149,8 @@ cask "suspicious-package"
 cask "touch-bar-simulator"
 cask "visual-studio-code"
 cask "webpquicklook"
+cask "whatsapp"
+cask "yt-music"
 mas "1Keyboard", id: 766939888
 mas "AdBlock", id: 1402042596
 mas "Adblock Plus", id: 1432731683
@@ -167,7 +170,6 @@ mas "Final Cut Pro", id: 424389933
 mas "Gemini 2", id: 1090488118
 mas "GhosteryLite", id: 1436953057
 mas "Gifski", id: 1351639930
-mas "GIPHY CAPTURE", id: 668208984
 mas "Helium", id: 1054607607
 mas "Image2icon", id: 992115977
 mas "iMovie", id: 408981434
@@ -182,7 +184,6 @@ mas "MainStage 3", id: 634159523
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "MindNode", id: 992076693
 mas "Motion", id: 434290957
-mas "MultiMarkdown Composer", id: 1275176220
 mas "Notability", id: 736189492
 mas "Numbers", id: 409203825
 mas "OneDrive", id: 823766827
@@ -211,5 +212,4 @@ mas "Type2Phone", id: 472717129
 mas "Unsplash Wallpapers", id: 1284863847
 mas "VirtualDJ", id: 1061963639
 mas "VPN Plus", id: 1202726435
-mas "WhatsApp", id: 1147396723
 mas "Xcode", id: 497799835

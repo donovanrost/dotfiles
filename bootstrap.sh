@@ -40,4 +40,5 @@ echo "For macOS settings, run macos"
 # echo "Brewfile includes: "
 # brew bundle list --all
 echo ""
-echo "Run brewfile or update for current versions"
+
+echo "Run brewfile (bf) or update (ud) for current versions"

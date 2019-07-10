@@ -27,11 +27,11 @@ alias please="sudo"
 alias fuck="thefuck"
 alias finder="open ."
 alias ql="qlmanage -p &>/dev/null" #quicklook from command line
+alias rl="reload"
 alias ud="update"
 alias fnd="finder"
 alias x="exit"
 alias e="x"
-alias test="echo 'Aliases are working!'"
 
 # Dotfiles
 alias dotfiles="cd ~/.dotfiles"
@@ -43,12 +43,17 @@ alias als="aliases"
 alias btt="dotfiles; cd bettertouchtool; finder"
 alias macos="dotfiles; . .macos"
 alias brewfile="dotfiles;. brew.sh"
-alias brw="brewfile"
+alias bf="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
 alias sdot="set -- -f; dotfiles; source bootstrap.sh"
 alias sd="sdot"
+
+# Brew
+alias bci="brew cask install "
+alias bcu="brew cask uninstall "
+alias bcr="brew cask reinstall "
 
 # Resources
 alias hint=". hint"
