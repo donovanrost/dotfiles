@@ -35,7 +35,6 @@ declare -a utils=(
   findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
   gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
   bash              # Bash 4
-  bash-completion2
   # languages & frameworks
   lua
   node
@@ -45,7 +44,6 @@ declare -a utils=(
   rbenv
   # downloaders & installers
   wget
-  cask
   mas
   # editors & shells
   vim
@@ -55,12 +53,22 @@ declare -a utils=(
   git
   hub
   git-lfs
+  #dev
+  react-native-cli
+  watchman
+  yarn
   # GnuPG to enable PGP-signing commits.
   gnupg
   # font tools
   sfnt2woff
   sfnt2woff-zopfli
   woff2
+  # completion
+  bash-completion2
+  brew-cask-completion
+  pip-completion
+  open-completion
+  yarn-completion
 )
 echo "Installing utils..."
 for item in "${utils[@]}"; do
@@ -80,7 +88,6 @@ declare -a brew=(
   ack
   bats
   calc
-  cowsay
   dockutil
   gibo
   gmp
@@ -93,6 +100,7 @@ declare -a brew=(
   p7zip
   pigz
   pinentry
+  pinentry-mac
   pv
   rename
   rlwrap
@@ -103,9 +111,9 @@ declare -a brew=(
   thefuck
   vbindiff
   watch
-  watchman
-  yarn
   zopfli
+  #fun
+  cowsay
 )
 echo "Installing other useful stuff..."
 for item in "${brew[@]}"; do
@@ -188,7 +196,6 @@ declare -a dev=(
   java
   midi-monitor
   postman
-
   sourcetree
   sublime-text
   touch-bar-simulator
