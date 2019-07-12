@@ -111,7 +111,8 @@ declare -a brew=(
   git-lfs
   gibo
   #dev
-  bats        #bash testing
+  bats
+  cocoapods
   react-native-cli
   watchman
   yarn
@@ -226,8 +227,8 @@ if [ "$1" == "-h" ] ; then
   echo "Usage: brewfile"
   echo "Options: "
   echo "-h  Show this message"
-  echo "-a  Install everything"
-  echo "-d  Install with developer options"
+  echo "-a  Install all the options"
+  echo "-d  Install developer options"
   echo "-m  Install Mac App Store apps"
   echo "-n  Install network tools"
   echo "-p  Install personal apps (entertainment, music, gaming)"
@@ -323,7 +324,7 @@ elif [[ "$1" == "-p" ]]; then
   personalInstall
 elif [[ "$1" == "-m" ]]; then
   masInstall
-elif [[ "$#" -eq 0 ]]; then
+else
   brewInstall
   caskInstall
   devInstall

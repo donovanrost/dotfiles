@@ -7,14 +7,14 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# Shortcuts
+# Finder Shortcuts
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/Developer"
+alias doc="cd ~/Documents"
 alias p="cd ~/Desktop/Projects"
 alias g="git"
 
@@ -47,17 +47,18 @@ alias bf="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
-alias sdot="set -- -f; dotfiles; source bootstrap.sh"
-alias sd="sdot"
+alias sd="set -- -f; dotfiles; source bootstrap.sh"
 
 # Brew
+alias bi="brew install "
+alias bu="brew uninstall "
+alias bl="brew link "
 alias bci="brew cask install "
 alias bcu="brew cask uninstall "
 alias bcr="brew cask reinstall "
 
 # Resources
 alias hint=". hint"
-alias mdcs="dt; cd Resources/Cheatsheets; open markdown.pdf"
 
 # React
 alias rn='react-native '
@@ -83,6 +84,7 @@ alias sudo='sudo '
 
 # Make executable
 alias ax="chmod a+x"
+alias exe="ax"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
