@@ -5,14 +5,13 @@
 osascript -e 'quit app "Slack"'
 
 FILE=/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
-CSS_SOURCE=https://cdn.jsdelivr.net/gh/laCour/slack-night-mode@master/css/raw/black.css
 
-cat >>$FILE <<EOL
+sudo cat >>$FILE <<EOL
 
 document.addEventListener('DOMContentLoaded', function() {
     let tt__customCss = '.menu ul li a:not(.inline_menu_link) {color: #fff !important;}'
     $.ajax({
-        url: '$CSS_SOURCE',
+        url: 'https://cdn.jsdelivr.net/gh/laCour/slack-night-mode@master/css/raw/black.css',
         success: function(css) {
             \$('<style></style>').appendTo('head').html(css + tt__customCss);
         }

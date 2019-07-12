@@ -1,0 +1,17 @@
+{
+  "Markdown": {
+    "beautifiers": [
+      "Prettier"
+    ]
+  },
+  "JSON": {
+    "beautifiers": [
+      "Prettier"
+    ]
+  },
+  "XML": {
+    "beautifiers": [
+      "JS-Beautify"
+    ]
+  },
+}
