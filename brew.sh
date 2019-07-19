@@ -146,6 +146,7 @@ declare -a brew=(
 	# media
 	imagemagick
 	multimarkdown
+  shpotify
 	# web
 	lynx
 	youtube-dl
@@ -181,6 +182,7 @@ declare -a network=(
 	foremost
 	geoip
 	hashpump
+  httpie
 	hydra
 	john
 	knock
