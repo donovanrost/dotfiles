@@ -5,247 +5,246 @@
 
 # Useful cask apps
 declare -a cask=(
-  # utility
-  aerial
-  barrier
-  bettertouchtool
-  betterzip
-  dropbox
-  duet
-  google-backup-and-sync
-  google-chrome
-  keyboardcleantool
-  touch-bar-simulator
-  # quicklook
-  epubquicklook
-  suspicious-package
-  provisionql
-  qlcolorcode
-  qlimagesize
-  qlmarkdown
-  qlplayground
-  qlstephen
-  qlvideo
-  quicklook-csv
-  quicklook-json
-  webpquicklook
+	# utility
+	aerial
+	barrier
+	bettertouchtool
+	betterzip
+	dropbox
+	duet
+	google-backup-and-sync
+	google-chrome
+	keyboardcleantool
+	touch-bar-simulator
+	# quicklook
+	epubquicklook
+	suspicious-package
+	provisionql
+	qlcolorcode
+	qlimagesize
+	qlmarkdown
+	qlplayground
+	qlstephen
+	qlvideo
+	quicklook-csv
+	quicklook-json
+	webpquicklook
 )
 
 # Apps I use for developing (-d)
 declare -a dev=(
-  arduino
-  atom
-  android-studio
-  cakebrew
-  dash
-  docker
-  github
-  google-chrome
-  gpg-suite-no-mail
-  iterm2
-  java
-  postman
-  sourcetree
-  sublime-text
-  touch-bar-simulator
-  react-native-debugger
-  visual-studio-code
-  wwdc
-  zoomus
-  # design
-  sketch-toolbox
-  skyfonts
-  kap
-  noun-project
+	arduino
+	atom
+	android-studio
+	cakebrew
+	dash
+	docker
+	github
+	google-chrome
+	gpg-suite-no-mail
+	iterm2
+	java
+	postman
+	sourcetree
+	sublime-text
+	touch-bar-simulator
+	react-native-debugger
+	visual-studio-code
+	wwdc
+	zoomus
+	# design
+	sketch-toolbox
+	skyfonts
+	kap
+	noun-project
 )
 
 # Apps that don't have much professional use (mostly entertainment) (-p)
 declare -a personal=(
-  # audio
-  amazon-music
-  beardedspice
-  boom-3d
-  lyricsx
-  sonic-pi
-  spotify
-  yt-music
-  # communication
-  caprine
-  telegram
-  whatsapp
-  # gaming
-  openemu
-  retroarch
-  steam
-  # media
-  downie
-  emojipedia
-  iina
-  kodi
+	# audio
+	amazon-music
+	background-music
+	beardedspice
+	boom-3d
+	lyricsx
+	sonic-pi
+	spotify
+	yt-music
+	# communication
+	caprine
+	telegram
+	whatsapp
+	# gaming
+	openemu
+	retroarch
+	steam
+	# media
+	downie
+	emojipedia
+	iina
+	kodi
 )
 
 declare -a brew=(
-  coreutils         # GNU core utilities (those that come with macOS are outdated).
-  moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-  findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-  gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
-  bash              # Bash 4
-  # languages & frameworks
-  lua
-  node
-  php
-  python
-  ruby
-  rbenv
-  # downloaders & installers
-  wget
-  cask
-  mas
-  # editors & shells
-  vim
-  zsh
-  fish
-  # version control
-  git
-  hub
-  git-lfs
-  gibo
-  #dev
-  bats
-  cocoapods
-  react-native-cli
-  watchman
-  yarn
-  # GnuPG to enable PGP-signing commits.
-  gnupg
-  pinentry
-  pinentry-mac
-  # font tools
-  sfnt2woff
-  sfnt2woff-zopfli
-  woff2
-  # completion
-  bash-completion2
-  brew-cask-completion
-  pip-completion
-  open-completion
-  yarn-completion
-  apm-bash-completion
-  # other
-  ack
-  gmp
-  grep
-  rlwrap
-  screen
-  ssh-copy-id
-  tree
-  thefuck
-  vbindiff
-  watch
-  # media
-  imagemagick
-  multimarkdown
-  shpotify
-  # web
-  lynx
-  youtube-dl
-  # system
-  dockutil
-  htop
-  mackup
-  pv
-  switchaudio-osx
-  # files
-  p7zip
-  pigz
-  rename
-  zopfli
-  xpdf
-  # tools
-  calc
-  wifi-password
-  # fun
-  cowsay
+	coreutils         # GNU core utilities (those that come with macOS are outdated).
+	moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+	findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+	gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
+	bash              # Bash 4
+	# languages & frameworks
+	lua
+	node
+	php
+	python
+	ruby
+	rbenv
+	# downloaders & installers
+	wget
+	cask
+	mas
+	# editors & shells
+	vim
+	zsh
+	fish
+	# version control
+	git
+	hub
+	git-lfs
+	gibo
+	#dev
+	bats
+	cocoapods
+	react-native-cli
+	watchman
+	yarn
+	# GnuPG to enable PGP-signing commits.
+	gnupg
+	pinentry
+	pinentry-mac
+	# font tools
+	sfnt2woff
+	sfnt2woff-zopfli
+	woff2
+	# completion
+	bash-completion2
+	brew-cask-completion
+	pip-completion
+	open-completion
+	yarn-completion
+	apm-bash-completion
+	# other
+	ack
+	gmp
+	grep
+	rlwrap
+	screen
+	ssh-copy-id
+	tree
+	thefuck
+	vbindiff
+	watch
+	# media
+	imagemagick
+	multimarkdown
+	# web
+	lynx
+	youtube-dl
+	# system
+	dockutil
+	htop
+	mackup
+	pv
+	switchaudio-osx
+	# files
+	p7zip
+	pigz
+	rename
+	zopfli
+	xpdf
+	# tools
+	calc
+	wifi-password
+	# fun
+	cowsay
 )
 
 # Optional: Network utils (-n)
 declare -a network=(
-  aircrack-ng
-  bfg
-  binutils
-  binwalk
-  cifer
-  dex2jar
-  dns2tcp
-  fcrackzip
-  foremost
-  geoip
-  hashpump
-  httpie
-  hydra
-  john
-  knock
-  netpbm
-  nmap
-  openssh
-  pngcheck
-  socat
-  speedtest_cli
-  sqlmap
-  tcpflow
-  tcpreplay
-  tcptrace
-  ucspi-tcp # `tcpserver` etc.
-  xz
+	aircrack-ng
+	bfg
+	binutils
+	binwalk
+	cifer
+	dex2jar
+	dns2tcp
+	fcrackzip
+	foremost
+	geoip
+	hashpump
+	hydra
+	john
+	knock
+	netpbm
+	nmap
+	openssh
+	pngcheck
+	socat
+	speedtest_cli
+	sqlmap
+	tcpflow
+	tcpreplay
+	tcptrace
+	ucspi-tcp # `tcpserver` etc.
+	xz
 )
 
 # Optional: Mac App Store (-m)
 declare -a mas=(
-  766939888   #1Keyboard
-  1432731683  #AdBlock Plus
-  424389933   #Final Cut
-  402989379   #iStudiez
-  409183694   #Keynote
-  634148309   #Logic
-  634159523   #MainStage
-  409203825   #Numbers
-  823766827   #OneDrive
-  1094255754  #Outbank
-  409201541   #Pages
-  1160374471  #PiPifier
-  445189367   #PopClip
-  803453959   #Slack
-  1153157709  #Speedtest
-  747648890   #Telegram
-  425424353   #The Unarchiver
-  1284863847  #Unsplash
-  1147396723  #Whatsapp
-  497799835   #Xcode
+	766939888   #1Keyboard
+	1432731683  #AdBlock Plus
+	424389933   #Final Cut
+	402989379   #iStudiez
+	409183694   #Keynote
+	634148309   #Logic
+	634159523   #MainStage
+	409203825   #Numbers
+	823766827   #OneDrive
+	1094255754  #Outbank
+	409201541   #Pages
+	1160374471  #PiPifier
+	445189367   #PopClip
+	803453959   #Slack
+	1153157709  #Speedtest
+	747648890   #Telegram
+	425424353   #The Unarchiver
+	1284863847  #Unsplash
+	1147396723  #Whatsapp
+	497799835   #Xcode
 )
 
 # Scripting starts here
 
 if [ "$1" == "-h" ] ; then
-  echo "Usage: brewfile"
-  echo "Options: "
-  echo "-h  Show this message"
-  echo "-a  Install all the options"
-  echo "-d  Install developer options"
-  echo "-m  Install Mac App Store apps"
-  echo "-n  Install network tools"
-  echo "-p  Install personal apps (entertainment, music, gaming)"
-  return
+	echo "Usage: brewfile"
+	echo "Options: "
+	echo "-h  Show this message"
+	echo "-a  Install all the options"
+	echo "-d  Install developer options"
+	echo "-m  Install Mac App Store apps"
+	echo "-n  Install network tools"
+	echo "-p  Install personal apps (entertainment, music, gaming)"
+	return
 elif [ "$#" -gt 1 ]; then
-  echo "Too many parameters"
-  return
+	echo "Too many parameters"
+	return
 fi
 
 echo "Running brewfile"
 
 # Check for homebrew
 if test ! $(which brew); then
-    echo “installing homebrew”
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	echo “installing homebrew”
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 echo "Checking for updates"
@@ -255,82 +254,82 @@ brew cask outdated  # Check for outdated casks
 brew cask upgrade   # Update any outdated casks
 
 function brewInstall() {
-  # Taps
-  brew tap bramstein/webfonttools
-  brew tap homebrew/cask-fonts
+	# Taps
+	brew tap bramstein/webfonttools
+	brew tap homebrew/cask-fonts
 
-  # Save Homebrew’s installed location.
-  BREW_PREFIX=$(brew --prefix)
-  # Switch to using brew-installed bash as default shell
-  if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-    echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-    chsh -s "${BREW_PREFIX}/bin/bash";
-  fi;
-  # ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
-  echo "Installing brew utilities..."
-  for item in "${brew[@]}"; do
-    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
-  done
+	# Save Homebrew’s installed location.
+	BREW_PREFIX=$(brew --prefix)
+	# Switch to using brew-installed bash as default shell
+	if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+		echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+		chsh -s "${BREW_PREFIX}/bin/bash";
+	fi;
+	# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+	echo "Installing brew utilities..."
+	for item in "${brew[@]}"; do
+		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+	done
 }
 
 function networkInstall() {
-  echo "Installing network utilities..."
-  for item in "${network[@]}"; do
-    brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
-  done
+	echo "Installing network utilities..."
+	for item in "${network[@]}"; do
+		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+	done
 }
 
 function caskInstall() {
-  echo "Installing casks..."
-  for app in "${cask[@]}"; do
-    brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
-  done
+	echo "Installing casks..."
+	for app in "${cask[@]}"; do
+		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+	done
 }
 
 function devInstall() {
-  echo "Installing developer casks..."
-  for app in "${dev[@]}"; do
-    brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
-  done
+	echo "Installing developer casks..."
+	for app in "${dev[@]}"; do
+		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+	done
 }
 
 function personalInstall() {
-  echo "Installing personal casks..."
-  for app in "${personal[@]}"; do
-    brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
-  done
+	echo "Installing personal casks..."
+	for app in "${personal[@]}"; do
+		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+	done
 }
 
 function masInstall() {
-  echo "Installing Mac App Store apps..."
-  for app in "${mas[@]}"; do
-    mas install "${app}"
-  done
+	echo "Installing Mac App Store apps..."
+	for app in "${mas[@]}"; do
+		mas install "${app}"
+	done
 }
 
 if [ "$1" == "-a" ]; then
-  brewInstall
-  caskInstall
-  devInstall
-  networkInstall
-  personalInstall
-  masInstall
+	brewInstall
+	caskInstall
+	devInstall
+	networkInstall
+	personalInstall
+	masInstall
 elif [[ "$1" == "-d" ]]; then
-  brewInstall
-  caskInstall
-  devInstall
-  networkInstall
+	brewInstall
+	caskInstall
+	devInstall
+	networkInstall
 elif [[ "$1" == "-n" ]]; then
-  networkInstall
+	networkInstall
 elif [[ "$1" == "-p" ]]; then
-  personalInstall
+	personalInstall
 elif [[ "$1" == "-m" ]]; then
-  masInstall
+	masInstall
 else
-  brewInstall
-  caskInstall
-  devInstall
-  echo "For specific categories, run again with appropriate flags (-h for more info)"
+	brewInstall
+	caskInstall
+	devInstall
+	echo "For specific categories, run again with appropriate flags (-h for more info)"
 fi;
 
 echo "Cleaning up homebrew"

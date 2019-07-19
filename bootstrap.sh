@@ -11,9 +11,9 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
-    --exclude "docs/" \
-    --exclude ".github/" \
-    --exclude ".travis.yml" \
+		--exclude "docs/" \
+		--exclude ".github/" \
+		--exclude ".travis.yml" \
 		--exclude "Brewfile" \
 		--exclude "Gemfile" \
 		--exclude "Gemfile.lock" \
