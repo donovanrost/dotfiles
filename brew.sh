@@ -201,7 +201,6 @@ declare -a network=(
 # Optional: Mac App Store (-m)
 declare -a mas=(
 	766939888   #1Keyboard
-	1432731683  #AdBlock Plus
 	424389933   #Final Cut
 	402989379   #iStudiez
 	409183694   #Keynote
@@ -215,10 +214,8 @@ declare -a mas=(
 	445189367   #PopClip
 	803453959   #Slack
 	1153157709  #Speedtest
-	747648890   #Telegram
 	425424353   #The Unarchiver
 	1284863847  #Unsplash
-	1147396723  #Whatsapp
 	497799835   #Xcode
 )
 
