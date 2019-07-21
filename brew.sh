@@ -42,6 +42,7 @@ declare -a dev=(
 	github
 	google-chrome
 	gpg-suite-no-mail
+	isimulator
 	iterm2
 	java
 	postman
@@ -83,6 +84,7 @@ declare -a personal=(
 	emojipedia
 	iina
 	kodi
+	musaicfm
 )
 
 declare -a brew=(
@@ -146,7 +148,7 @@ declare -a brew=(
 	# media
 	imagemagick
 	multimarkdown
-  shpotify
+	shpotify
 	# web
 	lynx
 	youtube-dl
@@ -164,6 +166,7 @@ declare -a brew=(
 	xpdf
 	# tools
 	calc
+	tldr
 	wifi-password
 	# fun
 	cowsay
@@ -182,7 +185,7 @@ declare -a network=(
 	foremost
 	geoip
 	hashpump
-  httpie
+	httpie
 	hydra
 	john
 	knock

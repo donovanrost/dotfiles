@@ -37,6 +37,6 @@ To maintain the list of your installed apps, add them to their corresponding pla
 
 # Updating
 
-The `.aliases` include an `update` alias that will run all kinds of updaters.
+The `.aliases` include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
 
 [<- Back](index.md)
