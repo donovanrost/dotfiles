@@ -39,4 +39,9 @@ To maintain the list of your installed apps, add them to their corresponding pla
 
 The `.aliases` include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
 
+# Troubleshooting
+
+- brew permissions broken
+`sudo chown -R $(whoami) $(brew --prefix)/*`
+
 [<- Back](index.md)

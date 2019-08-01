@@ -10,9 +10,6 @@ declare -a cask=(
 	barrier
 	bettertouchtool
 	betterzip
-	dropbox
-	duet
-	google-backup-and-sync
 	google-chrome
 	keyboardcleantool
 	touch-bar-simulator
@@ -85,6 +82,11 @@ declare -a personal=(
 	iina
 	kodi
 	musaicfm
+	# utilities
+	duet
+	# storage
+	google-backup-and-sync
+	dropbox
 )
 
 declare -a brew=(
