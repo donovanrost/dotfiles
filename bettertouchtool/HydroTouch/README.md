@@ -5,9 +5,9 @@ This is a heavily personalized and customized preset for BetterTouchTool based o
 
 Check out the [wiki](https://github.com/dnnsmnstrr/dotfiles/wiki) for more info!
 
-Releases
+[Releases](https://github.com/dnnsmnstrr/dotfiles/releases)
 ========
-This is the first release, to install, just download the preset files and open them with BTT.
+This is the first release, to install, just [download the preset](https://github.com/dnnsmnstrr/dotfiles/releases/tag/v0.2) files and open them with BTT.
 
 Credits
 ==
