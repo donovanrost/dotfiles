@@ -33,6 +33,7 @@ declare -a dev=(
 	arduino
 	atom
 	android-studio
+	android-platform-tools
 	cakebrew
 	dash
 	docker

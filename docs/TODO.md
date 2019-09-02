@@ -42,6 +42,16 @@ The `.aliases` include an `update` alias that will run all kinds of updaters. (e
 # Troubleshooting
 
 - brew permissions broken
-`sudo chown -R $(whoami) $(brew --prefix)/*`
+```
+sudo chown -R $(whoami) $(brew --prefix)/*
+```
+
+- [SourceTree GPG signing](https://community.atlassian.com/t5/Sourcetree-questions/Why-is-quot-Enable-GPG-key-signing-for-commit-quot-is-greyed-out/qaq-p/249852)
+```M
+// get current gpg version path
+ls -la /usr/local/bin/gpg
+// symlink gpg2
+ln -s ../Cellar/gnupg/{version}/bin/gpg /usr/local/bin/gpg2
+```
 
 [<- Back](index.md)
