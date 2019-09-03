@@ -44,6 +44,7 @@ declare -a dev=(
 	iterm2
 	java
 	postman
+  slack
 	sourcetree
 	sublime-text
 	touch-bar-simulator

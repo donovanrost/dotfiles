@@ -1,6 +1,6 @@
 # Dennis's dotfiles
 
-This is the website for my dotfiles.
+This is the GitHub-hosted website for my dotfiles.
 
 Check out the [wiki](https://github.com/dnnsmnstrr/dotfiles/wiki) or [HydroTouch](https://github.com/dnnsmnstrr/dotfiles/tree/master/bettertouchtool/HydroTouch)
 

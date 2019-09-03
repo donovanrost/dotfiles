@@ -42,6 +42,14 @@ function console() {
 	osascript -e 'tell application "BetterTouchTool" to trigger_named_async_without_response "run trigger"'
 }
 
+function die() {
+  osascript -e 'tell application "System Events" to shut down'
+}
+
+function restart() {
+  osascript -e 'tell application "System Events" to restart' 
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
 	local tmpFile="${@%/}.tar";
