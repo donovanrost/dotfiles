@@ -1,7 +1,6 @@
 # On fresh install...
 
-- Install Command Line Tools
-  `xcode-select --install`
+- Install Command Line Tools: `xcode-select --install`
 
 - clone this project and run the bootstrap script
 
@@ -31,9 +30,13 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bo
 
 - [set up ad-blocking](https://jspenguin2017.github.io/uBlockProtector/#extra-installation-steps-for-ublock-origin)
 
-# Adding Apps
+- [Add SSH keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
 
-To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`.
+# Adding Apps, Aliases or Functions
+
+To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`. Aliases and functions can be added to their respective files.
+After changing any of these files, remember to run `bootstrap.sh`, which can be done most quickly with the alias `sd` (source dotfiles).
+
 
 # Updating
 

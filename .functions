@@ -25,17 +25,24 @@ function update() {
 	brew upgrade;
 	brew cask upgrade;
 	brew cleanup;
+  brew cask cleanup;
 	echo "";
 	echo "npm:"
 	npm install npm -g;
 	npm update -g;
-	echo "";
-	echo "Gem:"
+	# echo "";
+	# echo "Gem:"
 	# sudo gem update --system;
 	# sudo gem update;
 	# sudo gem cleanup;
 	# echo "";
 	echo "Finished updating!";
+}
+
+# Install font using brew cask
+function font() {
+  local fontName="font-${@}";
+  brew cask install "${fontName}";
 }
 
 function console() {
@@ -47,7 +54,7 @@ function die() {
 }
 
 function restart() {
-  osascript -e 'tell application "System Events" to restart' 
+  osascript -e 'tell application "System Events" to restart'
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -140,6 +147,21 @@ function gz() {
 	local ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l);
 	printf "orig: %d bytes\n" "$origsize";
 	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
+}
+
+# Determine size of a file or total size of a directory
+function fs () {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh
+  else
+    local arg=-sh
+  fi
+
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@"
+  else
+    du $arg .[^.]* *
+  fi
 }
 
 # Run `dig` and display the most useful info

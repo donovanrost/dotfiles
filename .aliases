@@ -22,8 +22,11 @@ alias sd="set -- -f; dotfiles; source bootstrap.sh"
 alias bi="brew install "
 alias bu="brew uninstall "
 alias bl="brew link "
+alias bcd="brew cask doctor"
+alias bch="brew cask home "
 alias bci="brew cask install "
 alias bcf="brew cask install -f"
+alias bcl="brew cask list"
 alias bcu="brew cask uninstall "
 alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
@@ -67,6 +70,9 @@ alias HEAD='http HEAD'
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
+# SSH
+alias copy_ssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+
 ## Apps
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias atm="atom ."
@@ -86,12 +92,10 @@ alias e="x"
 
 ## System commands
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
-# Make executable
-alias ax="chmod a+x"
-alias exe="ax"
+# Disable Spotlight
+alias spotoff="sudo mdutil -a -i off"
+# Enable Spotlight
+alias spoton="sudo mdutil -a -i on"
 
 ## Finder
 alias finder="open ."
@@ -116,12 +120,21 @@ alias ql="qlmanage -p &>/dev/null" #quicklook from command line
 # Empty the Trash on all mounted volumes and the main HDD, clear Apple’s System Logs to improve shell startup speed, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
+## Terminal
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
+
+# Make executable
+alias ax="chmod a+x"
+alias exe="ax"
 
 ## ls
 # Detect which `ls` flavor is in use
@@ -191,11 +204,6 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
@@ -232,7 +240,31 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias paths='echo -e ${PATH//:/\\n}'
 
-# Fun
+## lol
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
+
+alias wtf='dmesg'
+alias onoz='cat /var/log/errors.log'
+alias rtfm='man'
+
+alias visible='echo'
+alias invisible='cat'
+alias moar='more'
+
+alias icanhas='mkdir'
+alias donotwant='rm'
+alias dowant='cp'
+alias gtfo='mv'
+
+alias hai='cd'
+alias plz='pwd'
+
+alias inur='locate'
+
+alias nomz='ps -aux'
+alias nomnom='killall'
+
+alias cya='reboot'
+alias kthxbai='halt'

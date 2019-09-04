@@ -138,6 +138,9 @@ declare -a brew=(
 	open-completion
 	yarn-completion
 	apm-bash-completion
+  zsh-completions
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 	# other
 	ack
 	gmp
@@ -340,7 +343,9 @@ fi;
 
 echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
+brew cask cleanup
 brew doctor
+brew cask doctor
 
-#Update brewfile for CI and quick install overview
+# Update brewfile for CI and quick install overview (not used for installing)
 brew bundle dump --force
