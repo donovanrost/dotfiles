@@ -44,6 +44,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | b
     - custom plugins
         - [zsh-nvm](https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin)
 
+- init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage)
+
 # Adding Apps, Aliases or Functions
 
 To maintain the list of your installed apps, add them to their corresponding place in `brew.sh`. Aliases and functions can be added to their respective files.

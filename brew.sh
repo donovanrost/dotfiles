@@ -159,6 +159,7 @@ declare -a brew=(
 	imagemagick
 	multimarkdown
 	shpotify
+  khanhas/tap/spicetify-cli
 	# web
 	lynx
 	youtube-dl
@@ -204,6 +205,7 @@ declare -a network=(
 	nmap
 	openssh
 	pngcheck
+  redis
 	socat
 	speedtest_cli
 	sqlmap
