@@ -15,7 +15,7 @@ function update() {
 	sudo -v
 	echo "Updating everything!";
 	echo "";
-	softwareupdate -i -a;
+	sudo softwareupdate -i -a;
 	echo "";
 	echo "Mac App Store:"
 	mas upgrade;
@@ -23,9 +23,8 @@ function update() {
 	echo "Brew:"
 	brew update;
 	brew upgrade;
+  brew cleanup;
 	brew cask upgrade;
-	brew cleanup;
-  brew cask cleanup;
 	echo "";
 	echo "npm:"
 	npm install npm -g;
@@ -55,6 +54,11 @@ function die() {
 
 function restart() {
   osascript -e 'tell application "System Events" to restart'
+}
+
+# Git clone and cd into new directory
+function gcd() {
+  git clone "$1" && cd "$(basename "$1" .git)"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -230,4 +234,34 @@ function o() {
 # small enough for one screen.
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+
+# converts and saves youtube video to mp3
+function convert_to_mp3() {
+  youtube-dl --extract-audio --audio-format mp3 $1
+}
+
+colors() {
+  local X=$(tput op)
+  local Y=$(printf %$((COLUMNS-6))s)
+  for i in {0..256}; do
+  o=00$i;
+  echo -e ${o:${#o}-3:3} $(tput setaf $i;tput setab $i)${Y// /=}$X;
+  done
+}
+
+# Calculator
+calc() {
+  echo "$*" | bc -l;
+}
+
+# Weather
+meteo() {
+  local LOCALE=$(echo ${LANG:-en} | cut -c1-2)
+  if [ $# -eq 0 ]; then
+    local LOCATION=$(curl -s ipinfo.io/loc)
+  else
+    local LOCATION=$1
+  fi
+  curl -s "$LOCALE.wttr.in/$LOCATION"
 }

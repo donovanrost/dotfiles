@@ -34,6 +34,17 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# Dotfiles
+_dotfiles_completions() {
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
+}
+
+complete -o default -F _dotfiles_completions dotfiles
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null; then
 	complete -o default -o nospace -F _git g;
@@ -47,4 +58,4 @@ fi;
 complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari Spotify SystemUIServer Terminal Twitter" killall;
+complete -o "nospace" -W "Atom BetterTouchTool Chrome Contacts Dock Finder iTerm Mail Safari Slack Sourcetree Spotify SystemUIServer Terminal Xcode" killall;

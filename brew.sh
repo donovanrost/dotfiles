@@ -108,6 +108,7 @@ declare -a brew=(
 	wget
 	cask
 	mas
+  nvm
 	# editors & shells
 	vim
 	zsh
@@ -132,6 +133,7 @@ declare -a brew=(
 	sfnt2woff-zopfli
 	woff2
 	# completion
+  apm-bash-completion
 	bash-completion2
 	brew-cask-completion
 	pip-completion
@@ -145,6 +147,7 @@ declare -a brew=(
 	ack
 	gmp
 	grep
+  jq
 	rlwrap
 	screen
 	ssh-copy-id
@@ -177,6 +180,7 @@ declare -a brew=(
 	wifi-password
 	# fun
 	cowsay
+  asciiquarium
 )
 
 # Optional: Network utils (-n)
@@ -343,9 +347,8 @@ fi;
 
 echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
-brew cask cleanup
-brew doctor
-brew cask doctor
+# brew doctor
+# brew cask doctor
 
 # Update brewfile for CI and quick install overview (not used for installing)
 brew bundle dump --force

@@ -68,7 +68,7 @@ ZSH_THEME="random"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew colorize copyfile git lol osx pip pod python react-native sudo thefuck)
+plugins=(brew colorize copyfile git lol osx pip pod python react-native sudo thefuck zsh-autosuggestions zsh-completions zsh-nvm)
 
 # Brew Completion
 if type brew &>/dev/null; then
@@ -107,3 +107,6 @@ alias theme="echo $RANDOM_THEME"
 
 #enter default workspace folder
 # cd workspace
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Activate plugins
