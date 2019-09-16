@@ -40,11 +40,12 @@ declare -a dev=(
 	github
 	google-chrome
 	gpg-suite-no-mail
+	hyper
 	isimulator
 	iterm2
 	java
 	postman
-  slack
+	slack
 	sourcetree
 	sublime-text
 	touch-bar-simulator
@@ -108,7 +109,7 @@ declare -a brew=(
 	wget
 	cask
 	mas
-  nvm
+	nvm
 	# editors & shells
 	vim
 	zsh
@@ -133,21 +134,21 @@ declare -a brew=(
 	sfnt2woff-zopfli
 	woff2
 	# completion
-  apm-bash-completion
+	apm-bash-completion
 	bash-completion2
 	brew-cask-completion
 	pip-completion
 	open-completion
 	yarn-completion
 	apm-bash-completion
-  zsh-completions
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+	zsh-completions
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 	# other
 	ack
 	gmp
 	grep
-  jq
+	jq
 	rlwrap
 	screen
 	ssh-copy-id
@@ -159,7 +160,7 @@ declare -a brew=(
 	imagemagick
 	multimarkdown
 	shpotify
-  khanhas/tap/spicetify-cli
+	khanhas/tap/spicetify-cli
 	# web
 	lynx
 	youtube-dl
@@ -181,7 +182,7 @@ declare -a brew=(
 	wifi-password
 	# fun
 	cowsay
-  asciiquarium
+	asciiquarium
 )
 
 # Optional: Network utils (-n)
@@ -205,7 +206,7 @@ declare -a network=(
 	nmap
 	openssh
 	pngcheck
-  redis
+	redis
 	socat
 	speedtest_cli
 	sqlmap
@@ -230,7 +231,7 @@ declare -a mas=(
 	409201541   #Pages
 	1160374471  #PiPifier
 	445189367   #PopClip
-	803453959   #Slack
+	# 803453959   #Slack
 	1153157709  #Speedtest
 	425424353   #The Unarchiver
 	1284863847  #Unsplash
