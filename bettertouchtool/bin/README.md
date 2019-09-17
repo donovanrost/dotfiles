@@ -1,3 +1,13 @@
+# BTT Scripts
+
+My pride are the scripts I have made for controlling media playback on my Mac.
+
+- [`play media`](./applescript/media/playmedia.applescript) checks for currently playing media and playpauses depending on different factors, such as which application is in the foreground and what priority it has (Spotify is #1)
+
+- [`handle media`](./applescript/media/handlemedia.applescript) also figures out what is playing, but brings the respective app to the foreground or pauses if that app already is foremost
+
+---
+
 ## btt-controllers
 
 Controllers for BetterTouchTool widgets. Provides hooks for various services that run in the background.
