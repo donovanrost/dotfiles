@@ -5,13 +5,13 @@
 
 Since [dotfiles](https://dotfiles.github.io) are a very personal thing, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
 
-I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai) and more information in the wiki
+I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai) and more information in the wiki (some day...)
 
 ![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
 xkcd ([#1806](https://xkcd.com/1806/))
 
 ## Where I got inspiration from:
-* [Name](link) and his [dotfiles repository](dotfiles)
+* [Matthias](https://mathiasbynens.be/), obviously
 * @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
 
 ## Installation
@@ -101,6 +101,8 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 
 Suggestions/improvements
 [welcome](https://github.com/dnnsmnstrr/dotfiles/issues)!
+
+---
 
 ## Original Author
 
