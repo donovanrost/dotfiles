@@ -1,4 +1,4 @@
-# Welcome to the HydroTouch!
+# Welcome to the HydroTouch! 💧
 
 This is a heavily personalized and customized ~~preset based on~~
 extension for the amazing [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) [Preset]() for [BetterTouchTool](https://folivora.ai) by @yuuiko.
