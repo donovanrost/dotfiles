@@ -1,13 +1,13 @@
 # Welcome to the HydroTouch!
 
-This is a heavily personalized and customized ~~preset for BetterTouchTool based on~~
+This is a heavily personalized and customized ~~preset based on~~
 extension for the amazing [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) [Preset]() for [BetterTouchTool](https://folivora.ai) by @yuuiko.
 
 Check out the [wiki](https://github.com/dnnsmnstrr/dotfiles/wiki) for more info!
 
 # [Releases](https://github.com/dnnsmnstrr/dotfiles/releases)
 
-This is the first release, to install, just [download the preset](https://github.com/dnnsmnstrr/dotfiles/releases/tag/v0.2) files and open them with BTT.
+This is the first release, to install, just [download the preset files](https://github.com/dnnsmnstrr/dotfiles/releases/tag/v0.1) files and open them with BTT.
 
 # [Installation](https://github.com/dnnsmnstrr/dotfiles/wiki/Installation)
 
