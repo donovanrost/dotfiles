@@ -306,6 +306,7 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
+  mas install 497799835
 }
 
 function personalInstall() {

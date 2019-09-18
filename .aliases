@@ -11,7 +11,7 @@ alias aliases="dotfiles; open -e .aliases"
 alias als="aliases"
 alias btt="dotfiles; cd bettertouchtool; finder"
 alias macos="dotfiles; . .macos"
-alias brewfile="dotfiles;. brew.sh"
+alias brewfile="dotfiles; cd brew; . brew.sh"
 alias bf="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
@@ -73,12 +73,16 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 # SSH
 alias copy_ssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 
-## Apps
+## Apps (these work without alias: github, sourcetree)
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias atm="atom ."
 
 ## Resources
 alias hint=". hint"
+
+## Media
+alias youtube="$(command -v youtube-dl)"
+alias youtube-mp3="$(command -v youtube-dl) -x --audio-format mp3"
 
 # Convenience
 alias please="sudo"
@@ -94,6 +98,8 @@ alias quit="exit"
 ## System commands
 
 alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias reboot='sudo shutdown -r now'
+alias shutdown='sudo shutdown -h now'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -247,6 +253,9 @@ alias reload="exec ${SHELL} -l"
 alias paths='echo -e ${PATH//:/\\n}'
 alias aliaslist="alias | sed 's/=.*//'"
 alias functionlist="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
+
+## Apps
+alias sketch="open -a Sketch"
 
 ## lol
 
