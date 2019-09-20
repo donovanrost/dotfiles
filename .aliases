@@ -16,7 +16,8 @@ alias bf="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
-alias sd="set -- -f; dotfiles; source bootstrap.sh"
+alias setup="cd ~/.dotfiles/.setup"
+alias sd="set -- -f; setup; source bootstrap.sh"
 
 # Brew
 alias bi="brew install "

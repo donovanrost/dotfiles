@@ -1,90 +1,76 @@
-coreutils         # GNU core utilities (those that come with macOS are outdated).
-moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
-bash              # Bash 4
-# languages & frameworks
-lua
-node
-php
-python
-ruby
-rbenv
-# downloaders & installers
-wget
-cask
-mas
-nvm
-# editors & shells
-vim
-zsh
-fish
-# version control
-git
-hub
-git-lfs
-gibo
-#dev
+ack
+apm-bash-completion
+apm-bash-completion
+archey
+asciiquarium
+bash
+bash-completion2
 bats
+brew-cask-completion
+calc
+cask
 cocoapods
-react-native-cli
-watchman
-yarn
-# GnuPG to enable PGP-signing commits.
+coreutils
+cowsay
+dockutil
+findutils
+fish
+gibo
+git
+git-lfs
+gmp
+gnu-sed
 gnupg
+grep
+htop
+hub
+imagemagick
+jq
+khanhas/tap/spicetify-cli
+lua
+lynx
+mackup
+mas
+moreutils
+multimarkdown
+node
+nvm
+open-completion
+p7zip
+php
+pigz
 pinentry
 pinentry-mac
-# font tools
+pip-completion
+pv
+python
+rbenv
+react-native-cli
+rename
+rlwrap
+ruby
+screen
 sfnt2woff
 sfnt2woff-zopfli
-woff2
-# completion
-apm-bash-completion
-bash-completion2
-brew-cask-completion
-pip-completion
-open-completion
-yarn-completion
-apm-bash-completion
-zsh-completions
-zsh-autosuggestions
-zsh-syntax-highlighting
-# other
-ack
-gmp
-grep
-jq
-rlwrap
-screen
-ssh-copy-id
-tree
-thefuck
-vbindiff
-watch
-# media
-imagemagick
-multimarkdown
 shpotify
-khanhas/tap/spicetify-cli
-# web
-lynx
-youtube-dl
-# system
-dockutil
-htop
-mackup
-pv
+ssh-copy-id
 switchaudio-osx
-# files
-p7zip
-pigz
-rename
-zopfli
-xpdf
-# tools
-calc
+thefuck
 tldr
+tree
+vbindiff
+vim
+watch
+watchman
+wget
 wifi-password
-# fun
-cowsay
-asciiquarium
+woff2
+xpdf
+yarn
+yarn-completion
+youtube-dl
+zopfli
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting

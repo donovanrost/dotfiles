@@ -28,7 +28,7 @@ declare -a cask=(
 	webpquicklook
 )
 
-# Apps I use for developing (-d)
+# Apps I use for development (-d)
 declare -a dev=(
 	arduino
 	atom
@@ -37,6 +37,7 @@ declare -a dev=(
 	cakebrew
 	dash
 	docker
+	eclipse-java
 	github
 	google-chrome
 	gpg-suite-no-mail
@@ -307,7 +308,7 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
-  mas install 497799835
+	mas install 497799835
 }
 
 function personalInstall() {

@@ -1,5 +1,5 @@
 task default: %w[test]
 
 task :test do
-  sh ". bootstrap.sh -f"
+  sh ". /.setup/bootstrap.sh -f"
 end
