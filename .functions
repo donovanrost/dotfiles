@@ -5,6 +5,7 @@ function md() {
 	mkdir -p "$@" && cd "$_";
 }
 
+
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
@@ -23,7 +24,7 @@ function update() {
 	echo "Brew:"
 	brew update;
 	brew upgrade;
-  brew cleanup;
+	brew cleanup;
 	brew cask upgrade;
 	echo "";
 	echo "npm:"
@@ -40,8 +41,18 @@ function update() {
 
 # Install font using brew cask
 function font() {
-  local fontName="font-${@}";
-  brew cask install "${fontName}";
+	local fontName="font-${@}";
+	brew cask install "${fontName}";
+}
+
+function addBrew() {
+	if brew ls --versions $1 > /dev/null; then
+		echo "$1 is already installed"
+	else
+		brew install $1
+		echo "$1" >> ~/.dotfiles/.brew/brews.txt
+		sort -o ~/.dotfiles/.brew/brews.txt ~/.dotfiles/.brew/brews.txt
+	fi
 }
 
 function console() {
@@ -49,16 +60,16 @@ function console() {
 }
 
 function die() {
-  osascript -e 'tell application "System Events" to shut down'
+	osascript -e 'tell application "System Events" to shut down'
 }
 
 function restart() {
-  osascript -e 'tell application "System Events" to restart'
+	osascript -e 'tell application "System Events" to restart'
 }
 
 # Git clone and cd into new directory
 function gcd() {
-  git clone "$1" && cd "$(basename "$1" .git)"
+	git clone "$1" && cd "$(basename "$1" .git)"
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
@@ -175,7 +186,7 @@ function getcertnames() {
 
 	if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]; then
 		local certText=$(echo "${tmp}" \
-			| openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
+				| openssl x509 -text -certopt "no_aux, no_header, no_issuer, no_pubkey, \
 			no_serial, no_sigdump, no_signame, no_validity, no_version");
 		echo "Common Name:";
 		echo ""; # newline
@@ -222,28 +233,28 @@ function tre() {
 }
 
 colors() {
-  local X=$(tput op)
-  local Y=$(printf %$((COLUMNS-6))s)
-  for i in {0..256}; do
-  o=00$i;
-  echo -e ${o:${#o}-3:3} $(tput setaf $i;tput setab $i)${Y// /=}$X;
-  done
+	local X=$(tput op)
+	local Y=$(printf %$((COLUMNS-6))s)
+	for i in {0..256}; do
+		o=00$i;
+		echo -e ${o:${#o}-3:3} $(tput setaf $i;tput setab $i)${Y// /=}$X;
+	done
 }
 
 # Calculator
 calc() {
-  echo "$*" | bc -l;
+	echo "$*" | bc -l;
 }
 
 # Weather
 meteo() {
-  local LOCALE=$(echo ${LANG:-en} | cut -c1-2)
-  if [ $# -eq 0 ]; then
-    local LOCATION=$(curl -s ipinfo.io/loc)
-  else
-    local LOCATION=$1
-  fi
-  curl -s "$LOCALE.wttr.in/$LOCATION"
+	local LOCALE=$(echo ${LANG:-en} | cut -c1-2)
+	if [ $# -eq 0 ]; then
+		local LOCATION=$(curl -s ipinfo.io/loc)
+	else
+		local LOCATION=$1
+	fi
+	curl -s "$LOCALE.wttr.in/$LOCATION"
 }
 
 # Make all binaries in folder executable
