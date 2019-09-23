@@ -283,9 +283,13 @@ function brewInstall() {
 	fi;
 	# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 	echo "Installing brew utilities..."
-	for item in "${brew[@]}"; do
-		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
-	done
+  while BREWS= read -r brew
+        do
+          brew info "${brew}" | grep --quiet 'Not installed' && brew install "${brew}"
+        done < "brews.txt"
+	# for item in "${brew[@]}"; do
+	# 	brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+	# done
 }
 
 function networkInstall() {

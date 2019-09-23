@@ -34,7 +34,7 @@ alias bcf="brew cask install -f "
 ### Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
-alias color="osascript -e 'choose color'"
+alias color="color-converter | osascript -e 'choose color'"
 
 ## Git
 alias g="git"
