@@ -5,6 +5,7 @@ archey
 asciiquarium
 bash
 bash-completion2
+bash-snippets
 bats
 brew-cask-completion
 calc

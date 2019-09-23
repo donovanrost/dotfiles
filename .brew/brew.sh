@@ -354,6 +354,6 @@ echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
 # brew doctor
 # brew cask doctor
-
+cd ..
 # Update brewfile for CI and quick install overview (not used for installing)
 brew bundle dump --force
