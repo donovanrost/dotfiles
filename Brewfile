@@ -9,9 +9,11 @@ tap "khanhas/tap"
 brew "ack"
 brew "aircrack-ng"
 brew "apm-bash-completion"
+brew "archey"
 brew "asciiquarium"
 brew "bash"
 brew "bash-completion@2"
+brew "bash-snippets"
 brew "bats"
 brew "xz"
 brew "python"
@@ -29,7 +31,6 @@ brew "clib"
 brew "cocoapods"
 brew "coreutils"
 brew "cowsay"
-brew "curl-openssl"
 brew "dex2jar"
 brew "dns2tcp"
 brew "docker", link: false
@@ -63,6 +64,7 @@ brew "mackup"
 brew "mas"
 brew "moreutils"
 brew "multimarkdown"
+brew "neofetch"
 brew "netcat"
 brew "nmap"
 brew "node"
@@ -90,6 +92,7 @@ brew "speedtest-cli"
 brew "sqlmap"
 brew "ssh-copy-id"
 brew "switchaudio-osx"
+brew "tag"
 brew "tcpflow"
 brew "tcpreplay"
 brew "tcptrace"
@@ -110,6 +113,7 @@ brew "yarn"
 brew "yarn-completion"
 brew "yosys"
 brew "youtube-dl"
+brew "z"
 brew "zopfli"
 brew "zsh"
 brew "zsh-autosuggestions"
@@ -138,8 +142,10 @@ cask "dash"
 cask "docker"
 cask "dropbox"
 cask "duet"
+cask "eclipse-java"
 cask "emojipedia"
 cask "epubquicklook"
+cask "font-roboto"
 cask "github"
 cask "google-backup-and-sync"
 cask "google-chrome"
@@ -172,6 +178,7 @@ cask "quicklook-csv"
 cask "quicklook-json"
 cask "react-native-debugger"
 cask "retroarch"
+cask "riot"
 cask "sketch"
 cask "sketch-toolbox"
 cask "skyfonts"
@@ -193,16 +200,10 @@ cask "wwdc"
 cask "yt-music"
 cask "zoomus"
 mas "1Keyboard", id: 766939888
-mas "AdBlock", id: 1402042596
 mas "Any.do", id: 944960179
-mas "Bear", id: 1091189122
 mas "Cleaner-App", id: 1013897218
 mas "CodeCows", id: 1176112058
 mas "com.rpatechnology.mobilemouse", id: 412814284
-mas "Core Shell", id: 1354319581
-mas "DaisyDisk", id: 411643860
-mas "Disk Graph", id: 697942581
-mas "Downlink", id: 1454269192
 mas "Evernote", id: 406056744
 mas "Final Cut Pro", id: 424389933
 mas "Gemini 2", id: 1090488118
@@ -214,32 +215,24 @@ mas "JSON Helper", id: 453114608
 mas "Keynote", id: 409183694
 mas "Letters", id: 1233167730
 mas "Logic Pro X", id: 634148309
-mas "Mactracker", id: 430255202
 mas "Magnet", id: 441258766
 mas "MainStage 3", id: 634159523
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "MindNode", id: 992076693
-mas "Notability", id: 736189492
 mas "Numbers", id: 409203825
 mas "OneDrive", id: 823766827
 mas "Outbank", id: 1094255754
 mas "Pages", id: 409201541
 mas "Parallels Desktop Lite", id: 1085114709
 mas "PiPifier", id: 1160374471
-mas "PopClip", id: 445189367
 mas "Remote Desktop - VNC", id: 472995993
 mas "Reverb", id: 1144697855
-mas "Shazam", id: 897118787
 mas "SiteSucker", id: 442168834
 mas "Skitch", id: 425955336
 mas "Sparkle", id: 863015334
 mas "Speechify", id: 1456658105
 mas "Speedifier", id: 1212622564
 mas "Speedtest", id: 1153157709
-mas "Telegram", id: 747648890
-mas "Termius", id: 1176074088
 mas "The Unarchiver", id: 425424353
-mas "Transmit", id: 1436522307
 mas "Turn Off the Lights for Safari", id: 1273998507
 mas "TweetDeck", id: 485812721
 mas "Type2Phone", id: 472717129

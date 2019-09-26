@@ -72,7 +72,7 @@ plugins=(brew colorize copyfile git lol osx pip pod python react-native sudo the
 
 # Brew Completion
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+	FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -105,6 +105,7 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias theme="echo $RANDOM_THEME"
 
+eval "$(thefuck --alias)"
 #enter default workspace folder
 # cd workspace
 
