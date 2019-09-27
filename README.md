@@ -13,6 +13,7 @@ xkcd ([#1806](https://xkcd.com/1806/))
 ## Where I got inspiration from:
 * [Matthias](https://mathiasbynens.be/), obviously
 * @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
+* https://github.com/paulirish/dotfiles
 
 ## Installation
 

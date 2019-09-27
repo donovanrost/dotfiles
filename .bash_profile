@@ -34,13 +34,21 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
+# z beats cd most of the time. `brew install z`
+if which brew > /dev/null; then
+	zpath="$(brew --prefix)/etc/profile.d/z.sh"
+	[ -s $zpath ] && source $zpath
+fi;
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
+eval "$(thefuck --alias)"
+
 # Dotfiles
 _dotfiles_completions() {
-  local cur="${COMP_WORDS[COMP_CWORD]}"
-  COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
+	local cur="${COMP_WORDS[COMP_CWORD]}"
+	COMPREPLY=( $(compgen -W 'clean dock edit help macos test update' -- $cur ) );
 }
 
 complete -o default -F _dotfiles_completions dotfiles

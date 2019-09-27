@@ -10,7 +10,6 @@ alias bp="dotfiles; open -e .bash_profile"
 alias aliases="dotfiles; open -e .aliases"
 alias als="aliases"
 alias btt="dotfiles; cd bettertouchtool; finder"
-alias macos="dotfiles; . .macos"
 alias brewfile="dotfiles; cd .brew; . brew.sh"
 alias bf="brewfile"
 alias extra="open -e ~/.extra"
@@ -18,9 +17,11 @@ alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
 alias setup="cd ~/.dotfiles/.setup"
 alias sd="setup; set -- -f; source bootstrap.sh"
+alias macos="setup; . .macos"
 
 # Brew
 alias bi="brew install "
+alias br="brew reinstall "
 alias bu="brew uninstall "
 alias bl="brew link "
 alias bcd="brew cask doctor"
@@ -60,7 +61,7 @@ alias ycc='yarn cache clean'
 # IP addresses
 #alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip="curl icanhazip.com"
-alias localip="ipconfig getifaddr en0"
+alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # HTTPie aliases
@@ -87,7 +88,6 @@ alias youtube-mp3="$(command -v youtube-dl) -x --audio-format mp3"
 
 # Convenience
 alias please="sudo"
-alias fuck="thefuck"
 alias rl="reload"
 alias ud="update"
 alias fnd="finder"

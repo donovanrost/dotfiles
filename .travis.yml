@@ -7,4 +7,5 @@ cache:
     - $HOME/Library/Caches/Homebrew
 addons:
   homebrew:
+    update: true
     brewfile: true

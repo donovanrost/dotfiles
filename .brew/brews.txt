@@ -4,6 +4,7 @@ apm-bash-completion
 asciiquarium
 bash
 bash-completion2
+bash-snippets
 bats
 brew-cask-completion
 calc
@@ -69,6 +70,7 @@ xpdf
 yarn
 yarn-completion
 youtube-dl
+z
 zopfli
 zsh
 zsh-autosuggestions
