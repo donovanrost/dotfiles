@@ -1,7 +1,6 @@
 ack
 apm-bash-completion
 apm-bash-completion
-archey
 asciiquarium
 bash
 bash-completion2
@@ -19,6 +18,7 @@ fish
 gibo
 git
 git-lfs
+gitlab-runner
 gmp
 gnu-sed
 gnupg

@@ -175,24 +175,16 @@ function gz() {
 	printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio";
 }
 
-# Determine size of a file or total size of a directory
-function fs () {
-	if du -b /dev/null > /dev/null 2>&1; then
-		local arg=-sbh
-	else
-		local arg=-sh
-	fi
-
-	if [[ -n "$@" ]]; then
-		du $arg -- "$@"
-	else
-		du $arg .[^.]* *
-	fi
-}
-
 # Run `dig` and display the most useful info
 function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
+}
+
+# Make all binaries in folder executable
+execBins() {
+  for binary in *; do
+      chmod a+x "$binary"
+  done
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
@@ -283,9 +275,7 @@ meteo() {
 	curl -s "$LOCALE.wttr.in/$LOCATION"
 }
 
-# who is using the laptop's iSight camera?
 camerausedby() {
 	echo "Checking to see who is using the iSight camera… 📷"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
 	echo -e "Recent camera uses:\n$usedby"
-}

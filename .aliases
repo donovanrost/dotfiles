@@ -16,7 +16,7 @@ alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
 alias setup="cd ~/.dotfiles/.setup"
-alias sd="set -- -f; setup; source bootstrap.sh"
+alias sd="setup; set -- -f; source bootstrap.sh"
 alias macos="setup; . .macos"
 
 # Brew
@@ -36,7 +36,7 @@ alias bcf="brew cask install -f "
 ### Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
-alias color="osascript -e 'choose color'"
+alias color="color-converter | osascript -e 'choose color'"
 
 ## Git
 alias g="git"
