@@ -2,10 +2,10 @@ os: osx
 language: ruby
 before_cache:
   - brew cleanup
-  - brew update
 cache:
   directories:
     - $HOME/Library/Caches/Homebrew
 addons:
   homebrew:
+    update: true
     brewfile: true
