@@ -8,4 +8,4 @@ cache:
 addons:
   homebrew:
     update: true
-    brewfile: true
+    # brewfile: true

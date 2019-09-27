@@ -259,8 +259,8 @@ fi
 echo "Running brewfile"
 
 # Check for homebrew
-if test ! $(which brew); then
-	echo “installing homebrew”
+if test ! "$(brew -v)"; then
+	echo "installing homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -278,16 +278,17 @@ function brewInstall() {
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 	# Switch to using brew-installed bash as default shell
-	if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+	if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 		echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
 		chsh -s "${BREW_PREFIX}/bin/bash";
 	fi;
 	# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 	echo "Installing brew utilities..."
-  while BREWS= read -r brew
-        do
-          brew info "${brew}" | grep --quiet 'Not installed' && brew install "${brew}"
-        done < "brews.txt"
+	# shellcheck disable=SC2034
+	while BREWS=(read -r brew)
+	do
+		brew info "${brew[@]}" | grep --quiet 'Not installed' && brew install "${brew[@]}"
+	done < "brews.txt"
 	# for item in "${brew[@]}"; do
 	# 	brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 	# done

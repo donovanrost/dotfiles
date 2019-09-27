@@ -53,6 +53,7 @@ ruby
 screen
 sfnt2woff
 sfnt2woff-zopfli
+shellcheck
 shpotify
 ssh-copy-id
 switchaudio-osx
