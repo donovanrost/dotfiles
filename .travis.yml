@@ -7,8 +7,8 @@ cache:
     - $HOME/Library/Caches/Homebrew
 addons:
   homebrew:
-    update: true
-    # brewfile: true
+    # update: true
+    brewfile: true
 script:
   # - shellcheck $(grep -rl '"^#!/bin/sh\|^#!/bin/bash\|^#!/usr/bin/env bash' ./ | g
   - shellcheck ./.brew/brew.sh
