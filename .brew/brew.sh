@@ -88,6 +88,8 @@ declare -a personal=(
 	musaicfm
 	# utilities
 	duet
+	philips-hue-sync
+	steelseries-engine
 	# storage
 	google-backup-and-sync
 	dropbox
@@ -272,6 +274,7 @@ brew cask upgrade   # Update any outdated casks
 
 function brewInstall() {
 	# Taps
+	brew tap homebrew/cask-drivers
 	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
 
