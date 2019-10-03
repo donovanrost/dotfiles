@@ -17,4 +17,6 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 #nvm
 export NVM_DIR="$HOME/.nvm"
 
+#frameworks
 export PATH="/usr/local/bin/react-native:$PATH"
+export PATH="/usr/local/opt/flutter/bin:$PATH"
