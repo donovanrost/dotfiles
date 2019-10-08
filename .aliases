@@ -23,6 +23,7 @@ alias bi="brew install "
 alias br="brew reinstall "
 alias bu="brew uninstall "
 alias bl="brew link "
+alias bs="brew search "
 alias blo="brew link --overwrite "
 alias bcd="brew cask doctor"
 alias bch="brew cask home "
@@ -32,6 +33,8 @@ alias bcl="brew cask list"
 alias bcu="brew cask uninstall "
 alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
+
+alias pi="pip install "
 
 ### Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"

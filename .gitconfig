@@ -79,8 +79,7 @@
 		fi \
 	}; f"
 
-  yolo = "!git add -A && git commit -am "`curl -s http://whatthecommit.com/index.txt `"
- && git push -f origin master"
+  # yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
 
 [apply]
 
