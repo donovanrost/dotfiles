@@ -1,6 +1,5 @@
-### Aliases
-
 #!/usr/bin/env bash
+### Aliases
 
 # Dotfiles
 alias dotfiles="cd ~/.dotfiles"
@@ -292,3 +291,5 @@ alias nomnom='killall'
 
 alias cya='reboot'
 alias kthxbai='halt'
+# https://github.com/busyloop/lolcat
+alias cowcat='fortune | cowsay | lolcat'

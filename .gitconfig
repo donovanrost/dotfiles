@@ -79,6 +79,9 @@
 		fi \
 	}; f"
 
+  yolo = "!git add -A && git commit -am "`curl -s http://whatthecommit.com/index.txt `"
+ && git push -f origin master"
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
@@ -191,7 +194,7 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
-	
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =

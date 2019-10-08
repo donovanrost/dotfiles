@@ -30,6 +30,7 @@ jq
 khanhas/tap/spicetify-cli
 lua
 lynx
+m-cli
 mackup
 mas
 moreutils
