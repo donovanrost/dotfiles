@@ -1,6 +1,5 @@
 # Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles)
 
-
 > These are my dotfiles. There are many like them, but these are mine.
 
 Since [dotfiles](https://dotfiles.github.io) are a very personal thing, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
@@ -11,13 +10,19 @@ I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterT
 xkcd ([#1806](https://xkcd.com/1806/))
 
 ## Where I got inspiration from:
-* [Matthias](https://mathiasbynens.be/), obviously
-* @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
-* https://github.com/paulirish/dotfiles
+
+- [Matthias](https://mathiasbynens.be/), obviously
+- @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
+- https://github.com/paulirish/dotfiles
+- https://github.com/thoughtbot/dotfiles
+- https://github.com/nicksp/dotfiles
+- https://github.com/denysdovhan/dotfiles
+- https://github.com/webpro/dotfiles - cool dotfiles command
+- https://github.com/alrra/dotfiles - shellcheck
 
 ## Installation
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository  :heavy_check_mark: , review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+**Warning:** If you want to give these dotfiles a try, you should first fork this repository :heavy_check_mark: , review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ### Using Git and the bootstrap script
 
@@ -108,21 +113,21 @@ Suggestions/improvements
 ## Original Author
 
 | [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
-|---|
-| [Mathias Bynens](https://mathiasbynens.be/) |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Mathias Bynens](https://mathiasbynens.be/)                                                                                                     |
 
 ## Thanks to…
 
-* @ptb and [his _macOS Setup_ repository](https://github.com/ptb/mac-setup)
-* [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
-* [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
-* [Gianni Chiappetta](https://butt.zone/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
-* [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
-* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://osxnotes.net/defaults.html)
-* [Matijs Brinkhuis](https://matijs.brinkhu.is/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
-* [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
-* [Sindre Sorhus](https://sindresorhus.com/)
-* [Tom Ryder](https://sanctum.geek.nz/) and his [dotfiles repository](https://sanctum.geek.nz/cgit/dotfiles.git/about)
-* [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
-* [Haralan Dobrev](https://hkdobrev.com/)
-* Anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
+- @ptb and [his _macOS Setup_ repository](https://github.com/ptb/mac-setup)
+- [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
+- [Cătălin Mariș](https://github.com/alrra) and his [dotfiles repository](https://github.com/alrra/dotfiles)
+- [Gianni Chiappetta](https://butt.zone/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
+- [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
+- [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://osxnotes.net/defaults.html)
+- [Matijs Brinkhuis](https://matijs.brinkhu.is/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
+- [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
+- [Sindre Sorhus](https://sindresorhus.com/)
+- [Tom Ryder](https://sanctum.geek.nz/) and his [dotfiles repository](https://sanctum.geek.nz/cgit/dotfiles.git/about)
+- [Kevin Suttle](http://kevinsuttle.com/) and his [dotfiles repository](https://github.com/kevinSuttle/dotfiles) and [macOS-Defaults project](https://github.com/kevinSuttle/macOS-Defaults), which aims to provide better documentation for [`~/.macos`](https://mths.be/macos)
+- [Haralan Dobrev](https://hkdobrev.com/)
+- Anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
