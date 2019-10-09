@@ -1,3 +1,7 @@
+---
+-- Find an open Netflix tab and make it visible. Pause Spotify if it is playing.
+---
+
 set activeTab to my getActiveSafariTab()
 set activeAppName to my getActiveApp()
 tell application "Safari"
