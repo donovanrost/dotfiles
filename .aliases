@@ -154,7 +154,6 @@ alias -- -="cd -"
 
 # Make executable
 alias ax="chmod a+x"
-alias exe="ax"
 
 ## ls
 # Detect which `ls` flavor is in use

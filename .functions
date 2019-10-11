@@ -63,6 +63,14 @@ function console() {
 	osascript -e 'tell application "BetterTouchTool" to trigger_named_async_without_response "run trigger"'
 }
 
+function scpt {
+  for f in *.applescript
+  do
+      osacompile -o "`basename -s .applescript "$f"`.scpt" "$f"
+      rm "$f"
+  done
+}
+
 function die() {
 	osascript -e 'tell application "System Events" to shut down'
 }
@@ -189,11 +197,16 @@ function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 
-# Make all binaries in folder executable
-execBins() {
-	for binary in *; do
+# Make all binaries in folder executable (or given input file)
+function exe() {
+  if [ $# -eq 0 ]; then
+    for binary in *; do
 		chmod a+x "$binary"
 	done
+	else
+		chmod a+x "$@";
+	fi;
+
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
