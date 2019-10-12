@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 cd "$(dirname "${BASH_SOURCE[@]}")" || exit;
 cd ..
 git pull origin master;
@@ -24,13 +23,22 @@ function doIt() {
 	source ~/.bash_profile;
 }
 
+function makeBinExecutable() {
+  cd $HOME/bin || return
+  for binary in *; do
+		chmod a+x "$binary"
+  done
+}
+
 if [ "$*" == "--force" ] || [ "$*" == "-f" ]; then
 	doIt;
+  makeBinExecutable;
 else
 	read -r -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt;
+    makeBinExecutable;
 	fi;
 fi;
 unset doIt;
