@@ -5,7 +5,6 @@ function md() {
 	mkdir -p "$@" && cd "$_" || return;
 }
 
-
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
@@ -63,12 +62,32 @@ function console() {
 	osascript -e 'tell application "BetterTouchTool" to trigger_named_async_without_response "run trigger"'
 }
 
+# Make all binaries in folder executable (or given input file)
+function exe() {
+  if [ $# -eq 0 ]; then
+    for binary in *; do
+		chmod a+x "$binary"
+	done
+	else
+		chmod a+x "$@";
+	fi;
+
+}
+
 function scpt {
   for f in *.applescript
   do
       osacompile -o "`basename -s .applescript "$f"`.scpt" "$f"
       rm "$f"
   done
+}
+
+function mark {
+  wd="`pwd`";
+  export lastMark=$wd;
+  if [ $# -gt 0 ]; then
+  export $1=$lastMark;
+  fi
 }
 
 function die() {
@@ -195,18 +214,6 @@ function gz() {
 # Run `dig` and display the most useful info
 function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer;
-}
-
-# Make all binaries in folder executable (or given input file)
-function exe() {
-  if [ $# -eq 0 ]; then
-    for binary in *; do
-		chmod a+x "$binary"
-	done
-	else
-		chmod a+x "$@";
-	fi;
-
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate
