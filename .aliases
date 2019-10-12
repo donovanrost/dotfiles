@@ -2,21 +2,20 @@
 ### Aliases
 
 # Dotfiles
-alias dotfiles="cd ~/.dotfiles"
-alias dtf="dotfiles"
+alias dotfiles="atom ~/.dotfiles"
+alias dtf="cd ~/.dotfiles"
 alias path="dotfiles; open -e .path"
 alias bp="dotfiles; open -e .bash_profile"
 alias aliases="dotfiles; open -e .aliases"
 alias als="aliases"
-alias btt="dotfiles; cd bettertouchtool; finder"
-alias brewfile="dotfiles; cd .brew; . brew.sh"
+alias btt="open ~/.dotfiles/bettertouchtool"
+alias brewfile="source ~/.dotfiles/.brew/brew.sh"
 alias bf="brewfile"
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
-alias setup="cd ~/.dotfiles/.setup"
-alias sd="setup; set -- -f; source bootstrap.sh"
-alias macos="setup; . .macos"
+alias sd="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
+alias macos="source ~/.dotfiles/.setup/macos"
 
 # Brew
 alias bi="brew install "
@@ -76,7 +75,7 @@ alias HEAD='http HEAD'
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # SSH
-alias copy_ssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
 
 ## Apps (these work without alias: github, sourcetree)
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -86,7 +85,7 @@ alias atm="atom ."
 alias hint=". hint"
 
 ## Media
-alias youtube="$(command -v youtube-dl)"
+alias youtube='$(command -v youtube-dl)'
 alias youtube-mp3="$(command -v youtube-dl) -x --audio-format mp3"
 
 # Convenience
@@ -151,6 +150,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
+
 
 # Make executable
 alias ax="chmod a+x"
