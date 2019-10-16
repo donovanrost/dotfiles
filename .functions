@@ -82,6 +82,23 @@ function scpt {
   done
 }
 
+function shells {
+  echo "Default Shell:"
+  echo "$SHELL"
+  echo "Current Shell:"
+  echo "$0"
+  echo "Available Shells:"
+  echo "
+  /bin/bash
+  /bin/csh
+  /bin/fish
+  /bin/ksh
+  /bin/sh
+  /bin/tcsh
+  /bin/zsh
+  "
+}
+
 function mark {
   wd="`pwd`";
   export lastMark=$wd;

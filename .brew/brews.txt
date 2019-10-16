@@ -57,6 +57,7 @@ sfnt2woff-zopfli
 shellcheck
 shpotify
 ssh-copy-id
+starship
 switchaudio-osx
 thefuck
 tldr

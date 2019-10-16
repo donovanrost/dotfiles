@@ -1,5 +1,5 @@
 ---
--- This script is made to be run within BetterTouchTool
+-- This script is made to be run with BetterTouchTool
 -- It detects which players are currently active and attempts to intelligently
 -- playpause the appropriate one
 ---
@@ -32,7 +32,7 @@ if activeAppName = "Spotify" then
 	end tell
 
 else if activeAppName = "iTunes" then
-	tell application "Podcasts"
+	tell application "iTunes"
 		playpause
 		return "iTunes in foreground"
 	end tell
