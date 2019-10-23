@@ -71,7 +71,8 @@ alias GET='http'
 alias POST='http POST'
 alias HEAD='http HEAD'
 
-alias git-proxy='git -c "http.proxy=http://192.168.10.10:3128"'
+alias git-proxy='git config https.proxy 192.168.10.10:3128'
+alias git-unproxy='git config --unset https.proxy'
 alias proxy="export https_proxy=http://192.168.10.10:3128; export ALL_PROXY=$https_proxy; export no_proxy=localhost,127.0.0.1,wiesan.de,10.0.0.0/8,192.168.0.0/16"
 
 # Show active network interfaces
