@@ -70,7 +70,10 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias GET='http'
 alias POST='http POST'
 alias HEAD='http HEAD'
-alias schoolProxy="export no_proxy=localhost, 127.0.0.1, wiesan.de, 10.0.0.0/8, 192.168.0.0/16"
+
+alias git-proxy='git -c "http.proxy=http://192.168.10.10:3128"'
+alias proxy="export https_proxy=http://192.168.10.10:3128; export ALL_PROXY=$https_proxy; export no_proxy=localhost,127.0.0.1,wiesan.de,10.0.0.0/8,192.168.0.0/16"
+
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
