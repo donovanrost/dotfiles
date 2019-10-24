@@ -59,6 +59,7 @@ declare -a dev=(
 	skyfonts
 	kap
 	noun-project
+  pine
 )
 
 # Apps that don't have much professional use (mostly entertainment) (-p)
@@ -277,7 +278,7 @@ function brewInstall() {
 	brew tap homebrew/cask-drivers
 	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
-
+  brew tap lukakerr/things
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 	# Switch to using brew-installed bash as default shell
@@ -316,7 +317,7 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
-	mas install 497799835
+	mas install 497799835 // ensure Xcode is installed
 }
 
 function personalInstall() {
