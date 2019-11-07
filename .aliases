@@ -116,6 +116,7 @@ alias cpu="sysctl -n machdep.cpu.brand_string"
 
 ## Finder
 alias finder="open ."
+
 # Shortcuts
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
