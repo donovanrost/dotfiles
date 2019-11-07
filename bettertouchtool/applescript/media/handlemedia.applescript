@@ -1,5 +1,5 @@
 ---
--- This script is made to be run within BetterTouchTool
+-- This script is made to be run with BetterTouchTool
 -- It checks what media is playing and activates the appropriate player
 -- if it currently is not foremost, otherwise executes a useful command
 ---

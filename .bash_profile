@@ -18,6 +18,9 @@ shopt -s histappend;
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
+# Enable storing directories in variables and cd'ing to them without '$' (check mark())
+shopt -s cdable_vars
+
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
 # * Recursive globbing, e.g. `echo **/*.txt`
@@ -67,3 +70,17 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Atom BetterTouchTool Chrome Contacts Dock Finder iTerm Mail Safari Slack Sourcetree Spotify SystemUIServer Terminal Xcode" killall;
+
+# Do automatic proxy setup
+export http_proxy=`scutil --proxy | awk '\
+  /HTTPEnable/ { enabled = $3; } \
+  /HTTPProxy/ { server = $3; } \
+  /HTTPPort/ { port = $3; } \
+  END { if (enabled == "1") { print "http://" server ":" port; } }'`
+export HTTP_PROXY="${http_proxy}"
+export https_proxy=`scutil --proxy | awk '\
+  /HTTPSEnable/ { enabled = $3; } \
+  /HTTPSProxy/ { server = $3; } \
+  /HTTPSPort/ { port = $3; } \
+  END { if (enabled == "1") { print "https://" server ":" port; } }'`
+export HTTPS_PROXY="${https_proxy}"

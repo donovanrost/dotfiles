@@ -8,7 +8,7 @@
 git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 
-- Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew.sh)
+- Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/.brew/brew.sh)
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https:/raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -57,12 +57,12 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bo
 
 # Adding Apps, Aliases or Functions
 
-To maintain the list of your installed apps, add them to their corresponding place in [`brew.sh`](../.brew/brew.sh). Aliases and functions can be added to their respective files.
-After changing any of these files, remember to run [`bootstrap.sh`](../.setup/bootstrap.sh), which can be done most quickly with the alias `sd` (source dotfiles).
+To maintain the list of your installed apps, add them to their corresponding place in [`brew.sh`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.brew/brew.sh). Aliases and functions can be added to their respective files.
+After changing any of these files, remember to run [`bootstrap.sh`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.setup/bootstrap.sh), which can be done most quickly with the alias [`sd`](https://github.com/dnnsmnstrr/dotfiles/blob/43094a112e0fd11fbda5eff82b408f3071e2c976/.aliases#L17) (source dotfiles).
 
 # Updating
 
-The `.aliases` include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
+The [`.aliases`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.aliases) include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
 Alternative: [`mac update`](https://github.com/guarinogabriel/Mac-CLI#general-commands)
 
 # Troubleshooting
@@ -75,7 +75,7 @@ sudo chown -R $(whoami) $(brew --prefix)/*
 
 - [SourceTree GPG signing](https://community.atlassian.com/t5/Sourcetree-questions/Why-is-quot-Enable-GPG-key-signing-for-commit-quot-is-greyed-out/qaq-p/249852)
 
-```M
+```
 // get current gpg version path
 ls -la /usr/local/bin/gpg
 // symlink gpg2
