@@ -38,6 +38,9 @@ function makeBundle() {
 if [ "$*" == "--force" ] || [ "$*" == "-f" ]; then
 	doIt;
   # makeBinExecutable;
+elif [ "$*" == "--bundle" ] || [ "$*" == "-b" ]; then
+  #statements
+  doIt;
   makeBundle;
 else
 	read -r -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
