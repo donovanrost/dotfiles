@@ -120,6 +120,11 @@ function gcd() {
 	git clone "$1" && cd "$(basename "$1" .git)" || return
 }
 
+# Git clone from clipboard
+gcb(){
+    git clone "$(pbpaste)"
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
 	local tmpFile="${*%/}.tar";

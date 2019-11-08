@@ -57,6 +57,8 @@ alias yp='yarn pods'
 alias ys='yarn start'
 alias yr='y; yp; ys'
 alias ycc='yarn cache clean'
+alias yg='yarn global add'
+
 
 ## Networking
 
@@ -115,8 +117,9 @@ alias spoton="sudo mdutil -a -i on"
 
 # Show system information
 alias displays="system_profiler SPDisplaysDataType"
-alias cpu="sysctl -n machdep.cpu.brand_string"
-
+alias cpuinfo="sysctl -n machdep.cpu.brand_string"
+alias cpu='top -o cpu'   # CPU
+alias mem='top -o rsize' # Memory
 ## Finder
 alias finder="open ."
 
@@ -156,9 +159,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-
 # Make executable
 alias ax="chmod a+x"
+
+alias os='osascript'
 
 ## ls
 # Detect which `ls` flavor is in use
@@ -265,6 +269,7 @@ alias functionlist="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 
 ## Apps
 alias sketch="open -a Sketch"
+alias safari="open -a Safari"
 
 ## lol
 

@@ -32,6 +32,12 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bo
 
 - [Add SSH keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
 
+* init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage)
+
+# init
+
+The init script will:
+
 - Install NVM
 
   ```bash
@@ -52,8 +58,6 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bo
   ```bash
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
   ```
-
-- init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage)
 
 # Adding Apps, Aliases or Functions
 
