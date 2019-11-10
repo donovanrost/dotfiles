@@ -284,8 +284,7 @@ alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
-alias wtf='dmesg'
-alias onoz='cat /var/log/errors.log'
+alias wtf='hint'
 alias rtfm='man'
 
 alias visible='echo'

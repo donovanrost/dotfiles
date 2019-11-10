@@ -121,7 +121,7 @@ function gcd() {
 }
 
 # Git clone from clipboard
-gcb(){
+function gcb(){
     git clone "$(pbpaste)"
 }
 

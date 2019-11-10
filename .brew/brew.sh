@@ -92,6 +92,7 @@ declare -a personal=(
 	philips-hue-sync
 	steelseries-engine
 	# storage
+  grandperspective
 	google-backup-and-sync
 	dropbox
 )
@@ -289,13 +290,13 @@ function brewInstall() {
 	# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 	echo "Installing brew utilities..."
 	# shellcheck disable=SC2034
-	while BREWS=(read -r brew)
-	do
-		brew info "${brew[@]}" | grep --quiet 'Not installed' && brew install "${brew[@]}"
-	done < "brews.txt"
-	# for item in "${brew[@]}"; do
-	# 	brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
-	# done
+	# while BREWS=(read -r brew)
+	# do
+	# 	brew info "${brew[@]}" | grep --quiet 'Not installed' && brew install "${brew[@]}"
+	# done < "brews.txt"
+	for item in "${brew[@]}"; do
+		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+	done
 }
 
 function networkInstall() {
@@ -317,7 +318,7 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
-	mas install 497799835 // ensure Xcode is installed
+	mas install 497799835 # ensure Xcode is installed
 }
 
 function personalInstall() {
