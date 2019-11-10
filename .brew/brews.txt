@@ -72,6 +72,7 @@ watchman
 wget
 wifi-password
 woff2
+wtf
 xpdf
 yarn
 yarn-completion

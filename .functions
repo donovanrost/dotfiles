@@ -120,6 +120,11 @@ function gcd() {
 	git clone "$1" && cd "$(basename "$1" .git)" || return
 }
 
+# Git clone from clipboard
+gcb(){
+    git clone "$(pbpaste)"
+}
+
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
 function targz() {
 	local tmpFile="${*%/}.tar";
@@ -331,4 +336,9 @@ camerausedby() {
 	echo "Checking to see who is using the iSight camera… 📷"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
 	echo -e "Recent camera uses:\n$usedby"
+}
+
+# reset Xcode simulators
+simreset(){
+  sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService; xcrun simctl list devices | grep "iPhone\|iPad" | awk '{print $(NF -1)}' | cut -d "(" -f2 | cut -d ")" -f1 | grep -E "^[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}$" | xargs -I {} xcrun simctl erase "{}"
 }

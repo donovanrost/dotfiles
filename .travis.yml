@@ -7,13 +7,7 @@ cache:
     - $HOME/Library/Caches/Homebrew
 before_install:
   - |
-        # Install `ShellCheck`.
-        #
-        # ShellCheck is required for testing and
-        # is included with Travis's Ubuntu builds,
-        # so it only needs to be installed for the
-        # macOS ones.
-        if [ "$TRAVIS_OS_NAME" = "osx" ]; then
+      if [ "$TRAVIS_OS_NAME" = "osx" ]; then
           brew install shellcheck
       fi
 addons:

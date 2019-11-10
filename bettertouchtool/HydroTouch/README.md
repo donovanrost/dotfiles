@@ -13,6 +13,11 @@ This is the first release, to install, just [download the preset files](https://
 
 Due to the existing limitations of updating presets in BTT, I have reworked HydroTouch to function as an extension layer on top of AquaTouch. Nevertheless there are some changes needed to achieve the setup I prefer. I am beginning to document the necessary modifications in comments within HydroTouch where possible and will try to list the most important ones [in the wiki](https://github.com/dnnsmnstrr/dotfiles/wiki).
 
+# BTT Setup
+
+- [Import duplicate presets](https://community.folivora.ai/t/cant-import-a-preset-without-replacing/10455/4)
+  `defaults write com.hegenberg.BetterTouchTool BTTImportDuplicatePresets YES`
+
 # Credits
 
 - [yuuiko](https://community.folivora.ai/t/v3-5-0-aquatouch-supports-40-apps-and-websites-and-the-native-touchbar/1704) (click on the sponsor link uptop to support him, my preset would be nothing without the foundation his provides)

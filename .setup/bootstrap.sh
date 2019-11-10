@@ -29,9 +29,19 @@ function doIt() {
 #   done
 # }
 
+function makeBundle() {
+  echo ""
+  echo "Brewfile includes: "
+  brew bundle list --all
+}
+
 if [ "$*" == "--force" ] || [ "$*" == "-f" ]; then
 	doIt;
   # makeBinExecutable;
+elif [ "$*" == "--bundle" ] || [ "$*" == "-b" ]; then
+  #statements
+  doIt;
+  makeBundle;
 else
 	read -r -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo "";
@@ -44,10 +54,5 @@ unset doIt;
 
 echo ""
 echo "For macOS settings, run macos"
-
-# echo ""
-# echo "Brewfile includes: "
-# brew bundle list --all
 echo ""
-
 echo "Run brewfile (bf) or update (ud) for current versions"
