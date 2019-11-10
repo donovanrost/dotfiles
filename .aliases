@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 ### Aliases
 
+alias listaliases="alias | sed 's/=.*//'"
+alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
+
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
 alias dtf="cd ~/.dotfiles"

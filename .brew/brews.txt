@@ -2,6 +2,8 @@ ack
 apm-bash-completion
 apm-bash-completion
 asciiquarium
+ask-cli
+awscli
 bash
 bash-completion2
 bash-snippets
@@ -51,6 +53,7 @@ react-native-cli
 rename
 rlwrap
 ruby
+scrcpy
 screen
 sfnt2woff
 sfnt2woff-zopfli
