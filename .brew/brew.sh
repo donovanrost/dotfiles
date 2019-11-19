@@ -91,6 +91,7 @@ declare -a personal=(
 	duet
 	philips-hue-sync
 	steelseries-engine
+  blackhole
 	# storage
   grandperspective
 	google-backup-and-sync
@@ -187,6 +188,8 @@ declare -a brew=(
 	wifi-password
 	# fun
 	cowsay
+  fortune
+  lolcat
 	asciiquarium
 )
 
