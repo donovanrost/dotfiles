@@ -53,6 +53,7 @@ declare -a dev=(
 	dash
 	docker
 	eclipse-java
+  fastlane
 	github
 	google-chrome
 	gpg-suite-no-mail
