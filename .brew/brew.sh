@@ -3,6 +3,21 @@
 # Apps to install
 # Categorized into brew, general casks, developer, personal and mac app store apps
 
+if [ "$1" == "-h" ] ; then
+	echo "Usage: brewfile"
+	echo "Options: "
+	echo "-h  Show this message"
+	echo "-a  Install all the options"
+	echo "-d  Install developer options"
+	echo "-m  Install Mac App Store apps"
+	echo "-n  Install network tools"
+	echo "-p  Install personal apps (entertainment, music, gaming)"
+	return
+elif [ "$#" -gt 1 ]; then
+	echo "Too many parameters"
+	return
+fi
+
 # Useful cask apps
 declare -a cask=(
 	# utility
@@ -28,7 +43,7 @@ declare -a cask=(
 	webpquicklook
 )
 
-# Apps I use for development (-d)
+# Apps for development (-d)
 declare -a dev=(
 	arduino
 	atom
@@ -103,8 +118,8 @@ declare -a brew=(
 	moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 	findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 	gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
-	bash              # Bash 4
 	# languages & frameworks
+  go
 	lua
 	node
 	php
@@ -117,9 +132,11 @@ declare -a brew=(
 	mas
 	nvm
 	# editors & shells
+  bash
+  fish
+  starship
 	vim
 	zsh
-	fish
 	# version control
 	git
 	hub
@@ -176,6 +193,7 @@ declare -a brew=(
 	mackup
 	pv
 	switchaudio-osx
+  scrcpy
 	# files
 	p7zip
 	pigz
@@ -184,8 +202,10 @@ declare -a brew=(
 	xpdf
 	# tools
 	calc
+  m-cli
 	tldr
 	wifi-password
+  z
 	# fun
 	cowsay
   fortune
@@ -196,6 +216,8 @@ declare -a brew=(
 # Optional: Network utils (-n)
 declare -a network=(
 	aircrack-ng
+  ask-cli
+  awscli
 	bfg
 	binutils
 	binwalk
@@ -229,7 +251,7 @@ declare -a network=(
 declare -a mas=(
 	766939888   #1Keyboard
 	424389933   #Final Cut
-	402989379   #iStudiez
+	# 402989379   #iStudiez
 	409183694   #Keynote
 	634148309   #Logic
 	634159523   #MainStage
@@ -247,21 +269,6 @@ declare -a mas=(
 )
 
 # Scripting starts here
-
-if [ "$1" == "-h" ] ; then
-	echo "Usage: brewfile"
-	echo "Options: "
-	echo "-h  Show this message"
-	echo "-a  Install all the options"
-	echo "-d  Install developer options"
-	echo "-m  Install Mac App Store apps"
-	echo "-n  Install network tools"
-	echo "-p  Install personal apps (entertainment, music, gaming)"
-	return
-elif [ "$#" -gt 1 ]; then
-	echo "Too many parameters"
-	return
-fi
 
 echo "Running brewfile"
 
