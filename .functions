@@ -309,7 +309,25 @@ function openx(){
       open *.xcodeproj
       return
     else
-      echo "Nothing found"
+      # in root of a react-native project
+      cd ios || return
+      if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
+      then
+        echo "Opening workspace in /ios"
+        open *.xcworkspace
+        cd ..
+        return
+      else
+        if test -n "$(find . -maxdepth 1 -name '*.xcodeproj' -print -quit)"
+        then
+          echo "Opening project in /ios"
+          open *.xcodeproj
+          cd ..
+          return
+        else
+          echo "Nothing found"
+        fi
+      fi
     fi
   fi
 }
