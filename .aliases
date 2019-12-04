@@ -99,6 +99,7 @@ alias hint=". hint"
 
 ## Media
 alias youtube='$(command -v youtube-dl)'
+alias yv='googler -w youtube.com --url-handler open-pip $argv'
 alias youtube-mp3='$(command -v youtube-dl) -x --audio-format mp3'
 
 # Disable Spotlight
@@ -272,6 +273,7 @@ alias c="clear"
 alias x="exit"
 alias e="x"
 alias quit="exit"
+alias google="googler"
 alias bf="brewfile"
 alias nf="npmfile"
 
