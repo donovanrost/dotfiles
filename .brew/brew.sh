@@ -46,7 +46,6 @@ declare -a cask=(
 # Apps for development (-d)
 declare -a dev=(
 	arduino
-  asciinema
 	atom
 	android-studio
 	android-platform-tools
@@ -189,6 +188,7 @@ declare -a brew=(
 	shpotify
 	khanhas/tap/spicetify-cli
 	# web
+  googler
 	lynx
 	youtube-dl
 	# system
@@ -205,16 +205,18 @@ declare -a brew=(
 	zopfli
 	xpdf
 	# tools
+  asciinema
 	calc
   m-cli
 	tldr
 	wifi-password
   z
 	# fun
+  asciiquarium
 	cowsay
   fortune
   lolcat
-	asciiquarium
+  rtv
 )
 
 # Optional: Network utils (-n)
@@ -332,7 +334,7 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
-	mas install 497799835 # ensure Xcode is installed
+	# mas install 497799835 # ensure Xcode is installed
 }
 
 function personalInstall() {
@@ -378,6 +380,4 @@ echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
 # brew doctor
 # brew cask doctor
-cd ..
-# Update brewfile for CI and quick install overview (not used for installing)
 brew bundle dump --force
