@@ -7,17 +7,18 @@ alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
 alias dtf="cd ~/.dotfiles"
-alias path="dotfiles; open -e .path"
-alias bp="dotfiles; open -e .bash_profile"
-alias aliases="dotfiles; open -e .aliases"
+alias path="dtf; open -e .path"
+alias bp="dtf; open -e .bash_profile"
+alias aliases="dtf; open -e .aliases"
 alias als="aliases"
 alias btt="open ~/.dotfiles/bettertouchtool"
 alias brewfile="source ~/.dotfiles/.brew/brew.sh"
-alias bf="brewfile"
+alias npmfile='cd ~/.dotfiles/.setup; npm install -g $(cat npmfile)'
 alias extra="open -e ~/.extra"
 alias functions="dotfiles; open -e .functions"
 alias fnc="functions"
 alias sd="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
+alias init="set -- -f; source ~/.dotfiles/.setup/init.sh"
 alias macos="source ~/.dotfiles/.setup/macos"
 
 # Brew
@@ -68,6 +69,7 @@ alias yg='yarn global add'
 # IP addresses
 #alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip="curl icanhazip.com"
+alias myip="curl http://ipecho.net/plain; echo"
 alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -87,6 +89,8 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
 
 ## Apps (these work without alias: github, sourcetree)
+alias sketch="open -a Sketch"
+alias safari="open -a Safari"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias atm="atom ."
 
@@ -97,32 +101,11 @@ alias hint=". hint"
 alias youtube='$(command -v youtube-dl)'
 alias youtube-mp3='$(command -v youtube-dl) -x --audio-format mp3'
 
-# Convenience
-alias please="sudo"
-alias rl="reload"
-alias ud="update"
-alias fnd="finder"
-alias c="clear"
-alias x="exit"
-alias e="x"
-alias quit="exit"
-
-## System commands
-
-alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias reboot='sudo shutdown -r now'
-alias shutdown='sudo shutdown -h now'
-
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
-# Show system information
-alias displays="system_profiler SPDisplaysDataType"
-alias cpuinfo="sysctl -n machdep.cpu.brand_string"
-alias cpu='top -o cpu'   # CPU
-alias mem='top -o rsize' # Memory
 ## Finder
 alias finder="open ."
 
@@ -164,7 +147,6 @@ alias -- -="cd -"
 
 # Make executable
 alias ax="chmod a+x"
-
 alias os='osascript'
 
 ## ls
@@ -196,9 +178,20 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Disk utility
+## System commands
+
+alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias reboot='sudo shutdown -r now'
+alias shutdown='sudo shutdown -h now'
+# info
+alias displays="system_profiler SPDisplaysDataType"
+alias cpuinfo="sysctl -n machdep.cpu.brand_string"
+alias cpu='top -o cpu'   # CPU
+alias mem='top -o rsize' # Memory
+# Disk
 alias df='df -h'
 alias du='du -h'
+alias disk="df -Tha --total"
 
 # Get week number
 alias week='date +%V'
@@ -270,9 +263,21 @@ alias paths='echo -e ${PATH//:/\\n}'
 alias aliaslist="alias | sed 's/=.*//'"
 alias functionlist="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 
-## Apps
-alias sketch="open -a Sketch"
-alias safari="open -a Safari"
+# Convenience
+alias please="sudo"
+alias rl="reload"
+alias ud="update"
+alias fnd="finder"
+alias c="clear"
+alias x="exit"
+alias e="x"
+alias quit="exit"
+alias bf="brewfile"
+alias nf="npmfile"
+
+## Typo
+alias sl="ls"
+alias bsh="bash"
 
 ## lol
 

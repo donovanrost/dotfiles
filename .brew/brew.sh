@@ -46,6 +46,7 @@ declare -a cask=(
 # Apps for development (-d)
 declare -a dev=(
 	arduino
+  asciinema
 	atom
 	android-studio
 	android-platform-tools
@@ -105,6 +106,7 @@ declare -a personal=(
 	musaicfm
 	# utilities
 	duet
+  hazeover
 	philips-hue-sync
 	steelseries-engine
   blackhole
@@ -142,6 +144,7 @@ declare -a brew=(
 	git
 	hub
 	git-lfs
+  git-standup
 	gibo
 	#dev
 	bats
