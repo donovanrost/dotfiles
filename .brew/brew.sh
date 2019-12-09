@@ -146,6 +146,7 @@ declare -a brew=(
   git-standup
 	gibo
 	#dev
+  applesimutils
 	bats
 	cocoapods
 	react-native-cli
@@ -296,6 +297,7 @@ function brewInstall() {
 	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
   brew tap lukakerr/things
+  brew tap wix/brew
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 	# Switch to using brew-installed bash as default shell

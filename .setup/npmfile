@@ -1,3 +1,5 @@
+detox-cli
+ios-sim
 npm-check
 open-pip-cli
 prettier
@@ -8,3 +10,10 @@ starring
 svgo
 tldr
 @rafaelrinaldi/whereami
+xclap-cli
+yo
+generator-rn-toolbox
+generator-electrode
+generator-electron
+generator-license
+generator-bash
