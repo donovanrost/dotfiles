@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd $(dirname "${BASH_SOURCE[@]}") || exit;
+cd $(dirname ${BASH_SOURCE[0]:-${(%):-%x}}) || exit;
 cd ..
 git pull origin master;
 
@@ -19,7 +19,14 @@ function doIt() {
 		--exclude "Gemfile.lock" \
 		--exclude "Rakefile" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
+    if [ -n "$ZSH_VERSION" ]; then
+     source ~/.zshrc;
+  elif [ -n "$BASH_VERSION" ]; then
+     source ~/.bash_profile;
+  else
+     echo 'unknown shell'
+  fi
+
 }
 
 # function makeBinExecutable() {
@@ -35,10 +42,10 @@ function makeBundle() {
   brew bundle list --all
 }
 
-if [ "$*" == "--force" ] || [ "$*" == "-f" ]; then
+if [ "$*" = "--force" ] || [ "$*" = "-f" ]; then
 	doIt;
   # makeBinExecutable;
-elif [ "$*" == "--bundle" ] || [ "$*" == "-b" ]; then
+elif [ "$*" = "--bundle" ] || [ "$*" = "-b" ]; then
   #statements
   doIt;
   makeBundle;

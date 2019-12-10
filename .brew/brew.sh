@@ -106,6 +106,7 @@ declare -a personal=(
 	# utilities
 	duet
   hazeover
+  ndm
 	philips-hue-sync
 	steelseries-engine
   blackhole
@@ -380,4 +381,4 @@ echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
 # brew doctor
 # brew cask doctor
-brew bundle dump --force
+# brew bundle dump --force

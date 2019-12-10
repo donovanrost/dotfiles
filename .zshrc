@@ -69,7 +69,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew colorize copyfile git lol osx pip pod python react-native sudo thefuck zsh-nvm)
+plugins=(brew copyfile git lol osx pip pod python react-native sudo thefuck zsh-nvm)
 
 # Brew Completion
 if type brew &>/dev/null; then
