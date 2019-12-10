@@ -1,11 +1,16 @@
 detox-cli
+file-icon-cli
+gh-home
 ios-sim
+move-file-cli
 npm-check
 open-pip-cli
 prettier
+run-applescript
 screensaver
 speedtest-net
 splash-cli
+stargazed
 starring
 svgo
 tldr
@@ -16,4 +21,3 @@ generator-rn-toolbox
 generator-electrode
 generator-electron
 generator-license
-generator-bash

@@ -57,12 +57,22 @@ alias rnrn='rnri; rnra'
 alias y='yarn '
 alias yi='yarn install '
 alias ya='yarn add '
+alias yad='yarn add --dev '
 alias yp='yarn pods'
 alias ys='yarn start'
 alias yr='y; yp; ys'
 alias ycc='yarn cache clean'
 alias yg='yarn global add'
-
+alias gh='gh-home'
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nr='npm run'
+alias ns='npm start'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias npl='npm list --global --depth=0'
 
 ## Networking
 
