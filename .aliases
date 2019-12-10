@@ -21,6 +21,12 @@ alias sd="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
 alias init="set -- -f; source ~/.dotfiles/.setup/init.sh"
 alias macos="source ~/.dotfiles/.setup/macos"
 
+# CLI shortcuts
+alias b="brew "
+alias cb="clipboard"
+alias g="git"
+alias p="pip "
+
 # Brew
 alias bi="brew install "
 alias br="brew reinstall "
@@ -38,6 +44,7 @@ alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
 
 alias pi="pip install "
+alias pir="cd ~/.dotfiles/.setup;pip install -r requirements.txt"
 
 ### Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
@@ -45,7 +52,6 @@ alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simu
 alias color="color-converter | osascript -e 'choose color'"
 
 ## Git
-alias g="git"
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 
 ## React
@@ -137,6 +143,9 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 alias ql="qlmanage -p &>/dev/null" #quicklook from command line
+
+# Safe delete
+alias del="mv -t ~/.Trash/"
 
 # Empty the Trash on all mounted volumes and the main HDD, clear Apple’s System Logs to improve shell startup speed, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
@@ -325,3 +334,4 @@ alias cya='reboot'
 alias kthxbai='halt'
 # https://github.com/busyloop/lolcat
 alias cowcat='fortune | cowsay | lolcat'
+alias devcat='devquote | cowsay | lolcat'

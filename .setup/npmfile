@@ -1,7 +1,10 @@
-detox-cli
+castnow
+clipboard-cli
+devquote
+fkill
 file-icon-cli
 gh-home
-ios-sim
+is-up-cli
 move-file-cli
 npm-check
 open-pip-cli
@@ -10,10 +13,12 @@ run-applescript
 screensaver
 speedtest-net
 splash-cli
+spoof
 stargazed
 starring
 svgo
 tldr
+vaca
 @rafaelrinaldi/whereami
 xclap-cli
 yo
