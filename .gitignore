@@ -15,3 +15,5 @@ Thumbs.db
 
 # Local Brewfile
 # Brewfile
+
+node_modules/
