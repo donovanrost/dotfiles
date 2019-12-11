@@ -37,9 +37,6 @@ alias bcu="brew cask uninstall "
 alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
 
-alias pi="pip install "
-alias pir="pip install -r requirements.txt"
-
 ## Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 
@@ -52,7 +49,6 @@ alias rnrn='rnri; rnra'
 # Yarn
 alias yi='yarn install '
 alias ya='yarn add '
-alias yad='yarn add --dev '
 alias yp='yarn pods'
 alias ys='yarn start'
 alias yr='y; yp; ys'
@@ -68,6 +64,10 @@ alias nr='npm run'
 alias ns='npm start'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias npl='npm list --global --depth=0'
+
+alias p="pip"
+alias pi="pip install "
+alias pir="pip install -r requirements.txt"
 
 ## Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
@@ -120,7 +120,6 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/Developer"
 alias doc="cd ~/Documents"
-alias p="cd ~/Desktop/Projects"
 
 # Show/hide hidden files
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
