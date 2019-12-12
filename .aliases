@@ -52,6 +52,7 @@ alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simu
 alias color="color-converter | osascript -e 'choose color'"
 
 ## Git
+alias gc="git clone "
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 
 ## React
@@ -108,7 +109,9 @@ alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
 alias sketch="open -a Sketch"
 alias safari="open -a Safari"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias atm="atom ."
+alias a="atom ."
+alias ad="atom --dev"
+alias al="apm link"
 
 ## Resources
 alias hint=". hint"
@@ -145,7 +148,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias ql="qlmanage -p &>/dev/null" #quicklook from command line
 
 # Safe delete
-alias del="mv -t ~/.Trash/"
+alias del="mv ~/.Trash/"
 
 # Empty the Trash on all mounted volumes and the main HDD, clear Apple’s System Logs to improve shell startup speed, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
@@ -215,6 +218,7 @@ alias disk="df -Tha --total"
 
 # Get week number
 alias week='date +%V'
+alias kw='week'
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
