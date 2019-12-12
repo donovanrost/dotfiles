@@ -78,6 +78,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_profile
+source ~/.path
+source ~/.extra
+source ~/.exports
 source ~/.aliases
 source ~/.functions
 
