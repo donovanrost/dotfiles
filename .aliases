@@ -6,26 +6,20 @@ alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non 
 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
-alias dtf="cd ~/.dotfiles"
-alias path="dtf; open -e .path"
-alias bp="dtf; open -e .bash_profile"
-alias aliases="dtf; open -e .aliases"
-alias als="aliases"
+alias bootstrap="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
+alias init="set -- -f; source ~/.dotfiles/.setup/init.sh"
+alias macos="source ~/.dotfiles/.setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
 alias brewfile="source ~/.dotfiles/.brew/brew.sh"
 alias npmfile='cd ~/.dotfiles/.setup; npm install -g $(cat npmfile)'
+alias pipfile="cd ~/.dotfiles/.setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
-alias functions="dotfiles; open -e .functions"
-alias fnc="functions"
-alias sd="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
-alias init="set -- -f; source ~/.dotfiles/.setup/init.sh"
-alias macos="source ~/.dotfiles/.setup/macos"
 
 # CLI shortcuts
 alias b="brew "
 alias cb="clipboard"
 alias g="git"
-alias p="pip "
+alias y='yarn '
 
 # Brew
 alias bi="brew install "
@@ -44,12 +38,7 @@ alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
 
 alias pi="pip install "
-alias pir="cd ~/.dotfiles/.setup;pip install -r requirements.txt"
-
-### Developing
-alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
-alias color="color-converter | osascript -e 'choose color'"
+alias pir="pip install -r requirements.txt"
 
 ## Git
 alias gc="git clone "
@@ -57,11 +46,11 @@ alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 
 ## React
 alias rn='react-native '
-alias rnl='react-native link'
 alias rnri='react-native run-ios'
 alias rnra='react-native run-android'
 alias rnrn='rnri; rnra'
-alias y='yarn '
+
+# Yarn
 alias yi='yarn install '
 alias ya='yarn add '
 alias yad='yarn add --dev '
@@ -81,11 +70,14 @@ alias ns='npm start'
 alias nf='npm cache clean && rm -rf node_modules && npm install'
 alias npl='npm list --global --depth=0'
 
-## Networking
+## Developing
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
+alias color="color-converter | osascript -e 'choose color'"
 
-# IP addresses
-#alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+## Networking
 alias ip="curl icanhazip.com"
+#alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias myip="curl http://ipecho.net/plain; echo"
 alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
@@ -94,10 +86,6 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias GET='http'
 alias POST='http POST'
 alias HEAD='http HEAD'
-
-alias git-proxy='git config https.proxy 192.168.10.10:3128'
-alias git-unproxy='git config --unset https.proxy'
-alias proxy="export https_proxy=http://192.168.10.10:3128; export ALL_PROXY=$https_proxy; export no_proxy=localhost,127.0.0.1,wiesan.de,10.0.0.0/8,192.168.0.0/16"
 
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
@@ -129,7 +117,7 @@ alias spoton="sudo mdutil -a -i on"
 ## Finder
 alias finder="open ."
 
-# Shortcuts
+# Directories
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -145,7 +133,8 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-alias ql="qlmanage -p &>/dev/null" #quicklook from command line
+# quicklook from command line
+alias ql="qlmanage -p &>/dev/null"
 
 # Safe delete
 alias del="mv ~/.Trash/"
@@ -291,18 +280,20 @@ alias functionlist="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias please="sudo"
 alias rl="reload"
 alias ud="update"
+alias bf="brewfile"
+alias nf="npmfile"
+alias pf="pipfile"
 alias fnd="finder"
 alias c="clear"
 alias x="exit"
 alias e="x"
 alias quit="exit"
 alias google="googler"
-alias bf="brewfile"
-alias nf="npmfile"
 
 ## Typo
 alias sl="ls"
 alias bsh="bash"
+alias brw="brew"
 
 ## lol
 
