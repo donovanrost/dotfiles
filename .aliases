@@ -92,6 +92,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 
 # SSH
 alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
+alias pi='ssh pi@raspberrypi.local'
 
 ## Apps (these work without alias: github, sourcetree)
 alias sketch="open -a Sketch"
