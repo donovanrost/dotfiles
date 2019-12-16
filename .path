@@ -8,7 +8,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 # ruby
-export PATH="/Users/dennismuensterer/.gem/ruby/2.3.0/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # go
 export PATH=$PATH:$(go env GOPATH)/bin

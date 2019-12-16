@@ -110,6 +110,7 @@ declare -a personal=(
 	philips-hue-sync
 	steelseries-engine
   blackhole
+  vnc-viewer
 	# storage
   grandperspective
 	google-backup-and-sync
