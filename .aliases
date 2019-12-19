@@ -157,6 +157,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
 # Make executable
 alias ax="chmod a+x"
 alias os='osascript'
