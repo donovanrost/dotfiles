@@ -87,7 +87,7 @@
 	whitespace = fix
 
 [core]
-
+  editor = atom --wait
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
