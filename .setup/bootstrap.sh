@@ -19,7 +19,7 @@ function doIt() {
 		--exclude "Gemfile.lock" \
 		--exclude "Rakefile" \
 		-avh --no-perms . ~;
-    if [ -n "$ZSH_VERSION" ]; then
+  if [ -n "$ZSH_VERSION" ]; then
      source ~/.zshrc;
   elif [ -n "$BASH_VERSION" ]; then
      source ~/.bash_profile;

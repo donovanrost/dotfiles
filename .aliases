@@ -157,6 +157,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
 # Make executable
 alias ax="chmod a+x"
 alias os='osascript'
@@ -195,6 +198,9 @@ alias egrep='egrep --color=auto'
 alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reboot='sudo shutdown -r now'
 alias shutdown='sudo shutdown -h now'
+alias dark='toggledarkmode'
+alias light='toggledarkmode'
+
 # info
 alias displays="system_profiler SPDisplaysDataType"
 alias cpuinfo="sysctl -n machdep.cpu.brand_string"

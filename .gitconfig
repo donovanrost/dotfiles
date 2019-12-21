@@ -79,7 +79,7 @@
 		fi \
 	}; f"
 
-  # yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
+  yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
 
 [apply]
 
@@ -87,7 +87,7 @@
 	whitespace = fix
 
 [core]
-
+  editor = atom --wait
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -138,6 +138,7 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
+  template = ~/.gitcommit
 
 [diff]
 
