@@ -103,6 +103,7 @@ declare -a personal=(
 	iina
 	kodi
 	musaicfm
+  obs
 	# utilities
 	duet
   hazeover

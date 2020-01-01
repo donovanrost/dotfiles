@@ -60,7 +60,7 @@ function updateBrews() {
 	sort -o ~/.dotfiles/.brew/brews.txt ~/.dotfiles/.brew/brews.txt
 }
 
-function toggledarkmode() {
+function darkmode() {
   osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 }
 
@@ -392,7 +392,7 @@ function extract {
     echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
     return 1
  else
-    for n in $@
+    for n in "$@"
     do
       if [ -f "$n" ] ; then
           case "${n%,}" in
@@ -442,7 +442,7 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 	# get the extension from the filename
 	ext=${filename#*.}
 	# if there's no extenstion, add default
-	if [[ $ext == $filename ]]; then
+	if [[ $ext == '$filename' ]]; then
 		ext=$default_ext
 		filename=$filename.$ext
 	fi
@@ -456,7 +456,7 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 			py ) echo -e "#!/usr/bin/env python" >> $filename;;
 			pl ) echo -e "#!/usr/bin/env perl" >> $filename;;
 			sh | bash ) echo -e "#!/bin/bash" >> $filename;;
-			zsh | bash ) echo -e "#!/bin/zbash" >> $filename;;
+			zsh ) echo -e "#!/bin/zbash" >> $filename;;
 			 * ) touch $filename;; # any other extension create blank file
 		esac
 		# if skeleton files directory and a txt for the given extension exist

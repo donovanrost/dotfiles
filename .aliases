@@ -81,6 +81,7 @@ alias ip="curl icanhazip.com"
 alias myip="curl http://ipecho.net/plain; echo"
 alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias cap="curl -s 'http://captive.apple.com'"
 
 # HTTPie aliases
 alias GET='http'
@@ -107,7 +108,7 @@ alias hint=". hint"
 
 ## Media
 alias youtube='$(command -v youtube-dl)'
-alias yv='googler -w youtube.com --url-handler open-pip $argv'
+alias yv='googler -w youtube.com --url-handler open-pip $argv' # search for a youtube video & open it in PiP
 alias youtube-mp3='$(command -v youtube-dl) -x --audio-format mp3'
 
 # Disable Spotlight
@@ -198,8 +199,8 @@ alias egrep='egrep --color=auto'
 alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias reboot='sudo shutdown -r now'
 alias shutdown='sudo shutdown -h now'
-alias dark='toggledarkmode'
-alias light='toggledarkmode'
+alias dark='darkmode'
+alias light='darkmode'
 
 # info
 alias displays="system_profiler SPDisplaysDataType"
@@ -290,7 +291,7 @@ alias sd="bootstrap"
 alias bf="brewfile"
 alias nf="npmfile"
 alias pf="pipfile"
-alias fnd="finder"
+alias f="finder"
 alias c="clear"
 alias x="exit"
 alias e="x"
