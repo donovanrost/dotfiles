@@ -6,6 +6,7 @@ gem "rails"
 gem "bundler"
 gem 'jekyll'
 gem 'facebook-cli'
+gem 'lolcommits'
 gem 'wifi-wand'
 gem 'github-pages', group: :jekyll_plugins
 gem "jekyll-github-metadata"
