@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Run installers
 bundle install
 pip install -r requirements.txt
 npm install -g $(cat npmfile)

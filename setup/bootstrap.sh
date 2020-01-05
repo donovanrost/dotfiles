@@ -5,18 +5,14 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude ".setup/" \
-		--exclude ".brew/" \
+		--exclude "setup/" \
+  	--exclude "docs/" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
-		--exclude "docs/" \
+		--exclude ".DS_Store" \
 		--exclude ".github/" \
 		--exclude ".travis.yml" \
 		--exclude "Brewfile" \
-		--exclude "Gemfile" \
-		--exclude "Gemfile.lock" \
 		--exclude "Rakefile" \
 		-avh --no-perms . ~;
   if [ -n "$ZSH_VERSION" ]; then

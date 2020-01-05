@@ -6,14 +6,14 @@ alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non 
 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
-alias setup="cd ~/.dotfiles/.setup"
+alias setup="cd ~/.dotfiles/setup"
 alias init="setup; source init.sh"
-alias bootstrap="set -- -f; source ~/.dotfiles/.setup/bootstrap.sh"
-alias macos="source ~/.dotfiles/.setup/macos"
+alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
+alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
-alias brewfile="source ~/.dotfiles/.brew/brew.sh"
-alias npmfile='cd ~/.dotfiles/.setup; npm install -g $(cat npmfile)'
-alias pipfile="cd ~/.dotfiles/.setup; pip install -r requirements.txt"
+alias brewfile="source ~/.dotfiles/setup/brew.sh"
+alias npmfile='setup; npm install -g $(cat npmfile)'
+alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
 
 # CLI shortcuts
