@@ -59,17 +59,31 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     builder (3.2.4)
+    cli-ui (1.3.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.11.1)
+    color (1.8)
     colorator (1.1.0)
+    coltrane (4.0.5)
+      activesupport (> 5.2)
+      cli-ui (~> 1.1)
+      color (~> 1.8)
+      dry-monads (~> 0.4)
+      paint (~> 2.0)
     commonmarker (0.17.13)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     dnsruby (1.61.3)
       addressable (~> 2.5)
+    dry-core (0.4.9)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.3.0)
+    dry-monads (0.4.0)
+      dry-core (~> 0.3, >= 0.3.3)
+      dry-equalizer
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -311,6 +325,7 @@ GEM
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     open4 (1.3.4)
+    paint (2.1.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
@@ -388,6 +403,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler!
+  coltrane!
   facebook-cli!
   github-pages!
   jekyll!
