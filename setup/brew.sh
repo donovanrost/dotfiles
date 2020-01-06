@@ -150,6 +150,7 @@ declare -a brew=(
 	gibo
 	#dev
   applesimutils
+  arduino-cli
 	bats
 	cocoapods
 	react-native-cli
@@ -299,6 +300,7 @@ function brewInstall() {
 	brew tap homebrew/cask-drivers
 	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
+  brew tap buo/cask-upgrade
   brew tap lukakerr/things
   brew tap wix/brew
 	# Save Homebrew’s installed location.
