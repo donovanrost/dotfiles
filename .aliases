@@ -71,6 +71,8 @@ alias p="pip"
 alias pi="pip install "
 alias pir="pip install -r requirements.txt"
 
+alias gi="gem install"
+
 ## Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
@@ -315,7 +317,7 @@ alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
-alias wtf='hint'
+# alias wtf='hint'
 alias rtfm='man'
 
 alias visible='echo'

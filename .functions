@@ -31,12 +31,12 @@ function update() {
 	echo "npm:"
 	npm install npm -g;
 	npm update -g;
-	# echo "";
-	# echo "Gem:"
-	# sudo gem update --system;
-	# sudo gem update;
-	# sudo gem cleanup;
-	# echo "";
+	echo "";
+	echo "Gem:"
+	sudo gem update --system;
+	sudo gem update;
+	sudo gem cleanup;
+	echo "";
 	echo "Finished updating!";
 }
 
