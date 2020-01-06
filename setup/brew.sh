@@ -24,7 +24,6 @@ declare -a cask=(
 	aerial
 	barrier
 	bettertouchtool
-	betterzip
 	google-chrome
 	keyboardcleantool
 	touch-bar-simulator
