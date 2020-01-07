@@ -8,6 +8,7 @@ gh-home
 is-up-cli
 move-file-cli
 npm-check
+npm-home
 node-red
 open-pip-cli
 prettier
