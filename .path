@@ -17,13 +17,14 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # MacPorts
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-#nvm
+# nvm
 export NVM_DIR="$HOME/.nvm"
 
-#frameworks
+# frameworks
 export PATH="/usr/local/bin/react-native:$PATH"
 export PATH="/usr/local/opt/flutter/bin:$PATH"
 
+# android
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
