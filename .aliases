@@ -306,6 +306,7 @@ alias x="exit"
 alias e="x"
 alias quit="exit"
 alias google="googler"
+alias qr="qrcode-terminal"
 
 ## Typo
 alias sl="ls"
