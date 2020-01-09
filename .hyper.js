@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Fira Code, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -55,7 +55,11 @@ module.exports = {
     css: '',
 
     // custom CSS to embed in the terminal window
-    termCSS: '',
+    termCSS: `
+    x-screen x-row {
+        font-variant-ligatures: initial;
+    }
+    `,
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
@@ -135,7 +139,7 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: true
+    webGLRenderer: false
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
@@ -153,7 +157,12 @@ module.exports = {
     // "hyper-shellect",
     'hyper-dark-scrollbar',
     'hyper-tab-icons',
-    'hyper-systray'
+    'hyper-systray',
+    'hyperlinks',
+    'hyperterm-close-on-left',
+    'hyperterm-paste',
+    'hyper-ligatures',
+    'hyper-font-ligatures'
   ],
 
   // in development, you can create a directory under

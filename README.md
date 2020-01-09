@@ -1,24 +1,34 @@
+
+
 # Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles)
 
 > These are my dotfiles. There are many like them, but these are mine.
 
-Since [dotfiles](https://dotfiles.github.io) are a very personal thing, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
-
-I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is included in this repo, but there will be a more detailed write up in the [BTT-forum](https://community.folivora.ai) and more information in the wiki (some day...)
+Since [dotfiles](https://dotfiles.github.io) are very personal, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
+I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is an extension to [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) by [@yuuiko](https://github.com/yuuiko), which I also highly recommend.
+My BTT setup basically makes my computer unusable for anyone other than myself, which can certainly cause situations like this:
 
 ![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
 xkcd ([#1806](https://xkcd.com/1806/))
 
-## Where I got inspiration from:
 
-- [Matthias](https://mathiasbynens.be/), obviously
-- @pengwynn and his [dotfiles repository](https://github.com/pengwynn/dotfiles)
-- https://github.com/paulirish/dotfiles
-- https://github.com/thoughtbot/dotfiles
-- https://github.com/nicksp/dotfiles
-- https://github.com/denysdovhan/dotfiles
-- https://github.com/webpro/dotfiles - cool dotfiles command
-- https://github.com/alrra/dotfiles - shellcheck
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Installation](#installation)
+  - [Using Git and the bootstrap script](#using-git-and-the-bootstrap-script)
+  - [Git-free install](#git-free-install)
+  - [Specify the `$PATH`](#specify-the-path)
+  - [Add custom commands without creating a new fork](#add-custom-commands-without-creating-a-new-fork)
+  - [Sensible macOS defaults](#sensible-macos-defaults)
+  - [Install Homebrew formulae](#install-homebrew-formulae)
+- [Inspiration:](#inspiration)
+- [Feedback](#feedback)
+- [Original Author](#original-author)
+- [Thanks to…](#thanks-to)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 
@@ -26,13 +36,13 @@ xkcd ([#1806](https://xkcd.com/1806/))
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in `~/.dotfiles`) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/dnnsmnstrr/dotfiles.git && cd .dotfiles/setup && source bootstrap.sh
 ```
 
-To update, `cd` into your local `dotfiles` repository and then:
+To update, `cd` into your local `dotfiles/setup` folder and then:
 
 ```bash
 source bootstrap.sh
@@ -43,6 +53,8 @@ Alternatively, to update while avoiding the confirmation prompt:
 ```bash
 set -- -f; source bootstrap.sh
 ```
+
+There are also the aliases `bootstrap` or `sd` (source dotfiles)
 
 ### Git-free install
 
@@ -98,10 +110,24 @@ Definitely go through and check each setting before running, this can change som
 When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
 
 ```bash
-./brew.sh
+./.dotfiles/setup/brew.sh
 ```
+(aliases)
 
 Some of the functionality of these dotfiles depends on formulae installed by `brew.sh`. If you don’t plan to run `brew.sh`, you should look carefully through the script and manually install any particularly important ones. A good example is Bash/Git completion: the dotfiles use a special version from Homebrew.
+
+## Inspiration:
+
+Where I ~~stole ideas~~ got inspiration from.
+
+- [Matthias](https://mathiasbynens.be/), obviously
+- https://github.com/pengwynn/dotfiles
+- https://github.com/paulirish/dotfiles
+- https://github.com/thoughtbot/dotfiles
+- https://github.com/nicksp/dotfiles
+- https://github.com/denysdovhan/dotfiles
+- https://github.com/webpro/dotfiles - cool dotfiles command
+- https://github.com/alrra/dotfiles - shellcheck
 
 ## Feedback
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export DOTFILES=$HOME/.dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/dennismuensterer/.oh-my-zsh"
 
@@ -105,15 +105,16 @@ source ~/.functions
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias theme="echo $RANDOM_THEME"
+alias reload!='. ~/.zshrc'
 
 # source z
 . /usr/local/etc/profile.d/z.sh
 
+# completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Activate plugins

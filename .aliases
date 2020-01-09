@@ -41,6 +41,11 @@ alias bcf="brew cask install -f "
 ## Git
 alias gc="git clone "
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
+alias undopush="git push -f origin HEAD^:master"
+alias push="git push"
+alias pull="git pull"
+alias master="git checkout master"
+
 
 ## React
 alias rn='react-native '
@@ -313,6 +318,9 @@ alias sl="ls"
 alias bsh="bash"
 alias brw="brew"
 alias fsh="fish"
+alias brwe="brew"
+alias gti="git"
+alias yearn="yarn"
 
 ## lol
 

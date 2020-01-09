@@ -12,6 +12,7 @@ npm-check
 npm-home
 ntl
 node-red
+now
 open-pip-cli
 prettier
 qrcode-terminal
@@ -28,6 +29,7 @@ tldr
 vaca
 @rafaelrinaldi/whereami
 xclap-cli
+yarn-completions
 yo
 generator-rn-toolbox
 generator-electrode
