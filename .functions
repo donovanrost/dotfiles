@@ -416,18 +416,9 @@ fi
 # https://brettterpstra.com/2018/05/07/shell-tricks-quick-start-scripts/
 newscript() {
 	# Config
-	# where your scripts are stored
-	local scriptdir=~/.dotfiles/bin/
-	# if no extension is provided, default to
-	local default_ext=sh
-	# optional, where skeleton scripts (e.g. rb.txt) are stored
-	local defaults_txt=~/.newscript/
-	# End config
-  if [[ -z $2 ]]; then
-    local filename="${scriptdir%/}/$1"
-  else
-    local filename="${2%/}/$1"
-  fi
+	local scriptdir=~/.dotfiles/bin/   # where your scripts are stored
+	local default_ext=sh               # if no extension is provided, default to
+	local defaults_txt=~/.newscript/ 	 # optional, where skeleton scripts (e.g. rb.txt) are stored
 
 	if [[ $# == 0 ]]; then # no argument, display help and exit
 		echo -e "newscript: touch, make executable and \
@@ -435,16 +426,28 @@ start editing a new script.\n\033[31;1mError:\033[37;1m Missing filename\033[0m\
 Usage: mynewscript SCRIPT_NAME.ext\n"
 		return 1
 	fi
+
+  # check for input path
+  if [[ -z $2 ]]; then
+    local filename="${scriptdir%/}/$1"
+  else
+    local filename="${2%/}/$1"
+  fi
 	# get the extension from the filename
 	ext=${filename#*.}
-	# if there's no extenstion, add default
+
+	# if there's no extension, add default
 	if [[ $ext == '$filename' ]]; then
 		ext=$default_ext
 		filename=$filename.$ext
 	fi
+
+  if [[ $ext == "blank" ]]; then
+    filename=${filename#.*}
+  fi
+
 	# if no script with this name already exists
 	if [ ! -f $filename ]; then
-
 		# create a file for the given extension with appropriate shebang
 		case $ext in
       js ) echo -e "#!/usr/bin/env node" >> $filename;;
@@ -462,8 +465,11 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 		fi
 		# Add trailing newline to the new script
 		echo -ne "\n" >> $filename
-		# Make it executable
-		chmod a+x "$filename"
+    if [[ $ext != "txt" && $ext != "json" ]]; then
+      # Make it executable
+  		chmod a+x "$filename"
+    fi
+
 		echo -e "\033[32;1m$filename\033[0m"
 	else # Specified filename already exists
 		echo -e "\033[31;1mFile exists: $filename\033[0m"
@@ -472,7 +478,6 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 	$EDITOR "$filename"
 }
 
-#
 function anybash { echo -n ${1:-blue} | nc -u -c localhost ${2:-1738}; }
 
 function myinfo () {
