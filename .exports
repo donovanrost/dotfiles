@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export EDITOR='$HOME/scripts/editor.sh';
+export EDITOR="$HOME/bin/editor.sh"
 export GEM_HOME="$HOME/.gem"
 # React Native for Android requirements
 export ANDROID_HOME=$HOME/Library/Android/sdk
