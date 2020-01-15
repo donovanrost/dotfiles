@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-# Create a new directory and enter it
-function md() {
-	mkdir -p "$@" && cd "$_" || return;
-}
-
-# Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
-	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
-}
-
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
 function update() {
 	sudo -v
@@ -60,6 +50,16 @@ function updateBrews() {
 	sort -o ~/.dotfiles/.brew/brews.txt ~/.dotfiles/.brew/brews.txt
 }
 
+# Create a new directory and enter it
+function md() {
+	mkdir -p "$@" && cd "$_" || return;
+}
+
+# Change working directory to the top-most Finder window location
+function cdf() { # short for `cdfinder`
+	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
+}
+
 function darkmode() {
   osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 }
@@ -104,6 +104,7 @@ function shells {
   "
 }
 
+# store current directory position, cd to it with 'lastMark'
 function mark {
   wd="`pwd`";
   export lastMark=$wd;
@@ -194,17 +195,6 @@ function dataurl() {
 		mimeType="${mimeType};charset=utf-8";
 	fi
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-}
-
-function localip(){
-	function _localip(){ echo "📶  ""$(ipconfig getifaddr "$1")"; }
-	export -f _localip
-	local purple="\x1B\[35m" reset="\x1B\[m"
-	networksetup -listallhardwareports | \
-		sed -r "s/Hardware Port: (.*)/${purple}\1${reset}/g" | \
-		sed -r "s/Device: (en.*)$/_localip \1/e" | \
-		sed -r "s/Ethernet Address:/📘 /g" | \
-		sed -r "s/(VLAN Configurations)|==*//g"
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
@@ -300,7 +290,13 @@ function o() {
 	fi;
 }
 
-# open Xcode
+## Xcode
+# reset simulators
+simreset(){
+  sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService; xcrun simctl list devices | grep "iPhone\|iPad" | awk '{print $(NF -1)}' | cut -d "(" -f2 | cut -d ")" -f1 | grep -E "^[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}$" | xargs -I {} xcrun simctl erase "{}"
+}
+
+# open project/workspace in current or /ios folder
 function openx(){
   if test -n "$(find . -maxdepth 1 -name '*.xcworkspace' -print -quit)"
   then
@@ -336,6 +332,7 @@ function openx(){
     fi
   fi
 }
+
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
@@ -378,11 +375,6 @@ camerausedby() {
 	echo "Checking to see who is using the iSight camera… 📷"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
 	echo -e "Recent camera uses:\n$usedby"
-}
-
-# reset Xcode simulators
-simreset(){
-  sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService; xcrun simctl list devices | grep "iPhone\|iPad" | awk '{print $(NF -1)}' | cut -d "(" -f2 | cut -d ")" -f1 | grep -E "^[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}$" | xargs -I {} xcrun simctl erase "{}"
 }
 
 function extract {

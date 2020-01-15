@@ -14,6 +14,8 @@ function doIt() {
 		--exclude ".travis.yml" \
 		--exclude "Brewfile" \
 		--exclude "Rakefile" \
+    --exclude "package.json" \
+    --exclude ".gitignore" \
 		-avh --no-perms . ~;
   if [ -n "$ZSH_VERSION" ]; then
      source ~/.zshrc;
