@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo -n anythink | nc -u -c localhost 1738;
-osascript -e 'display notification "hello world!"'
