@@ -313,6 +313,7 @@ alias e="x"
 alias quit="exit"
 alias google="googler"
 alias qr="qrcode-terminal"
+alias any="anybash"
 
 ## Typo
 alias sl="ls"

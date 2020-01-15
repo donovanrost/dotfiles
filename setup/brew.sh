@@ -48,6 +48,7 @@ declare -a dev=(
 	atom
 	android-studio
 	android-platform-tools
+  anybar
 	cakebrew
 	dash
 	docker
@@ -90,6 +91,7 @@ declare -a personal=(
 	yt-music
 	# communication
 	caprine
+  flume
 	telegram
 	whatsapp
 	# gaming
@@ -358,6 +360,7 @@ function masInstall() {
 }
 
 if [ "$1" == "-a" ]; then
+  echo 'All options'
 	brewInstall
 	caskInstall
 	devInstall
@@ -365,6 +368,7 @@ if [ "$1" == "-a" ]; then
 	personalInstall
 	masInstall
 elif [[ "$1" == "-d" ]]; then
+  echo 'Dev install'
 	brewInstall
 	caskInstall
 	devInstall
@@ -376,6 +380,7 @@ elif [[ "$1" == "-p" ]]; then
 elif [[ "$1" == "-m" ]]; then
 	masInstall
 else
+  echo "Default installation"
 	brewInstall
 	caskInstall
 	devInstall

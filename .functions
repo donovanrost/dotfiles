@@ -476,6 +476,9 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 	$EDITOR "$filename"
 }
 
+#
+function anybash { echo -n ${1:-blue} | nc -u -c localhost ${2:-1738}; }
+
 function myinfo () {
   printf "CPU: "
   cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
