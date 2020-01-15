@@ -49,6 +49,11 @@ function mac-cli() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
 }
 
+function locationchanger() {
+  echo "Install location changer" # https://github.com/kyletmiller/locationchanger
+  curl -L https://github.com/kyletmiller/locationchanger/raw/master/locationchanger.sh | bash
+}
+
 if [ "$1" == "-a" ]; then
 	gem
   pip
