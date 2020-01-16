@@ -442,10 +442,6 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 		filename=$filename.$ext
 	fi
 
-  if [[ $ext == "blank" ]]; then
-    filename=${filename#.*}
-  fi
-
 	# if no script with this name already exists
 	if [ ! -f $filename ]; then
 		# create a file for the given extension with appropriate shebang
