@@ -110,7 +110,6 @@ declare -a personal=(
   hazeover
   ndm
 	philips-hue-sync
-	steelseries-engine
   blackhole
   vnc-viewer
 	# storage
