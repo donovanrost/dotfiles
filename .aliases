@@ -7,12 +7,12 @@ alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
 alias setup="cd ~/.dotfiles/setup"
-alias init="setup; source init.sh"
+alias init="source ~/.dotfiles/setup/init.sh"
 alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
 alias brewfile="source ~/.dotfiles/setup/brew.sh"
-alias npmfile='setup; npm install -g $(cat npmfile)'
+alias npmfile='npm install -g $(cat ~/.dotfiles/setup/npmfile)'
 alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
 
@@ -40,12 +40,12 @@ alias bcf="brew cask install -f "
 
 ## Git
 alias gc="git clone "
-alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 alias undopush="git push -f origin HEAD^:master"
 alias push="git push"
 alias pull="git pull"
 alias master="git checkout master"
-
+alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
+alias rmds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch" # Remove all .DS_Store files from a project
 
 ## React
 alias rn='react-native '
@@ -109,7 +109,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
 alias pi='ssh pi@raspberrypi.local'
 
-## Apps (these work without alias: github, sourcetree)
+## Apps (these work without alias: github, sourcetree, atom)
 alias sketch="open -a Sketch"
 alias safari="open -a Safari"
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
@@ -307,6 +307,7 @@ alias bf="brewfile"
 alias nf="npmfile"
 alias pf="pipfile"
 alias f="finder"
+alias fnd="finder"
 alias c="clear"
 alias x="exit"
 alias e="x"

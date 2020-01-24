@@ -22,6 +22,8 @@ function doIt() {
     --exclude "dotbot/" \
     --exclude "dotbot-pip" \
     --exclude "yarn.lock" \
+    --exclude "node_modules/" \
+    --exclude "yarn-error.log" \
 		-avh --no-perms . ~;
   if [ -n "$ZSH_VERSION" ]; then
      source ~/.zshrc;

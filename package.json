@@ -6,6 +6,7 @@
   "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "./setup/bootstrap.sh -f",
+      "install": "npm install -g $(cat ~/.dotfiles/setup/npmfile)",
       "bootstrap": "./setup/bootstrap.sh",
       "brew": "./setup/brew.sh",
       "macos": "./setup/macos.sh",

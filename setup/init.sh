@@ -16,17 +16,17 @@ fi
 
 function gem() {
   echo "Installing gems"
-  bundle install
+  bundle install --gemfile=~/.dotfiles/setup/Gemfile
 }
 
 function pip() {
-  echo "Installing pip requirements"
-  pip install -r requirements.txt
+  echo "Installing pyton requirements"
+  pip install -r ~/.dotfiles/setup/requirements.txt
 }
 
 function npm() {
   echo "Installing npm apps"
-  npm install -g $(cat npmfile)
+  npm install -g $(cat ~/.dotfiles/setup/npmfile)
 }
 
 function nvm() {
@@ -51,7 +51,7 @@ function mac-cli() {
 
 function locationchanger() {
   echo "Install location changer" # https://github.com/kyletmiller/locationchanger
-  curl -L https://github.com/kyletmiller/locationchanger/raw/master/locationchanger.sh | bash
+  curl -L https://github.com/dnnsmnstrr/locationchanger/raw/master/locationchanger.sh | bash
 }
 
 if [ "$1" == "-a" ]; then
@@ -63,6 +63,8 @@ if [ "$1" == "-a" ]; then
   mac-cli
 elif [[ "$1" == "-g" ]]; then
 	gem
+elif [[ "$1" == "-l" ]]; then
+	locationchanger
 elif [[ "$1" == "-n" ]]; then
 	npm
   nvm
@@ -74,7 +76,7 @@ elif [[ "$1" == "-o" ]]; then
   mac-cli
 else
   gem
-  pip
-  npm
+  # pip
+  # npm
 	echo "For specific categories, run again with appropriate flags (-h for more info)"
 fi;
