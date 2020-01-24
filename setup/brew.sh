@@ -198,6 +198,7 @@ declare -a brew=(
 	youtube-dl
 	# system
 	dockutil
+  duti
 	htop
 	mackup
 	pv

@@ -4,10 +4,12 @@
 # Folder view configuration files
 .DS_Store
 Desktop.ini
+.DS_Store?
 
 # Thumbnail cache files
 ._*
 Thumbs.db
+ehthumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
@@ -18,3 +20,4 @@ Thumbs.db
 
 node_modules/
 *.lock
+dotbot/

@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+    - ~/.locations
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  # - [source ./setup/init.sh, Running init]
+  - [source ./setup/bootstrap.sh, Running bootstrap]

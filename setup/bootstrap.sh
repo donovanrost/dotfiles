@@ -5,6 +5,8 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
+    --exclude "install" \
+    --exclude "install.conf.yaml" \
 		--exclude "setup/" \
   	--exclude "docs/" \
 		--exclude "README.md" \
@@ -16,6 +18,10 @@ function doIt() {
 		--exclude "Rakefile" \
     --exclude "package.json" \
     --exclude ".gitignore" \
+    --exclude ".gitmodules" \
+    --exclude "dotbot/" \
+    --exclude "dotbot-pip" \
+    --exclude "yarn.lock" \
 		-avh --no-perms . ~;
   if [ -n "$ZSH_VERSION" ]; then
      source ~/.zshrc;
