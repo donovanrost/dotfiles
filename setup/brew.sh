@@ -359,36 +359,44 @@ function masInstall() {
 	done
 }
 
-if [ "$1" == "-a" ]; then
-  echo 'All options'
-	brewInstall
-	caskInstall
-	devInstall
-	networkInstall
-	personalInstall
-	masInstall
-elif [[ "$1" == "-d" ]]; then
-  echo 'Dev install'
-	brewInstall
-	caskInstall
-	devInstall
-	networkInstall
-elif [[ "$1" == "-n" ]]; then
-	networkInstall
-elif [[ "$1" == "-p" ]]; then
-	personalInstall
-elif [[ "$1" == "-m" ]]; then
-	masInstall
-else
+case $1 in
+  "-a" | "--all" )
+    echo 'All options'
+    brewInstall
+    caskInstall
+    devInstall
+    networkInstall
+    personalInstall
+    masInstall
+    ;;
+  "-d" | "--dev" )
+    echo 'Development install'
+    brewInstall
+    caskInstall
+    devInstall
+    networkInstall
+    ;;
+  "-p" | "--personal" )
+    personalInstall
+    ;;
+  "-m" | "--mas" )
+    masInstall
+    ;;
+  * )
   echo "Default installation"
 	brewInstall
 	caskInstall
 	devInstall
 	echo "For specific categories, run again with appropriate flags (-h for more info)"
-fi;
+    ;;
+esac
 
-echo "Cleaning up homebrew"
+if [[ "$1" == "--dump" ]] || [[ "$2" == "--dump" ]]; then
+  brew bundle dump --force
+elif [[ "$1" == "--doc" ]] || [[ "$2" == "--doc" ]]; then
+  brew doctor
+  brew cask doctor
+else
+  echo "Cleaning up homebrew"
 brew cleanup # Remove outdated versions from the cellar.
-# brew doctor
-# brew cask doctor
-# brew bundle dump --force
+fi;
