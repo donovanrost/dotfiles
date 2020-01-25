@@ -54,6 +54,15 @@ function updateBrews() {
 function md() {
 	mkdir -p "$@" && cd "$_" || return;
 }
+# Create a directory and cd into it (alternate version)
+mcd() {
+    mkdir "${1}" && cd "${1}"
+}
+
+# Jump to directory containing file
+jump() {
+    cd "$(dirname ${1})"
+}
 
 # Change working directory to the top-most Finder window location
 function cdf() { # short for `cdfinder`

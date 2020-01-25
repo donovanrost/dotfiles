@@ -81,6 +81,8 @@
 
   yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
 
+  # update submodules
+  sm = "git submodule update --init --remote"
 [apply]
 
 	# Detect whitespace errors when applying a patch

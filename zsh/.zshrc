@@ -77,12 +77,12 @@ if type brew &>/dev/null; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh_profile
-source ~/.path
-source ~/.extra
-source ~/.exports
-source ~/.aliases
-source ~/.functions
+source ~/.zsh/.zsh_profile
+source ~/.shell/.path
+source ~/.shell/.extra
+source ~/.shell/.exports
+source ~/.shell/.aliases
+source ~/.shell/.functions
 
 # User configuration
 
