@@ -1,17 +1,24 @@
-# Use shell-style glob syntax
-syntax: glob
-
 # Compiled Python files
 *.pyc
 
 # Folder view configuration files
 .DS_Store
 Desktop.ini
+.DS_Store?
 
 # Thumbnail cache files
 ._*
 Thumbs.db
+ehthumbs.db
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Local Brewfile
+# Brewfile
+
+node_modules/
+*.lock
+*.log
+dotbot/

@@ -1,13 +1,15 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+source ~/.bash/bash_prompt
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
+# * ~/.shell/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.shell/.{path,exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+source ~/.extra
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
@@ -84,3 +86,4 @@ export https_proxy=`scutil --proxy | awk '\
   /HTTPSPort/ { port = $3; } \
   END { if (enabled == "1") { print "https://" server ":" port; } }'`
 export HTTPS_PROXY="${https_proxy}"
+export ALL_PROXY="${https_proxy}" # brew uses this

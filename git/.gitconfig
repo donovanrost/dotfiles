@@ -81,6 +81,8 @@
 
   yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
 
+  # update submodules
+  sm = "git submodule update --init --remote"
 [apply]
 
 	# Detect whitespace errors when applying a patch
@@ -205,3 +207,12 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Dennis Muensterer
+	email = dennismuensterer@gmail.com
+	signingkey = 0xDB6E00827839C2D6
