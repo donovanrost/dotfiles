@@ -7,3 +7,7 @@
 	path = dotbot/lib/pyyaml
 	url = https://github.com/yaml/pyyaml
   ignore = dirty
+  
+[submodule "btt/HydroTouch"]
+	path = btt/HydroTouch
+	url = https://github.com/dnnsmnstrr/HydroTouch.git
