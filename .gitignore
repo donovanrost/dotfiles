@@ -21,4 +21,3 @@ ehthumbs.db
 node_modules/
 *.lock
 *.log
-#dotbot/
