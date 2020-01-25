@@ -6,21 +6,22 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/bash:
+    ~/.bash:
       create: true
-      path: .bash/
     ~/.bashrc: bash/bashrc
     ~/bin:
       create: true
     ~/.editorconfig: editor/editorconfig
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore_global
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/.gitignore_global
+    ~/.hyper.js: shell/.hyper.js
     ~/.inputrc: shell/.inputrc
     ~/.shell:
     ~/.vim:
-    ~/.vimrc: editor/.vimrc
+      path: .vim
+    ~/.vimrc: editor/vimrc
     ~/.zsh:
-    ~/.zshrc: zsh/.zshrc
+    ~/.zshrc: zsh/zshrc
 
 - create:
     - ~/.locations

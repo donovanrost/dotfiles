@@ -79,10 +79,10 @@ fi
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/.zsh_profile
 source ~/.shell/.path
-source ~/.shell/.extra
 source ~/.shell/.exports
 source ~/.shell/.aliases
 source ~/.shell/.functions
+source ~/.extra
 
 # User configuration
 

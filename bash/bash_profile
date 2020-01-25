@@ -1,14 +1,15 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-source bash_prompt
+source ~/.bash/bash_prompt
 # Load the shell dotfiles, and then some:
 # * ~/.shell/.path can be used to extend `$PATH`.
-# * ~/.shell/.extra can be used for other settings you don’t want to commit.
-for file in ~/.shell/.{path,exports,aliases,functions,extra}; do
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.shell/.{path,exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+source ~/.extra
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
