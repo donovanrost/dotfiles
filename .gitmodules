@@ -2,11 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-
-[submodule "lib/pyyaml"]
-	path = dotbot/lib/pyyaml
-	url = https://github.com/yaml/pyyaml
-  ignore = dirty
   
 [submodule "btt/HydroTouch"]
 	path = btt/HydroTouch
