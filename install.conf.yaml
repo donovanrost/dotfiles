@@ -11,6 +11,9 @@
     ~/.bashrc: bash/bashrc
     ~/bin:
       create: true
+    ~/.config/fish:
+      create: true
+      path: fish
     ~/.editorconfig: editor/editorconfig
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore_global
