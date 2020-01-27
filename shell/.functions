@@ -351,6 +351,10 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
+function color() {
+  osascript -e 'choose color' | read color; color-converter $(echo $color)
+}
+
 colors() {
 	local X
 	X=$(tput op)
@@ -484,6 +488,16 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 }
 
 function anybash { echo -n ${1:-blue} | nc -u -c localhost ${2:-1738}; }
+
+function star {
+    if [ -n "$ZSH_VERSION" ]; then
+       eval "$(starship init zsh)"
+    elif [ -n "$BASH_VERSION" ]; then
+       eval "$(starship init bash)"
+    else
+       echo 'unknown shell'
+    fi
+}
 
 function myinfo () {
   printf "CPU: "
