@@ -55,11 +55,7 @@ module.exports = {
     css: '',
 
     // custom CSS to embed in the terminal window
-    termCSS: `
-    x-screen x-row {
-        font-variant-ligatures: initial;
-    }
-    `,
+    termCSS: '',
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
@@ -107,7 +103,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/local/bin/bash',
+    shell: '/usr/local/bin/fish',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -150,20 +146,9 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-    // "hyperpower",
-    'hyper-search',
-    'hyper-fading-scrollbar',
-    // "hyper-shellect",
-    'hyper-dark-scrollbar',
-    'hyper-tab-icons',
-    'hyper-systray',
-    'hyperlinks',
-    'hyperterm-close-on-left',
-    'hyperterm-paste',
-    'hyper-ligatures',
-    'hyper-font-ligatures'
-  ],
+  plugins: [// "hyperpower",
+  'hyper-search', 'hyper-fading-scrollbar', // "hyper-shellect",
+  'hyper-dark-scrollbar', 'hyper-tab-icons', 'hyper-systray', 'hyperlinks', 'hyperterm-close-on-left', 'hyperterm-paste', 'hyper-ligatures', 'hyper-font-ligatures', "hyperalfred"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

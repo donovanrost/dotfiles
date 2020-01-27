@@ -9,9 +9,11 @@ gem 'jekyll'
 gem 'facebook-cli'
 gem 'lolcommits'
 gem 'wifi-wand'
+gem 'with_anybar'
 gem 'github-pages', group: :jekyll_plugins
 gem "jekyll-github-metadata"
 gem "jekyll-octicons"
 gem "jemoji"
+
 
 end
