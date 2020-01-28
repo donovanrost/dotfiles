@@ -8,10 +8,11 @@
 - link:
     ~/.bash:
       create: true
-    ~/.bashrc: bash/bashrc
+      path: shell/bash
+    ~/.bashrc: shell/bash/bashrc
     ~/bin:
       create: true
-    ~/.editorconfig: editor/editorconfig
+    ~/.editorconfig: shell/editor/editorconfig
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore_global
     ~/.hyper.js: shell/.hyper.js
@@ -19,16 +20,17 @@
     ~/.shell:
     ~/.vim:
       path: .vim
-    ~/.vimrc: editor/vimrc
+    ~/.vimrc: shell/editor/vimrc
     ~/.zsh:
-    ~/.zshrc: zsh/zshrc
+      path: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
 
 - create:
     - ~/.locations
 
 - shell:
-  # - git submodule sync --recursive
+  - git submodule sync --recursive
   - [git submodule update --init --recursive, Installing submodules]
   - [git submodule update --remote  --recursive, Updating submodules]
   # - [source ./setup/init.sh, Running init]
-  - [source ./setup/bootstrap.sh, Running bootstrap]
+  # - [source ./setup/bootstrap.sh, Running bootstrap]

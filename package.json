@@ -1,13 +1,11 @@
 {
   "name": "dotfiles",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "My dotfiles",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./setup/bootstrap.sh -f",
-    "install": "npm install -g $(cat ~/.dotfiles/setup/npmfile)",
-    "bootstrap": "./setup/bootstrap.sh",
+    "install": "npm install -g $(cat ~/.dotfiles/node/npmfile)",
     "brew": "./setup/brew.sh",
     "macos": "./setup/macos.sh",
     "setup": "./setup/init.sh; ./setup/brew.sh; ./setup/bootstrap.sh"

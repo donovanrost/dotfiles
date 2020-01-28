@@ -12,7 +12,7 @@ alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
 alias brewfile="source ~/.dotfiles/setup/brew.sh"
-alias npmfile='npm install -g $(cat ~/.dotfiles/setup/npmfile)'
+alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
 alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
 
