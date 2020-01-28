@@ -12,15 +12,15 @@ alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
 alias brewfile="source ~/.dotfiles/setup/brew.sh"
-alias npmfile='npm install -g $(cat ~/.dotfiles/setup/npmfile)'
+alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
 alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
 
-# CLI shortcuts
+# Shortcuts
 alias b="brew "
 alias cb="clipboard"
 alias g="git"
-alias y='yarn '
+alias y='yarn ' # Some say I live dangerously aliasing this to 'y'. I say yolo.
 
 # Brew
 alias bi="brew install "
@@ -37,6 +37,7 @@ alias bcl="brew cask list"
 alias bcu="brew cask uninstall "
 alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
+alias fonts="brew cask list | grep 'font-'"
 
 ## Git
 alias gc="git clone "
@@ -88,7 +89,6 @@ alias gi="gem install"
 ## Developing
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
-alias color="color-converter | osascript -e 'choose color'"
 
 ## Networking
 alias ip="curl icanhazip.com"
@@ -317,6 +317,7 @@ alias qr="qrcode-terminal"
 alias quit="exit"
 alias google="googler"
 alias any="anybash"
+alias anybar-icons="ls ~/.AnyBar/*.png | cut -d"/" -f 5 | cut -d"." -f 1"
 alias newfile="newscript"
 
 ## Typo

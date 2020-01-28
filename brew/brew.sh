@@ -22,6 +22,7 @@ fi
 declare -a cask=(
 	# utility
 	aerial
+  alfred
 	barrier
 	bettertouchtool
 	google-chrome
