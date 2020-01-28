@@ -1,5 +1,3 @@
-
-
 # Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles)
 
 > These are my dotfiles. There are many like them, but these are mine.
@@ -11,10 +9,10 @@ My BTT setup basically makes my computer unusable for anyone other than myself, 
 ![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)
 xkcd ([#1806](https://xkcd.com/1806/))
 
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Installation](#installation)
   - [Using Git and the bootstrap script](#using-git-and-the-bootstrap-script)
@@ -112,6 +110,7 @@ When setting up a new Mac, you may want to install some common [Homebrew](https:
 ```bash
 ./.dotfiles/setup/brew.sh
 ```
+
 (aliases)
 
 Some of the functionality of these dotfiles depends on formulae installed by `brew.sh`. If you don’t plan to run `brew.sh`, you should look carefully through the script and manually install any particularly important ones. A good example is Bash/Git completion: the dotfiles use a special version from Homebrew.

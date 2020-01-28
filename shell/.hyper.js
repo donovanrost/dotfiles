@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Fira Code, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -55,7 +55,11 @@ module.exports = {
     css: '',
 
     // custom CSS to embed in the terminal window
-    termCSS: '',
+    termCSS: `
+    x-screen x-row {
+        font-variant-ligatures: initial;
+    }
+    `,
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
@@ -88,7 +92,7 @@ module.exports = {
       lightBlue: '#6A76FB',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
-      lightWhite: '#FFFFFF',
+      lightWhite: '#FFFFFF'
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -103,7 +107,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: '/usr/local/bin/bash',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -135,7 +139,7 @@ module.exports = {
 
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
-    webGLRenderer: true,
+    webGLRenderer: false
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
@@ -146,7 +150,20 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+    // "hyperpower",
+    'hyper-search',
+    'hyper-fading-scrollbar',
+    // "hyper-shellect",
+    'hyper-dark-scrollbar',
+    'hyper-tab-icons',
+    'hyper-systray',
+    'hyperlinks',
+    'hyperterm-close-on-left',
+    'hyperterm-paste',
+    'hyper-ligatures',
+    'hyper-font-ligatures'
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -156,5 +173,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  },
-};
+  }
+}
