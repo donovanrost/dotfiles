@@ -1,7 +1,7 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-source ~/.bash/bash_prompt
+source ~/.shell/bash/bash_prompt
 # Load the shell dotfiles, and then some:
 # * ~/.shell/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

@@ -4,6 +4,7 @@
   "description": "My dotfiles",
   "main": "index.js",
   "scripts": {
+    "start": "./install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm install -g $(cat ~/.dotfiles/node/npmfile)",
     "brew": "./setup/brew.sh",

@@ -6,9 +6,6 @@
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.bash:
-      create: true
-      path: shell/bash
     ~/.bashrc: shell/bash/bashrc
     ~/bin:
       create: true
@@ -21,8 +18,6 @@
     ~/.vim:
       path: .vim
     ~/.vimrc: shell/editor/vimrc
-    ~/.zsh:
-      path: shell/zsh
     ~/.zshrc: shell/zsh/zshrc
 
 - create:

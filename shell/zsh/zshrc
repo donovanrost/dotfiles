@@ -77,7 +77,7 @@ if type brew &>/dev/null; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/.zsh_profile
+source ~/.shell/zsh/.zsh_profile
 source ~/.shell/.path
 source ~/.shell/.exports
 source ~/.shell/.aliases
