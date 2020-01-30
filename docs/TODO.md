@@ -2,29 +2,30 @@
 
 - Install Command Line Tools: `xcode-select --install`
 
-- clone this project and run the bootstrap script
+- clone this project and run the [dotbot]() [install]() script ~~bootstrap script~~ (deprecated)
 
 ```bash
-git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source ./install
 ```
 
-- Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/.brew/brew.sh)
+- Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew/brew.sh)
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https:/raw.githubusercontent.com/Homebrew/install/master/install)"
-&& cd dotfiles && source brew.sh
+&& cd dotfiles && source ./brew/brew.sh
 ```
 
-- Install [BTT](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/dotfiles/tree/master/bettertouchtool/HydroTouch)
+- Install [BetterTouchTool](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/HydroTouch)
 
 - [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
 
-- [Create .path and .extra files in your root directory for path variables and confidential configs](README.md)
+- [Create .path and .extra files in your root directory for path variables and confidential configs](../README.md#add-custom-commands-without-creating-a-new-fork)
 
 - [Restore Backup from Atom Sync-Settings](https://atom.io/packages/sync-settings)
 
   - [create access token](https://github.com/settings/tokens/new)
   - Gist ID is `92968648b5ea54edbee216e87e52c15e`
+
 
 - run `mackup` if you have used it to back up settings
 
@@ -32,7 +33,7 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source bo
 
 - [Add SSH keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
 
-* init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage)
+<!-- * init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage) -->
 
 # init
 
@@ -61,8 +62,7 @@ The init script will:
 
 # Adding Apps, Aliases or Functions
 
-To maintain the list of your installed apps, add them to their corresponding place in [`brew.sh`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.brew/brew.sh). Aliases and functions can be added to their respective files.
-After changing any of these files, remember to run [`bootstrap.sh`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.setup/bootstrap.sh), which can be done most quickly with the alias [`sd`](https://github.com/dnnsmnstrr/dotfiles/blob/43094a112e0fd11fbda5eff82b408f3071e2c976/.aliases#L17) (source dotfiles).
+To maintain the list of your installed apps, add them to their corresponding place in [`brew.sh`](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew/brew.sh). Aliases and functions can be added to their respective files.
 
 # Updating
 

@@ -1,4 +1,10 @@
-anybar-cli
+alfred-atom
+alfred-emoj
+alfred-gitlab
+alfred-loremipsum
+alfred-npms
+alfred-updater
+alfred-xcode
 castnow
 clipboard-cli
 devquote
@@ -32,7 +38,8 @@ vaca
 xclap-cli
 yarn-completions
 yo
-generator-rn-toolbox
+generator-alfred
 generator-electrode
 generator-electron
 generator-license
+generator-rn-toolbox

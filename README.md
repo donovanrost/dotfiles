@@ -3,7 +3,7 @@
 > These are my dotfiles. There are many like them, but these are mine.
 
 Since [dotfiles](https://dotfiles.github.io) are very personal, I would not recommend just installing mine. Take a look and get inspiration, but there are better places to start off from. (such as the repo this one is forked from)
-I do recommend checking out my [preset](bettertouchtool/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is an extension to [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) by [@yuuiko](https://github.com/yuuiko), which I also highly recommend.
+I do recommend checking out my [preset](https://github.com/dnnsmnstrr/HydroTouch) for [BetterTouchTool](https://folivora.ai)! It is an extension to [AquaTouch](https://community.folivora.ai/c/setup-preset-sharing/aquatouch) by [@yuuiko](https://github.com/yuuiko), which I also highly recommend.
 My BTT setup basically makes my computer unusable for anyone other than myself, which can certainly cause situations like this:
 
 ![If used with software that could keep up, a scroll wheel mapped to send a stream of 'undo' and 'redo' events could be kind of cool.](https://imgs.xkcd.com/comics/borrow_your_laptop.png)

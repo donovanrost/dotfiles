@@ -145,6 +145,7 @@ declare -a brew=(
 	# version control
 	git
 	hub
+  git-gui
 	git-lfs
   git-standup
 	gibo
