@@ -55,11 +55,7 @@ module.exports = {
     css: '',
 
     // custom CSS to embed in the terminal window
-    termCSS: `
-    x-screen x-row {
-        font-variant-ligatures: initial;
-    }
-    `,
+    termCSS: '',
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
@@ -107,7 +103,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '/usr/local/bin/bash',
+    shell: '/usr/local/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used

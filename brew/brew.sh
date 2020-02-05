@@ -22,7 +22,9 @@ fi
 declare -a cask=(
 	# utility
 	aerial
-	barrier
+  anybar
+  bitbar
+  barrier
 	bettertouchtool
 	google-chrome
 	keyboardcleantool
@@ -48,7 +50,6 @@ declare -a dev=(
 	atom
 	android-studio
 	android-platform-tools
-  anybar
 	cakebrew
 	dash
 	docker
@@ -148,7 +149,8 @@ declare -a brew=(
   git-gui
 	git-lfs
   git-standup
-	gibo
+  github/gh/gh
+  gibo
 	#dev
   applesimutils
   arduino-cli
