@@ -40,12 +40,17 @@ function font() {
 	brew cask install "${fontName}";
 }
 
+# show a color picker and copy the selection to clipboard as hex value
+function color() {
+  osascript -e 'choose color' | read color; color-converter $(echo $color)
+}
+
 function addBrew() {
 	if brew ls --versions $1 > /dev/null; then
 		echo "$1 is already installed"
 	else
 		brew install $1
-		echo "$1" >> ~/.dotfiles/.brew/brews.txt
+		echo "$1" >> ~/.dotfiles/brew/brews.txt
 		sort -o ~/.dotfiles/.brew/brews.txt ~/.dotfiles/.brew/brews.txt
 	fi
 }
@@ -98,6 +103,16 @@ function scpt {
       osacompile -o "`basename -s .applescript "$f"`.scpt" "$f"
       rm "$f"
   done
+}
+
+function star {
+if [ -n "$ZSH_VERSION" ]; then
+   eval "$(starship init zsh)"
+elif [ -n "$BASH_VERSION" ]; then
+   eval "$(starship init bash)"
+else
+   echo 'unknown shell'
+fi
 }
 
 function shells {

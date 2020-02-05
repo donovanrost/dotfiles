@@ -14,14 +14,27 @@ valueInRange() {
   fi
 }
 
+# Check that a value is in range 0-65535.
+ valueInLargeRange() {
+   if (($1 >= 0 && $1 <= 65535)); then
+     return 0
+   else
+     return 1
+   fi
+ }
+
 # Convert a color in RGB to a hexadecimal value.
 rgbToHex() {
-  if valueInRange $1 && valueInRange $2 && valueInRange $3; then
-    printf "rgb($1, $2, $3) -> #%02X%02X%02X\n" $1 $2 $3
-  else
-    rangeError
-  fi
-}
+   printf "rgb($1, $2, $3) -> "
+   if valueInRange $1 && valueInRange $2 && valueInRange $3; then
+     printf "#%02X%02X%02X" $1 $2 $3 | tee >(pbcopy) | cat
+   elif valueInLargeRange $1 && valueInLargeRange $2 && valueInLargeRange $3; then
+     printf "#%02X%02X%02X" "$(expr $1 / 256)" "$(expr $2 / 256)" "$(expr $3 / 256)" | tee >(pbcopy) | cat
+   else
+     rangeError		     rangeError
+   fi
+   printf "\n"
+ }
 
 # Darken a RGB color by percentage
 darkenRgb() {
@@ -79,7 +92,7 @@ rangeError() {
 
 # Determine if we should run rgbToHex, hexToRgb or simply throw an error.
 if [[ "$#" == 3 ]]; then
-  rgbToHex $1 $2 $3
+  rgbToHex "$(echo "$1" | sed 's/,//')" "$(echo "$2" | sed 's/,//')" $3
 elif [[ "$#" == 1 ]]; then
   hexToRgb $1
 elif [[ "$#" == 4 ]]; then
