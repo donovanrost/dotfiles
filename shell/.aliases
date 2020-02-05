@@ -11,7 +11,7 @@ alias init="source ~/.dotfiles/setup/init.sh"
 alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/bettertouchtool"
-alias brewfile="source ~/.dotfiles/setup/brew.sh"
+alias brewfile="source ~/.dotfiles/brew/brew.sh"
 alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
 alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
@@ -65,7 +65,7 @@ alias yrm='ycc; rm -rf node_modules; yi'
 alias ycc='yarn cache clean'
 alias yag='yarn global add'
 
-alias gh='gh-home'
+# alias gh='gh-home'
 alias nhg='npm-home -g'
 alias nhy='npm-home -y'
 
