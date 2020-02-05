@@ -31,8 +31,9 @@ function update() {
 }
 
 function sleeptimer() {
-  echo "+$1" | sudo shutdown -s
+  sudo shutdown -s +$1
 }
+
 # Install font using brew cask
 function font() {
 	local fontName="font-${*}";
