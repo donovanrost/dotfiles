@@ -10,6 +10,9 @@
     ~/bin:
       create: true
     ~/.editorconfig: shell/editor/editorconfig
+    ~/.config/fish:
+       create: true
+       path: shell/fish
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore_global
     ~/.hyper.js: shell/.hyper.js
