@@ -98,6 +98,7 @@ declare -a personal=(
 	retroarch
 	steam
 	# media
+  calibre
 	downie
 	emojipedia
 	iina
