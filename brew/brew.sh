@@ -48,6 +48,7 @@ declare -a cask=(
 declare -a dev=(
 	arduino
 	atom
+  adoptopenjdk8
 	android-studio
 	android-platform-tools
 	cakebrew
@@ -100,6 +101,7 @@ declare -a personal=(
 	retroarch
 	steam
 	# media
+  calibre
 	downie
 	emojipedia
 	iina
@@ -304,6 +306,7 @@ function brewInstall() {
 	brew tap homebrew/cask-drivers
 	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
+  brew tap AdoptOpenJDK/openjdk
   brew tap buo/cask-upgrade
   brew tap lukakerr/things
   brew tap wix/brew
