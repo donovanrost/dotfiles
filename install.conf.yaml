@@ -13,8 +13,9 @@
     ~/.config/fish:
        create: true
        path: shell/fish
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore: git/.gitignore_global
+    ~/.gitconfig: git/gitconfig
+    ~/.gitattributes: git/gitattributes
+    ~/.gitignore: git/gitignore_global
     ~/.hyper.js: shell/.hyper.js
     ~/.inputrc: shell/.inputrc
     ~/.shell:

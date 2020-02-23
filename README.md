@@ -1,4 +1,4 @@
-# Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles)
+# Dennis’s dotfiles [![Build Status](https://travis-ci.com/dnnsmnstrr/dotfiles.svg?branch=master)](https://travis-ci.com/dnnsmnstrr/dotfiles) ![GitHub language count](https://img.shields.io/github/languages/count/dnnsmnstrr/dotfiles) [![Twitter Follow](https://img.shields.io/twitter/follow/dnnsmnstrr?style=social)](https://twitter.com/dnnsmnstrr)
 
 > These are my dotfiles. There are many like them, but these are mine.
 

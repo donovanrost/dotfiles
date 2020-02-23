@@ -151,7 +151,7 @@ function restart() {
 
 # Git clone and cd into new directory
 function gcd() {
-	git clone "$1" && cd "$(basename "$1" .git)" || return
+  git clone "$1" && cd $(basename $_ .git)
 }
 
 # Git clone from clipboard

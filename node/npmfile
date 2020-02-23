@@ -13,6 +13,7 @@ expo-cli
 fkill
 file-icon-cli
 gh-home
+git-open
 is-up-cli
 move-file-cli
 npm-check

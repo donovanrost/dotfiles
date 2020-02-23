@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-### Aliases
 
-alias listaliases="alias | sed 's/=.*//'"
-alias listfunctions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
+# Aliases
+alias aliases="alias | sed 's/=.*//'"
+alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
@@ -16,12 +16,8 @@ alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
 alias pipfile="setup; pip install -r requirements.txt"
 alias extra="open -e ~/.extra"
 
-# CLI shortcuts
-alias b="brew "
-alias cb="clipboard"
-alias g="git"
-
 # Brew
+alias b="brew "
 alias bi="brew install "
 alias br="brew reinstall "
 alias bu="brew uninstall "
@@ -38,14 +34,17 @@ alias bcr="brew cask reinstall "
 alias bcf="brew cask install -f "
 
 ## Git
+alias g="git"
 alias gc="git clone "
 alias undopush="git push -f origin HEAD^:master"
-alias push="git push"
-alias pull="git pull"
 alias master="git checkout master"
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 alias rmds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch" # Remove all .DS_Store files from a project
 alias cdgr='cd "$(git root)"' # cd to git root directory
+
+for method in clone checkout pull push; do
+	alias "${method}"="git '${method}'"
+done
 
 ## React
 alias rn='react-native '
@@ -98,11 +97,6 @@ alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias captive="curl -s 'http://captive.apple.com'"
 
-# HTTPie aliases
-alias GET='http'
-alias POST='http POST'
-alias HEAD='http HEAD'
-
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
@@ -110,9 +104,11 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
 alias pi='ssh pi@raspberrypi.local'
 
-## Apps (these work without alias: github, sourcetree, atom)
-alias sketch="open -a Sketch"
-alias safari="open -a Safari"
+## Apps (these work without alias: github, sourcetree, atom, hyper)
+for method in arduino barrier bettertouchtool notes slack sketch safari terminal trello whatsapp xcode; do
+	alias "${method}"="open -a '${method}'"
+done
+
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias a="atom ."
 alias ad="atom --dev"
@@ -296,8 +292,6 @@ alias reload='exec ${SHELL} -l'
 
 # Print each PATH entry on a separate line
 alias paths='echo -e ${PATH//:/\\n}'
-alias aliaslist="alias | sed 's/=.*//'"
-alias functionlist="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 
 # Convenience
 alias please="sudo"
@@ -318,6 +312,7 @@ alias quit="exit"
 alias google="googler"
 alias any="anybash"
 alias newfile="newscript"
+alias ns="newscript"
 
 ## Typo
 alias sl="ls"
@@ -326,7 +321,7 @@ alias brw="brew"
 alias fsh="fish"
 alias brwe="brew"
 alias gti="git"
-alias yearn="yarn"
+alias yaern="yarn"
 
 ## lol
 
@@ -335,7 +330,8 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume output volume 100'"
 
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
-alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias tableflip="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias tf="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
 
 # alias wtf='hint'
@@ -362,4 +358,26 @@ alias cya='reboot'
 alias kthxbai='halt'
 # https://github.com/busyloop/lolcat
 alias cowcat='fortune | cowsay | lolcat'
-alias devcat='devquote | cowsay | lolcat'
+alias devcow='devquote | cowsay | lolcat'
+# https://gist.github.com/graceavery/01ec404e555571a4a668c271c8f62e8b
+alias accio=wget
+alias avadaKedavra='rm -f'
+alias imperio=sudo
+alias priorIncantato='echo `history |tail -n2 |head -n1` | sed "s/[0-9]* //"'
+alias stupefy='sleep 5'
+alias lumos="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to false'"
+alias nox="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to true'"
+alias wingardiumLeviosa=mv
+alias sonorus='set -v'
+alias quietus='set +v'
+alias colloportus='openssl enc -aes-256-cbc'  # locking spell!  $colloportus -in unencryptedName -out encryptedName
+alias alohamora='openssl enc -d -aes-256-cbc'  # unlocking spell!  $alohamora -in encryptedName -out unencryptedName
+alias reducio='zip -r'  # $reducio zippedName thingToZip
+alias engorgio=unzip  # $engorgio zippedName
+alias legilimens='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'  # see the hidden thoughts!
+alias occlumens='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'  # keep hidden things hidden!
+alias obliviate='history -c; history -w'  # clear bash history
+alias obscuro='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'  # lock screen
+alias tergeo='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'  # makes surfaces clean!
+alias untergeo='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'  # (this one isn't canon)
+alias expectoPatronum='nyan'  # summon your spirit animal!

@@ -3,7 +3,7 @@
 # Apps to install
 # Categorized into brew, general casks, developer, personal and mac app store apps
 
-if [ "$1" == "-h" ] ; then
+if [ "$1" '==' "-h" ] ; then
 	echo "Usage: brewfile"
 	echo "Options: "
 	echo "-h  Show this message"
@@ -46,6 +46,7 @@ declare -a cask=(
 
 # Apps for development (-d)
 declare -a dev=(
+  adoptopenjdk8
 	arduino
 	atom
 	android-studio
@@ -307,6 +308,7 @@ function brewInstall() {
   brew tap buo/cask-upgrade
   brew tap lukakerr/things
   brew tap wix/brew
+  brew tap AdoptOpenJDK/openjdk
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 	# Switch to using brew-installed bash as default shell
