@@ -14,6 +14,7 @@ fkill
 file-icon-cli
 gh-home
 git-open
+gitbook-cli
 is-up-cli
 move-file-cli
 npm-check
@@ -34,6 +35,7 @@ spoof
 stargazed
 starring
 svgo
+svgexport
 tldr
 vaca
 @rafaelrinaldi/whereami

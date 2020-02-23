@@ -2,10 +2,9 @@
 
 export EDITOR="$HOME/bin/editor.sh"
 export GEM_HOME="$HOME/.gem"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_242)
 # React Native for Android requirements
 export ANDROID_HOME=$HOME/Library/Android/sdk
-
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
 # Allow 32³ entries; the default is 1000.
