@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$1" == "-h" ] ; then
+if [ "$1" '==' "-h" ] ; then
 	echo "Usage: init"
 	echo "Options: "
 	echo "-h  Show this message"
@@ -16,17 +16,21 @@ fi
 
 function gem() {
   echo "Installing gems"
-  bundle install --gemfile=~/.dotfiles/setup/Gemfile
+  bundle install --gemfile=~/.dotfiles/gem/Gemfile
+}
+
+function gitlab() {
+  echo "Installing gitlab-cli"
+  curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh | sudo bash
 }
 
 function pip() {
-  echo "Installing pyton requirements"
-  pip install -r ~/.dotfiles/setup/requirements.txt
+  cat ~/.dotfiles/setup/requirements.txt | xargs -n 1 pip install
 }
 
 function npm() {
   echo "Installing npm apps"
-  npm install -g $(cat ~/.dotfiles/setup/npmfile)
+  cat ~/.dotfiles/node/npmfile | xargs -n 1 npm install -g
 }
 
 function nvm() {
@@ -41,7 +45,8 @@ function omz() {
 
 function omf() {
   echo "Installing oh-my-fish"
-  curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+  curl -L https://get.oh-my.fish | fish
+  omf install brew fish-spec hub osx weather cd fonts node spark xcode config gh omf tab z
 }
 
 function mac-cli() {
@@ -54,29 +59,44 @@ function locationchanger() {
   curl -L https://github.com/dnnsmnstrr/locationchanger/raw/master/locationchanger.sh | bash
 }
 
-if [ "$1" == "-a" ]; then
+case $1 in
+  "-a" | "--all" )
+    echo 'All options'
+    gem
+    pip
+    npm
+    omz
+    omf
+    mac-cli
+    ;;
+  "-f" | "--fish" )
+    omf
+    ;;
+  "-g" | "--gitlab" )
+    gitlab
+    ;;
+  "-l" | "--location" )
+    locationchanger
+    ;;
+  "-n" | "--node" )
+    npm
+    nvm
+    ;;
+  "-o" | "--other" )
+    omz
+    omf
+    mac-cli
+    ;;
+  "-p" | "--python" )
+    pip
+    ;;
+  * )
+  echo "Default initialization"
 	gem
   pip
   npm
-  omz
-  omf
-  mac-cli
-elif [[ "$1" == "-g" ]]; then
-	gem
-elif [[ "$1" == "-l" ]]; then
-	locationchanger
-elif [[ "$1" == "-n" ]]; then
-	npm
-  nvm
-elif [[ "$1" == "-p" ]]; then
-	pip
-elif [[ "$1" == "-o" ]]; then
-	omz
-  omf
-  mac-cli
-else
-  gem
-  # pip
-  # npm
 	echo "For specific categories, run again with appropriate flags (-h for more info)"
-fi;
+    ;;
+esac
+
+return

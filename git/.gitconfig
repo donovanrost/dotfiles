@@ -216,3 +216,5 @@
 	name = Dennis Muensterer
 	email = dennismuensterer@gmail.com
 	signingkey = 0xDB6E00827839C2D6
+[gpg]
+	program = gpg2

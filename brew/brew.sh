@@ -22,6 +22,7 @@ fi
 declare -a cask=(
 	# utility
 	aerial
+  alfred
   anybar
   bitbar
   barrier
@@ -107,9 +108,11 @@ declare -a personal=(
 	emojipedia
 	iina
 	kodi
-	musaicfm
   obs
-	# utilities
+  # screensavers
+  brooklyn
+	musaicfm
+  # utilities
 	duet
   hazeover
   ndm
