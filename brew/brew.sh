@@ -3,7 +3,7 @@
 # Apps to install
 # Categorized into brew, general casks, developer, personal and mac app store apps
 
-if [ "$1" == "-h" ] ; then
+if [ "$1" '==' "-h" ] ; then
 	echo "Usage: brewfile"
 	echo "Options: "
 	echo "-h  Show this message"
@@ -22,6 +22,7 @@ fi
 declare -a cask=(
 	# utility
 	aerial
+  alfred
   anybar
   bitbar
   barrier
@@ -106,9 +107,11 @@ declare -a personal=(
 	emojipedia
 	iina
 	kodi
-	musaicfm
   obs
-	# utilities
+  # screensavers
+  brooklyn
+	musaicfm
+  # utilities
 	duet
   hazeover
   ndm

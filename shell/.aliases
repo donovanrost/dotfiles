@@ -46,6 +46,7 @@ alias master="git checkout master"
 alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
 alias rmds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch" # Remove all .DS_Store files from a project
 alias cdgr='cd "$(git root)"' # cd to git root directory
+alias depp='git '
 
 ## React
 alias rn='react-native '
