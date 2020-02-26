@@ -6,6 +6,7 @@
 - clean: ['~', '~/.config']
 
 - link:
+    ~/Library/Application Support/Alfred/Alfred.alfredpreferences: alfred
     ~/.bashrc: shell/bash/bashrc
     ~/bin:
       create: true
@@ -26,6 +27,7 @@
 
 - create:
     - ~/.locations
+    - ~/.hushlogin
 
 - shell:
   - git submodule sync --recursive
