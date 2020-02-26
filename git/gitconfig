@@ -91,7 +91,7 @@
 [core]
   editor = atom --wait
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/dennismuensterer/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -140,7 +140,7 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
-  template = ~/.gitcommit
+	template = ~/.gitcommit
 
 [diff]
 
@@ -203,7 +203,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -214,5 +214,7 @@
 	smudge = git-lfs smudge -- %f
 [user]
 	name = Dennis Muensterer
-	email = dennismuensterer@gmail.com
-	signingkey = 0xDB6E00827839C2D6
+	email = dm@hpm.agency
+	signingkey = 0x2DCF054C01E8A6C8
+[gpg]
+	program = gpg2
