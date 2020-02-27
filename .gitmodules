@@ -5,3 +5,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "alfred/workflows"]
+	path = alfred/workflows
+	url = git@github.com:dnnsmnstrr/workflows.git
