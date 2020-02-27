@@ -214,7 +214,7 @@
 	smudge = git-lfs smudge -- %f
 [user]
 	name = Dennis Muensterer
-	email = dm@hpm.agency
-	signingkey = 0x2DCF054C01E8A6C8
+	email = dennismuensterer@gmail.com
+	signingkey = 0xDB6E00827839C2D6
 [gpg]
 	program = gpg2
