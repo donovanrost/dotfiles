@@ -4,6 +4,7 @@ if [ "$1" '==' "-h" ] ; then
 	echo "Usage: init"
 	echo "Options: "
 	echo "-h  Show this message"
+  echo "-d  Set default AppleShowAllFiles"
 	echo "-a  Install all the options (gem, pip, npm, nvm, oh-my-zsh, oh-my-fish)"
 	echo "-g  Install Gemfile"
 	echo "-n  Install node apps & nvm"
@@ -13,6 +14,34 @@ elif [ "$#" -gt 1 ]; then
 	echo "Too many parameters"
 	return
 fi
+
+function defaults {
+  info 'Setting default apps.'
+
+  # General extensions
+  # for ext in {aac,avi,f4v,flac,m4a,m4b,mkv,mov,mp3,mp4,mpeg,mpg,part,wav,webm}; do duti -s io.mpv "${ext}" all; done # Media
+  # for ext in {7z,bz2,gz,rar,tar,tgz,zip}; do duti -s com.aone.keka "${ext}" all; done # Archives
+  # for ext in {cbr,cbz}; do duti -s com.richie.YACReader "${ext}" all; done # Image archives
+  # for ext in {md,txt}; do duti -s pro.writer.mac "${ext}" all; done # Text
+  # for ext in {css,js,json,php,pug,py,rb,sh}; do duti -s com.microsoft.VSCode "${ext}" all; done # Code
+
+  # Affinity apps (use beta versions when possible)
+  # Whenever a stable is more recent than the beta, the beta cannot be used, so we need to detect which is latest and always use that
+  local afd_id='com.seriflabs.affinitydesigner'
+  # local afp_id='com.seriflabs.affinityphoto'
+
+  local afd_location="$(mdfind kMDItemCFBundleIdentifier = "${afd_id}")"
+  # local afp_location="$(mdfind kMDItemCFBundleIdentifier = "${afp_id}")"
+
+  local afd_version="$(mdls -raw -name kMDItemVersion "${afd_location}")"
+  # local afp_version="$(mdls -raw -name kMDItemVersion "${afp_location}")"
+
+  [[ "${afd_version}" == "${afdbeta_version}" ]] && local afd_latest="${afd_id}" || local afd_latest="${afdbeta_id}"
+  # [[ "${afp_version}" == "${afpbeta_version}" ]] && local afp_latest="${afp_id}" || local afp_latest="${afpbeta_id}"
+
+  for ext in {afdesign,eps}; do duti -s "${afd_latest}" "${ext}" all; done
+  # for ext in {afphoto,psd}; do duti -s "${afp_latest}" "${ext}" all; done
+}
 
 function gem() {
   echo "Installing gems"
@@ -68,6 +97,9 @@ case $1 in
     omz
     omf
     mac-cli
+    ;;
+  "-d" | "--defaults" )
+    defaults
     ;;
   "-f" | "--fish" )
     omf

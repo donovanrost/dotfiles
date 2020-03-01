@@ -103,6 +103,7 @@ declare -a personal=(
 	retroarch
 	steam
 	# media
+  apple-events
   calibre
 	downie
 	emojipedia
