@@ -47,32 +47,34 @@ declare -a cask=(
 
 # Apps for development (-d)
 declare -a dev=(
-  adoptopenjdk8
-	arduino
+  # IDE
+  arduino
 	atom
-  adoptopenjdk8
 	android-studio
+  eclipse-java
+  sublime-text
+  visual-studio-code
+  # VCS
+  github
+  sourcetree
+  # CLI
+  hyper
+  iterm2
+  # DB
+  sequel-pro
+  # tools
 	android-platform-tools
-	cakebrew
-	dash
+  adoptopenjdk8
+  java
 	docker
-	eclipse-java
   fastlane
-	github
-	google-chrome
 	gpg-suite-no-mail
-	hyper
 	isimulator
-	iterm2
-	java
+  react-native-debugger
+  # network
 	postman
+  # communication
 	slack
-	sourcetree
-	sublime-text
-	touch-bar-simulator
-	react-native-debugger
-	visual-studio-code
-	wwdc
 	zoomus
 	# design
 	sketch-toolbox
@@ -80,6 +82,9 @@ declare -a dev=(
 	kap
 	noun-project
   pine
+  # resources
+  dash
+  wwdc
 )
 
 # Apps that don't have much professional use (mostly entertainment) (-p)
@@ -114,6 +119,7 @@ declare -a personal=(
   brooklyn
 	musaicfm
   # utilities
+  cakebrew
 	duet
   hazeover
   ndm
