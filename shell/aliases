@@ -78,6 +78,8 @@ alias nr='npm run'
 alias ns='npm start'
 alias nrm='rm -rf node_modules && npm install'
 alias npl='npm list --global --depth=0'
+# npx
+alias cra='npx create-react-app '
 
 alias p="pip"
 alias pi="pip install "
