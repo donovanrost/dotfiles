@@ -135,6 +135,32 @@ function shells {
   "
 }
 
+function shellswitch {
+  case $1 in
+    "bash" | "bsh" | "b" | "-b")
+      SHELL=/bin/bash
+    ;;
+    "fish" | "fsh" | "f" | "-f")
+      SHELL=$(brew --prefix)/bin/fish
+    ;;
+    "zsh" | "z" | "-z")
+      SHELL=$(brew --prefix)/bin/zsh
+    ;;
+    *)
+      if [ -n "$ZSH_VERSION" ]; then
+         SHELL=$(brew --prefix)/bin/fish
+      elif [ -n "$BASH_VERSION" ]; then
+         SHELL=zsh
+      elif [ -n "$FISH_VERSION" ]; then
+         SHELL=$(brew --prefix)/bin/zsh
+      else
+         SHELL=/bin/bash
+      fi
+    ;;
+  esac
+  chsh -s $SHELL
+}
+
 # store current directory position, cd to it with 'lastMark'
 function mark {
   wd="`pwd`";
