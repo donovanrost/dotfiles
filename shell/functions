@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Functions
+alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'" # show non _prefixed functions
+
 # Get macOS Software and App Store Updates, update installed Ruby gems, Homebrew, npm, and their installed packages
 function update() {
 	sudo -v

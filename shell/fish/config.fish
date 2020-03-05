@@ -1,6 +1,6 @@
-# ~/.config/fish/config.fish
+# fish config
 
-# source ~/.config/fish/path.fish
+source ~/.dotfiles/shell/profile
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
 
