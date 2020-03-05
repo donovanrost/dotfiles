@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+# Profile - basic aliases shared among shells
+
+# Directories
+alias db="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias dev="cd ~/Developer"
+alias doc="cd ~/Documents"
+alias finder="open ."
+# Show/hide hidden files
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Dotfiles
+alias dotfiles="atom ~/.dotfiles"
+alias setup="cd ~/.dotfiles/setup"
+alias init="source ~/.dotfiles/setup/init.sh"
+alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
+alias macos="source ~/.dotfiles/setup/macos"
+alias btt="open ~/.dotfiles/btt"
+alias brewfile="source ~/.dotfiles/brew/brew.sh"
+alias pipfile="setup; pip install -r requirements.txt"
+alias extra="open -e ~/.extra"
+
+# Brew
+alias b="brew "
+alias bi="brew install "
+alias br="brew reinstall "
+alias bu="brew uninstall "
+alias bl="brew link "
+alias bs="brew search "
+alias blo="brew link --overwrite "
+alias bcd="brew cask doctor"
+alias bch="brew cask home "
+alias bci="brew cask install "
+alias bcf="brew cask install -f"
+alias bcl="brew cask list"
+alias bcu="brew cask uninstall "
+alias bcr="brew cask reinstall "
+alias bcf="brew cask install -f "
+
+# Editor
+alias a="atom ."
+alias ad="atom --dev"
+alias al="apm link"
+alias c.="code ."
+
+## Git
+alias g="git"
+alias gc="git clone "
+alias undopush="git push -f origin HEAD^:master"
+alias master="git checkout master"
+alias ungit="find . -name '.git' -exec rm -rf {} \;" # Remove git from a project
+alias rmds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch" # Remove all .DS_Store files from a project
+alias depp='git '
+
+## React
+alias rn='react-native '
+alias rnri='react-native run-ios'
+alias rnra='react-native run-android'
+alias rnrn='rnri; rnra'
+
+# Yarn
+alias y='yarn '  # Some say I live dangerously aliasing this to 'y'. I say yolo.
+alias yi='yarn install '
+alias ya='yarn add '
+alias yp='yarn pods'
+alias ys='yarn start'
+alias yt='yarn test'
+alias yr='y; yp; ys'
+alias yrm='ycc; rm -rf node_modules; yi'
+alias ycc='yarn cache clean'
+alias yag='yarn global add'
+
+# npm
+alias ni='npm install'
+alias ns='npm start'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nr='npm run'
+alias ns='npm start'
+alias nrm='rm -rf node_modules && npm install'
+alias npl='npm list --global --depth=0'
+alias nhg='npm-home -g'
+alias nhy='npm-home -y'
+# npx
+alias cra='npx create-react-app '
+
+alias p="pip"
+alias pi="pip install "
+alias pir="pip install -r requirements.txt"
+
+alias gi="gem install"
+
+# Shell
+alias del="mv ~/.Trash/" # Safe delete
+alias ax="chmod a+x" # make executable
+alias os='osascript'
+
+## Developing
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
+
+## Networking
+alias ip="curl icanhazip.com"
+# SSH
+alias copy_ssh='pbcopy < $HOME/.ssh/id_rsa.pub'
+
+# System
+
+alias logoff="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias reboot='sudo shutdown -r now'
+alias shutdown='sudo shutdown -h now'
+alias dark='darkmode'
+alias light='darkmode'
+# Empty the Trash on all mounted volumes and the main HDD, clear Apple’s System Logs to improve shell startup speed, clear download history from quarantine. https://mths.be/bum
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Get week number
+alias week='date +%V'
+alias kw='week'
+
+# Shortcuts
+alias g="git"
+alias f="finder"
+alias fnd="finder"
+alias lc="locationchanger"
+alias qr="qrcode-terminal"
+alias google="googler"
+alias rl="reload"
+alias ud="update"
+
+## Typo
+alias sl="ls"
+alias bsh="bash"
+alias brw="brew"
+alias fsh="fish"
+alias brwe="brew"
+alias gti="git"
+alias yaern="yarn"
