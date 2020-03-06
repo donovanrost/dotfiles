@@ -213,6 +213,7 @@ declare -a brew=(
 	lynx
 	youtube-dl
 	# system
+  dark-mode
 	dockutil
   duti
 	htop
