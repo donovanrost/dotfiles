@@ -487,6 +487,8 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
   # check for input path
   if [[ -z $2 ]]; then
     local filename="${scriptdir%/}/$1"
+  elif [[ $2 == "." ]]; then
+    local filename="${"$(pwd)"%/}/$1"
   else
     local filename="${2%/}/$1"
   fi
