@@ -139,7 +139,6 @@ function update --description 'Update system software'
 			# __macos_macports
 			__macos_homebrew
 			__update_node_packages
-            __neovim_plugins
 		case Linux
 			__debian_apt
 			__update_node_packages

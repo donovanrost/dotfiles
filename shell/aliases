@@ -8,7 +8,7 @@ alias aliases="alias | sed 's/=.*//'"
 # Git
 alias cdgr='cd "$(git root)"' # cd to git root directory
 
-for method in clone checkout pull push; do
+for method in commit clone checkout pull push; do
 	alias "${method}"="git '${method}'"
 done
 
