@@ -168,6 +168,7 @@ declare -a brew=(
   applesimutils
   arduino-cli
 	bats
+  bit
 	cocoapods
 	react-native-cli
 	watchman

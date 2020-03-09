@@ -1,0 +1,13 @@
+package brew
+package cd
+package fonts
+package gh
+package hub
+package node
+package osx
+package tab
+package xcode
+package z
+theme default
+theme lolfish
+theme random

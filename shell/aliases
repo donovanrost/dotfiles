@@ -12,6 +12,7 @@ for method in commit clone checkout pull push; do
 	alias "${method}"="git '${method}'"
 done
 
+alias brewfile="source ~/.dotfiles/brew/brew.sh"
 alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
 
 alias myip="curl http://ipecho.net/plain; echo"
@@ -161,7 +162,6 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Convenience
-alias bf="brewfile"
 alias nf="npmfile"
 alias pf="pipfile"
 alias ql="quicklook"

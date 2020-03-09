@@ -19,17 +19,17 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Dotfiles
 alias dotfiles="atom ~/.dotfiles"
+alias extra="open -e ~/.extra"
 alias setup="cd ~/.dotfiles/setup"
 alias init="source ~/.dotfiles/setup/init.sh"
 alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/btt"
-alias brewfile="source ~/.dotfiles/brew/brew.sh"
 alias pipfile="setup; pip install -r requirements.txt"
-alias extra="open -e ~/.extra"
 
 # Brew
 alias b="brew "
+alias bf="brewfile"
 alias bi="brew install "
 alias br="brew reinstall "
 alias bu="brew uninstall "
