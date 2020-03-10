@@ -215,6 +215,7 @@ declare -a brew=(
 	youtube-dl
 	# system
   dark-mode
+  displayplacer
 	dockutil
   duti
 	htop
@@ -324,6 +325,8 @@ function brewInstall() {
   brew tap lukakerr/things
   brew tap wix/brew
   brew tap AdoptOpenJDK/openjdk
+  brew tap jakehilborn/jakehilborn
+
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 	# Switch to using brew-installed bash as default shell
