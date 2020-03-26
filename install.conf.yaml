@@ -17,6 +17,7 @@
     ~/.config/omf:
        create: true
        path: shell/fish/omf
+    ~/.finicky.js: config/finicky.js
     ~/.gitconfig: git/gitconfig
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore_global
