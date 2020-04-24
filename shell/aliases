@@ -171,6 +171,7 @@ alias e="x"
 alias quit="exit"
 alias any="anybash"
 alias newfile="newscript"
+alias zm="zoom join "
 
 ## lol (only in bash)
 if [ -n "$BASH_VERSION" ]; then
