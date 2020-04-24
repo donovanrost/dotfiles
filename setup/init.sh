@@ -2,18 +2,28 @@
 
 if [ "$1" '==' "-h" ] ; then
 	echo "Usage: init"
+	echo "Default: init"
 	echo "Options: "
   echo "-h  Show this message"
-  echo "-a  Install all the options (gem, pip, npm, nvm, oh-my-zsh, oh-my-fish)"
+  echo "-a  Set up atom settings sync"
   echo "-d  Set defaults using duti"
 	echo "-g  Install Gemfile"
 	echo "-n  Install node apps & nvm"
 	echo "-p  Install python requirements"
 	return
 elif [ "$#" -gt 1 ]; then
-	echo "Too many parameters"
+	echo "Too many parameters. Run one config at a time. "
 	return
 fi
+
+function atom() {
+  apm install sync-settings
+  # Gist-ID: 92968648b5ea54edbee216e87e52c15e
+}
+
+function brew() {
+  ~/.dotfiles/brew/brew.sh
+}
 
 function defaults {
   info 'Setting default apps.'
@@ -89,14 +99,8 @@ function locationchanger() {
 }
 
 case $1 in
-  "-a" | "--all" )
-    echo 'All options'
-    gem
-    pip
-    npm
-    omz
-    omf
-    mac-cli
+  "-a" | "--atom" )
+    atom
     ;;
   "-d" | "--defaults" )
     defaults
@@ -124,9 +128,7 @@ case $1 in
     ;;
   * )
   echo "Default initialization"
-	gem
-  pip
-  npm
+	brew
 	echo "For specific categories, run again with appropriate flags (-h for more info)"
     ;;
 esac
