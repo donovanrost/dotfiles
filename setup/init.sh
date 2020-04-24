@@ -3,9 +3,9 @@
 if [ "$1" '==' "-h" ] ; then
 	echo "Usage: init"
 	echo "Options: "
-	echo "-h  Show this message"
-  echo "-d  Set default AppleShowAllFiles"
-	echo "-a  Install all the options (gem, pip, npm, nvm, oh-my-zsh, oh-my-fish)"
+  echo "-h  Show this message"
+  echo "-a  Install all the options (gem, pip, npm, nvm, oh-my-zsh, oh-my-fish)"
+  echo "-d  Set defaults using duti"
 	echo "-g  Install Gemfile"
 	echo "-n  Install node apps & nvm"
 	echo "-p  Install python requirements"
@@ -22,12 +22,12 @@ function defaults {
   # for ext in {aac,avi,f4v,flac,m4a,m4b,mkv,mov,mp3,mp4,mpeg,mpg,part,wav,webm}; do duti -s io.mpv "${ext}" all; done # Media
   # for ext in {7z,bz2,gz,rar,tar,tgz,zip}; do duti -s com.aone.keka "${ext}" all; done # Archives
   # for ext in {cbr,cbz}; do duti -s com.richie.YACReader "${ext}" all; done # Image archives
-  # for ext in {md,txt}; do duti -s pro.writer.mac "${ext}" all; done # Text
-  # for ext in {css,js,json,php,pug,py,rb,sh}; do duti -s com.microsoft.VSCode "${ext}" all; done # Code
+  for ext in {md,txt}; do duti -s com.github.atom "${ext}" all; done # Text
+  for ext in {css,js,jsx,jxa,json,md,php,py,rb,sh}; do duti -s com.github.atom "${ext}" all; done # Code
 
   # Affinity apps (use beta versions when possible)
   # Whenever a stable is more recent than the beta, the beta cannot be used, so we need to detect which is latest and always use that
-  local afd_id='com.seriflabs.affinitydesigner'
+local afd_id='com.seriflabs.affinitydesigner'
   # local afp_id='com.seriflabs.affinityphoto'
 
   local afd_location="$(mdfind kMDItemCFBundleIdentifier = "${afd_id}")"

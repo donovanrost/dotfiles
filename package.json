@@ -1,5 +1,5 @@
 {
-  "name": "dotfiles",
+  "name": "dotfiles-dnnsmnstrr",
   "version": "0.1.0",
   "description": "My dotfiles",
   "main": "index.js",
@@ -7,8 +7,11 @@
     "start": "./install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "npm install -g $(cat ./node/npmfile)",
+    "update": "brew update; brew upgrade",
     "brew": "./brew/brew.sh",
     "macos": "./setup/macos.sh",
+    "init": "./setup/init.sh",
+    "info": "./bin/info",
     "setup": "./setup/init.sh; ./setup/brew.sh; ./setup/bootstrap.sh"
   },
   "repository": "https://github.com/dnnsmnstrr/dotfiles.git",
