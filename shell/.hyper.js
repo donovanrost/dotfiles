@@ -150,6 +150,7 @@ module.exports = {
     // "hyperpower",
     'hyper-search',
     'hyper-fading-scrollbar',
+    'hyperfullscreen',
     // "hyper-shellect",
     'hyper-dark-scrollbar',
     'hyper-tab-icons',
