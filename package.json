@@ -10,9 +10,7 @@
     "update": "brew update; brew upgrade",
     "brew": "./brew/brew.sh",
     "macos": "./setup/macos.sh",
-    "init": "./setup/init.sh",
-    "info": "./bin/info",
-    "setup": "./setup/init.sh; ./setup/brew.sh; ./setup/bootstrap.sh"
+    "info": "./bin/info"
   },
   "repository": "https://github.com/dnnsmnstrr/dotfiles.git",
   "homepage": "https://muensterer.tech/dotfiles",

@@ -38,4 +38,9 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [git submodule update --remote  --recursive, Updating submodules]
   # - [source ./setup/init.sh, Running init]
-  # - [source ./setup/bootstrap.sh, Running bootstrap]
+  -
+    command: source ./setup/init.sh
+    stdin: true
+    stdout: true
+    description: Running init
+    quiet: false
