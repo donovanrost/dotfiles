@@ -8,7 +8,10 @@ if [ "$1" '==' "-h" ] ; then
 	echo "Options: "
 	echo "-h  Show this message"
 	echo "-a  Install all the options"
+	echo "-b  Create a bundle dump"
+	echo "-c  Cleanup"
 	echo "-d  Install developer options"
+	echo "-f  Install fonts"
 	echo "-m  Install Mac App Store apps"
 	echo "-n  Install network tools"
 	echo "-p  Install personal apps (entertainment, music, gaming)"
@@ -119,6 +122,7 @@ declare -a personal=(
   brooklyn
 	musaicfm
   # utilities
+  apple-juice
   cakebrew
 	duet
   hazeover
@@ -214,6 +218,7 @@ declare -a brew=(
 	lynx
 	youtube-dl
 	# system
+  blueutil
   dark-mode
   displayplacer
 	dockutil
@@ -299,6 +304,13 @@ declare -a mas=(
 	497799835   #Xcode
 )
 
+declare -a fonts=(
+	source-code-pro
+  fontawesome
+  input
+  roboto
+)
+
 # Scripting starts here
 
 echo "Running brewfile"
@@ -382,6 +394,14 @@ function masInstall() {
 	done
 }
 
+function fontInstall() {
+  echo "Installing fonts..."
+	for font in "${fonts[@]}"; do
+    local fontName="font-${font}";
+		brew cask install "${fontName}"
+	done
+}
+
 case $1 in
   "-a" | "--all" )
     echo 'All options'
@@ -391,6 +411,7 @@ case $1 in
     networkInstall
     personalInstall
     masInstall
+    fontInstall
     ;;
   "-d" | "--dev" )
     echo 'Development install'
@@ -398,6 +419,10 @@ case $1 in
     caskInstall
     devInstall
     networkInstall
+    fontInstall
+    ;;
+  "-f" | "--font" )
+    fontInstall
     ;;
   "-p" | "--personal" )
     personalInstall
@@ -406,20 +431,21 @@ case $1 in
     masInstall
     ;;
   * )
-  echo "Default installation"
-	brewInstall
-	caskInstall
-	devInstall
-	echo "For specific categories, run again with appropriate flags (-h for more info)"
+    echo "Default installation"
+  	brewInstall
+  	caskInstall
+  	devInstall
+  	echo "For specific categories, run again with appropriate flags (-h for more info)"
     ;;
 esac
 
-if [[ "$1" == "--dump" ]] || [[ "$2" == "--dump" ]]; then
+brew cleanup # Remove outdated versions from the cellar.
+
+if [[ "$1" == "-b" ]] || [[ "$1" == "--bundle" ]]; then
   brew bundle dump --force
-elif [[ "$1" == "--doc" ]] || [[ "$2" == "--doc" ]]; then
+elif [[ "$1" == "--doc" ]] || [[ "$1" == "--doctor" ]]; then
   brew doctor
   brew cask doctor
 else
-  echo "Cleaning up homebrew"
-brew cleanup # Remove outdated versions from the cellar.
+  echo "Brewing complete"
 fi;
