@@ -25,11 +25,14 @@ function update() {
 	npm install npm -g;
 	npm update -g;
 	echo "";
-	echo "Gem:"
+	echo "Gem:";
 	sudo gem update --system;
 	sudo gem update;
 	sudo gem cleanup;
 	echo "";
+  echo "Atom Packages";
+  apm update
+  apm upgrade
 	echo "Finished updating!";
 }
 
