@@ -102,6 +102,9 @@ case $1 in
   "-a" | "--atom" )
     atom
     ;;
+  "-b" | "--brew" )
+    brew
+    ;;
   "-d" | "--defaults" )
     defaults
     ;;
@@ -127,8 +130,10 @@ case $1 in
     pip
     ;;
   * )
-  echo "Default initialization"
+  echo "Initializing setup"
 	brew
+  atom
+  defaults
 	echo "For specific categories, run again with appropriate flags (-h for more info)"
     ;;
 esac

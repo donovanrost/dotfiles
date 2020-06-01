@@ -153,6 +153,7 @@ declare -a brew=(
 	wget
 	cask
 	mas
+  mint
 	nvm
 	# editors & shells
   bash
@@ -431,11 +432,11 @@ case $1 in
     masInstall
     ;;
   * )
-    echo "Default installation"
+    echo "Default brew installation"
   	brewInstall
   	caskInstall
   	devInstall
-  	echo "For specific categories, run again with appropriate flags (-h for more info)"
+  	# echo "For specific categories, run again with appropriate flags (-h for more info)"
     ;;
 esac
 
