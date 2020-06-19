@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       // Open work urls in Chrome
-      match: finicky.matchHostnames(['zoom', 'zoom.us', /.*\.zoom.us$/]),
+      match: finicky.matchHostnames(['zoom', 'zoom.us', /.*\.zoom.us$/, 'meet.jit.si']),
       browser: 'Google Chrome'
     },
     {

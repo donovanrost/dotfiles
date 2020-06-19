@@ -85,6 +85,8 @@ declare -a dev=(
 	kap
 	noun-project
   pine
+  # productivity
+  mactex
   # resources
   dash
   wwdc
@@ -147,6 +149,7 @@ declare -a brew=(
 	node
 	php
 	python
+  r
 	ruby
 	rbenv
 	# downloaders & installers

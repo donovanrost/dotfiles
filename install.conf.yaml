@@ -1,7 +1,7 @@
 - defaults:
     link:
-      relink: true
-      force: true
+      relink: false
+      force: false
 
 - clean: ['~', '~/.config']
 
