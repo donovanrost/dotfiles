@@ -70,6 +70,7 @@ alias rnrn='rnri; rnra'
 alias y='yarn '  # Some say I live dangerously aliasing this to 'y'. I say yolo.
 alias yi='yarn install '
 alias ya='yarn add '
+alias yc='yarn cucumber'
 alias yp='yarn pods'
 alias ys='yarn start'
 alias yt='yarn test'
@@ -77,6 +78,8 @@ alias yr='y; yp; ys'
 alias yrm='ycc; rm -rf node_modules; yi'
 alias ycc='yarn cache clean'
 alias yag='yarn global add'
+alias yad='yarn add --dev'
+alias ysb='yarn storybook'
 
 # npm
 alias ni='npm install'
@@ -93,6 +96,7 @@ alias nhg='npm-home -g'
 alias nhy='npm-home -y'
 # npx
 alias cra='npx create-react-app '
+alias me='npx dnnsmnstrr'
 
 alias p="pip"
 alias pi="pip install "
