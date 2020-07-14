@@ -181,10 +181,6 @@ function restart() {
 	osascript -e 'tell application "System Events" to restart'
 }
 
-# Git clone and cd into new directory
-function gcd() {
-  git clone "$1" && cd $(basename $_ .git)
-}
 
 # Git clone from clipboard
 function gcb(){
@@ -572,4 +568,9 @@ function url () {
     end tell
   tell application \"Safari\" to activate
   "
+}
+
+
+function godwords () {
+  echo $(shuf -n ${1:-10} /usr/share/dict/words --random-source=/dev/urandom | tr "\n" " ")
 }
