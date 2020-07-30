@@ -138,6 +138,7 @@ function shells {
   "
 }
 
+# change shells between bash, fish & zsh
 function shellswitch {
   case $1 in
     "bash" | "bsh" | "b" | "-b")
@@ -389,6 +390,7 @@ function openx(){
   fi
 }
 
+# Kill a process at a given port
 killport(){
 sudo kill -9 $(sudo lsof -t -i:$1)
 }
@@ -412,7 +414,7 @@ colors() {
 	done
 }
 
-# Calculator
+# Simple Calculator
 calc() {
 	echo "$*" | bc -l;
 }
@@ -427,7 +429,7 @@ meteo() {
 	else
 		LOCATION=$1
 	fi
-	curl -s "$LOCALE.wttr.in/$LOCATION"
+	curl "$LOCALE.wttr.in/$LOCATION?format=3"
 }
 
 camerausedby() {
@@ -472,6 +474,7 @@ function extract {
 fi
 }
 
+# Create a new binary file. Takes filename with filetype extension and optional path to store the script.
 # https://brettterpstra.com/2018/05/07/shell-tricks-quick-start-scripts/
 newscript() {
 	# Config
@@ -535,30 +538,16 @@ Usage: mynewscript SCRIPT_NAME.ext\n"
 	$EDITOR "$filename"
 }
 
-function anybash { echo -n ${1:-blue} | nc -u -c localhost ${2:-1738}; }
+# Set anybar color
+function anybash () { echo -n ${1:-blue} | nc -u -c localhost ${2:-1738}; }
 
-function myinfo () {
-  printf "CPU: "
-  cat /proc/cpuinfo | grep "model name" | head -1 | awk '{ for (i = 4; i <= NF; i++) printf "%s ", $i }'
-  printf "\n"
-
-  cat /etc/issue | awk '{ printf "OS: %s %s %s %s | " , $1 , $2 , $3 , $4 }'
-  uname -a | awk '{ printf "Kernel: %s " , $3 }'
-  uname -m | awk '{ printf "%s | " , $1 }'
-  kded4 --version | grep "KDE Development Platform" | awk '{ printf "KDE: %s", $4 }'
-  printf "\n"
-  uptime | awk '{ printf "Uptime: %s %s %s", $3, $4, $5 }' | sed 's/,//g'
-  printf "\n"
-  cputemp | head -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-  cputemp | tail -1 | awk '{ printf "%s %s %s\n", $1, $2, $3 }'
-  #cputemp | awk '{ printf "%s %s", $1 $2 }'
-}
-
+# Nicely format the current uptime
 function myuptime () {
   uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
   return;
 }
 
+# Open a url in safari
 function url () {
   osascript -e \
   "tell application \"Safari\"
@@ -570,7 +559,13 @@ function url () {
   "
 }
 
+# Get the bundle id of an application
+function bundleid () {
+  cd /Applications || exit
+  osascript -e "id of app \"$1\"" | pbcopy && pbpaste && cd - >/dev/null && printf '\n(copied to clipbord)\n\n'
+}
 
+# Return random words from dictionary á la TempleOS (RIP Terry)
 function godwords () {
   echo $(shuf -n ${1:-10} /usr/share/dict/words --random-source=/dev/urandom | tr "\n" " ")
 }

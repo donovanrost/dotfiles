@@ -68,7 +68,9 @@ alias rnrn='rnri; rnra'
 
 # Yarn
 alias y='yarn '  # Some say I live dangerously aliasing this to 'y'. I say yolo.
-alias yi='yarn install '
+alias yb='yarn build'
+alias yd='yarn dev'
+alias yi='yarn add '
 alias ya='yarn add '
 alias yc='yarn cucumber'
 alias yp='yarn pods'
