@@ -13,7 +13,7 @@
     "info": "./bin/info"
   },
   "repository": "https://github.com/dnnsmnstrr/dotfiles.git",
-  "homepage": "https://muensterer.tech/dotfiles",
+  "homepage": "https://dnnsmnstrr.github.io/dotfiles",
   "author": "Dennis Muensterer <dennismuensterer@gmail.com>",
   "license": "MIT"
 }
