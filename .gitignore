@@ -21,3 +21,6 @@ ehthumbs.db
 node_modules/
 *.lock
 *.log
+
+# Alfred
+alfred/snippets
