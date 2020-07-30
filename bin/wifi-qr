@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+SSID=$1
+PASSWORD=$2
+qrcode "WIFI:S:$SSID;T:WPA;P:$PASSWORD;;"
