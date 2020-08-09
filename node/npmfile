@@ -3,6 +3,7 @@ alfred-dark-mode
 alfred-emoj
 alfred-gitlab
 alfred-loremipsum
+alfred-unsplash-source
 alfred-xcode
 castnow
 clipboard-cli
@@ -28,6 +29,7 @@ open-pip-cli
 prettier
 qrcode-terminal
 react-devtools
+rn-game-over
 run-applescript
 screensaver
 speedtest-net
@@ -44,6 +46,7 @@ xclap-cli
 yarn-completions
 zoom-cli
 yo
+xo
 generator-alfred
 generator-electrode
 generator-electron

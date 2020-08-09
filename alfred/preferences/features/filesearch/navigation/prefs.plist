@@ -2,7 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>darkthemeuid</key>
-	<string>theme.urlimport.B763083C-E69E-413D-9927-E6065F08E27A</string>
+	<key>previousPathHotkey</key>
+	<dict>
+		<key>key</key>
+		<integer>44</integer>
+		<key>mod</key>
+		<integer>1179648</integer>
+		<key>string</key>
+		<string>?</string>
+	</dict>
 </dict>
 </plist>
