@@ -116,12 +116,14 @@ alias reload!='. ~/.zshrc'
 . /usr/local/etc/profile.d/z.sh
 
 . $HOME/.nix-profile/etc/profile.d/nix.sh
+
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # Activate plugins
 
 
+
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zshif [ -e /Users/dennismuensterer/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/dennismuensterer/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+[[ -f /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /usr/local/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh

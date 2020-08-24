@@ -9,6 +9,7 @@ alias dt="cd ~/Desktop"
 alias dev="cd ~/Developer"
 alias doc="cd ~/Documents"
 alias finder="open ."
+
 # Show/hide hidden files
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -22,7 +23,6 @@ alias dotfiles="atom ~/.dotfiles"
 alias extra="open -e ~/.extra"
 alias setup="cd ~/.dotfiles/setup"
 alias init="source ~/.dotfiles/setup/init.sh"
-alias bootstrap="set -- -f; source ~/.dotfiles/setup/bootstrap.sh"
 alias macos="source ~/.dotfiles/setup/macos"
 alias btt="open ~/.dotfiles/btt"
 alias pipfile="setup; pip install -r requirements.txt"
@@ -83,6 +83,7 @@ alias ycc='yarn cache clean'
 alias yag='yarn global add'
 alias yad='yarn add --dev'
 alias ysb='yarn storybook'
+alias ybs='yarn build-storybook'
 
 # npm
 alias ni='npm install'

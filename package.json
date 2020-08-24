@@ -6,8 +6,8 @@
   "scripts": {
     "start": "./install",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm install -g $(cat ./node/npmfile)",
-    "update": "brew update; brew upgrade",
+    "install": "npm install -g $(cat ./node/npmfile) && ./brew/brew.sh",
+    "update": "npm update -g",
     "brew": "./brew/brew.sh",
     "macos": "./setup/macos.sh",
     "info": "./bin/info"

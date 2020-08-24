@@ -71,7 +71,7 @@ function md() {
 }
 # Create a directory and cd into it (alternate version)
 mcd() {
-    mkdir "${1}" && cd "${1}"
+    mkdir -p "${1:-unnamed}" && cd "${1:-unnamed}";
 }
 
 # Jump to directory containing file
@@ -186,6 +186,18 @@ function restart() {
 # Git clone from clipboard
 function gcb(){
     git clone "$(pbpaste)"
+}
+
+function gcd {
+  REPO=$1
+  CLONEPATH=$2
+
+  if [ -z $CLONEPATH ]; then
+      CLONEPATH=${$(basename $1)/.git/}
+  fi
+
+  git clone $REPO $CLONEPATH
+  cd $CLONEPATH
 }
 
 # Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression

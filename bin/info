@@ -15,6 +15,11 @@ echo "###   MacApp Store   ###"
 # show outdated MacAppStore apps
 mas outdated
 
+echo "---------------------------------------------------------------"
+echo "###   npm   ###"
+# show outdated MacAppStore apps
+npm -g ls --depth=0
+
 echo "#   SPACE   ###################################################"
 # show disk space
 df -H -T hfs,zfs,exfat
