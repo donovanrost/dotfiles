@@ -46,6 +46,10 @@ declare -a cask=(
 	quicklook-csv
 	quicklook-json
 	webpquicklook
+  # alfred
+  alfred-theme-simple
+  alfred-sound-Outbank
+  alfred-finder-new-item
 )
 
 # Apps for development (-d)
