@@ -1,5 +1,5 @@
 const workUrls = ['hpm.agency', 'hpm.digital', /.*\.hpm.agency$/]
-const videoCalling = ['zoom', 'zoom.us', /.*\.zoom.us$/, 'meet.jit.si']
+const videoCalling = ['meet.jit.si']
 module.exports = {
   defaultBrowser: 'Safari',
   options: {
@@ -12,9 +12,20 @@ module.exports = {
       browser: 'Google Chrome'
     },
     {
+      match: "open.spotify.com*",
+      browser: "Spotify"
+    },
+    {
+      match: /zoom.us\/j\//,
+      browser: "us.zoom.xos"
+    },
+    {
       // Open in Chrome
       match: finicky.matchHostnames([...workUrls, ...videoCalling, 'localhost', 'chrome.google.com']),
-      browser: 'Google Chrome'
+      browser: {
+        name: 'Google Chrome',
+        profile: "Profile 1"
+      }
     },
     {
       // Open youtube in safari
@@ -23,7 +34,10 @@ module.exports = {
     },
     {
       match: ({ sourceBundleIdentifier }) => sourceBundleIdentifier === 'com.tinyspeck.slackmacgap',
-      browser: 'Google Chrome'
+      browser: {
+        name: 'Google Chrome',
+        profile: "Profile 1"
+      }
     }
   ]
 }
