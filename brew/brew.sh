@@ -27,7 +27,6 @@ declare -a cask=(
 	aerial
   alfred
   anybar
-  bitbar
   barrier
 	bettertouchtool
 	google-chrome
@@ -57,9 +56,8 @@ declare -a dev=(
   # IDE
   arduino
 	atom
-	android-studio
-  eclipse-java
-  sublime-text
+  eclipse # for school
+  android-studio
   visual-studio-code
   # VCS
   github
@@ -84,29 +82,27 @@ declare -a dev=(
 	slack
 	zoomus
 	# design
+  autodesk-fusion360
 	sketch-toolbox
 	skyfonts
 	kap
 	noun-project
-  pine
   # productivity
-  mactex
+  pine
+  drawio
   # resources
-  dash
   wwdc
 )
 
 # Apps that don't have much professional use (mostly entertainment) (-p)
 declare -a personal=(
 	# audio
-	amazon-music
 	background-music
 	beardedspice
 	boom-3d
 	lyricsx
 	sonic-pi
 	spotify
-	yt-music
 	# communication
 	caprine
   flume
@@ -114,19 +110,17 @@ declare -a personal=(
 	whatsapp
 	# gaming
 	openemu
-	retroarch
 	steam
 	# media
-  apple-events
   calibre
 	downie
 	emojipedia
 	iina
-	kodi
   obs
-  # screensavers
+  # screensavers & wallpapers
   brooklyn
 	musaicfm
+  wallpapper
   # utilities
   apple-juice
   cakebrew
@@ -138,7 +132,6 @@ declare -a personal=(
   vnc-viewer
 	# storage
   grandperspective
-	google-backup-and-sync
 	dropbox
 )
 
@@ -245,6 +238,7 @@ declare -a brew=(
 	# tools
   asciinema
 	calc
+  figlet
   m-cli
 	tldr
 	wifi-password
@@ -299,14 +293,14 @@ declare -a mas=(
 	409183694   #Keynote
 	634148309   #Logic
 	634159523   #MainStage
-	409203825   #Numbers
+	# 409203825   #Numbers
 	823766827   #OneDrive
 	1094255754  #Outbank
-	409201541   #Pages
+	# 409201541   #Pages
 	1160374471  #PiPifier
 	445189367   #PopClip
 	# 803453959   #Slack
-	1153157709  #Speedtest
+	# 1153157709  #Speedtest
 	425424353   #The Unarchiver
 	1284863847  #Unsplash
 	497799835   #Xcode
@@ -326,7 +320,7 @@ echo "Running brewfile"
 # Check for homebrew
 if test ! "$(brew -v)"; then
 	echo "installing homebrew"
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 echo "Checking for updates"
@@ -346,21 +340,9 @@ function brewInstall() {
   brew tap wix/brew
   brew tap AdoptOpenJDK/openjdk
   brew tap jakehilborn/jakehilborn
+  brew tap danielbayley/alfred
 
-	# Save Homebrew’s installed location.
-	BREW_PREFIX=$(brew --prefix)
-	# Switch to using brew-installed bash as default shell
-	if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
-		echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
-		chsh -s "${BREW_PREFIX}/bin/bash";
-	fi;
-	# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 	echo "Installing brew utilities..."
-	# shellcheck disable=SC2034
-	# while BREWS=(read -r brew)
-	# do
-	# 	brew info "${brew[@]}" | grep --quiet 'Not installed' && brew install "${brew[@]}"
-	# done < "brews.txt"
 	for item in "${brew[@]}"; do
 		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 	done
