@@ -24,6 +24,9 @@
   # Add submodule
   sa = submodule add
 
+  # Update submodules
+  su = "git submodule update --init --remote"
+
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
@@ -87,8 +90,6 @@
 
   yolo = "!git add -A && git commit -am \"`curl -s http://whatthecommit.com/index.txt `\" && git push -f origin master"
 
-  # update submodules
-  sm = "git submodule update --init --remote"
 [apply]
 
 	# Detect whitespace errors when applying a patch

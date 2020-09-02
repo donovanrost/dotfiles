@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>applicationUseKeywords</key>
+	<true/>
+	<key>fallbacks</key>
+	<array>
+		<string>features.websearch.google.fallback</string>
+		<string>features.websearch.amazon.fallback</string>
+		<string>features.websearch.wiki.fallback</string>
+		<string>alfred-zettelkasten.C2A12B8E-31FC-4829-A481-A661C477E3A9</string>
+		<string>alfred-hpm.96958FC7-8B2A-4F76-B4B5-B4E58AE83C69</string>
+	</array>
+	<key>showFolders</key>
+	<true/>
+	<key>showTextFiles</key>
+	<true/>
+	<key>showUserDefined</key>
+	<array>
+		<string>com.apple.icns</string>
+	</array>
+</dict>
+</plist>
