@@ -37,7 +37,6 @@
   - git submodule sync --recursive
   - [git submodule update --init --recursive, Installing submodules]
   - [git submodule update --remote  --recursive, Updating submodules]
-  # - [source ./setup/init.sh, Running init]
   -
     command: source ./setup/init.sh
     stdin: true
