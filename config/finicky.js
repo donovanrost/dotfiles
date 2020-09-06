@@ -1,4 +1,4 @@
-const workUrls = ['hpm.agency', 'hpm.digital', /.*\.hpm.agency$/]
+const workUrls = ['hpm.agency', 'hpm.digital', /.*\.hpm.land/, /.*\.hpm.agency$/]
 const videoCalling = ['meet.jit.si']
 module.exports = {
   defaultBrowser: 'Safari',
@@ -12,9 +12,10 @@ module.exports = {
       browser: 'Google Chrome'
     },
     {
-      match: "open.spotify.com*",
-      browser: "Spotify"
-    },
+			// Open Spotify links in Spotify.app
+			match: finicky.matchHostnames("open.spotify.com"),
+			browser: "Spotify",
+		},
     {
       match: /zoom.us\/j\//,
       browser: "us.zoom.xos"

@@ -3,7 +3,8 @@ alfred-dark-mode
 alfred-emoj
 alfred-gitlab
 alfred-loremipsum
-alfred-unsplash-source
+alfred-mdi
+alfred-updater
 alfred-xcode
 castnow
 clipboard-cli
@@ -15,7 +16,6 @@ fkill
 file-icon-cli
 gh-home
 git-open
-gitbook-cli
 gitmoji-cli
 is-up-cli
 move-file-cli
@@ -23,12 +23,12 @@ npm-check
 npm-home
 ntl
 node-red
-now
 np
 open-pip-cli
 prettier
 qrcode-terminal
 react-devtools
+reload
 rn-game-over
 run-applescript
 screensaver
@@ -41,12 +41,13 @@ svgo
 svgexport
 tldr
 vaca
+vercel
 @rafaelrinaldi/whereami
 xclap-cli
+xo
 yarn-completions
 zoom-cli
 yo
-xo
 generator-alfred
 generator-electrode
 generator-electron
