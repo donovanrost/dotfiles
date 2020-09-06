@@ -145,7 +145,9 @@ declare -a brew=(
 	lua
 	node
 	php
-	python
+	python3
+  pyenv
+  pipenv
   r
 	ruby
 	rbenv
