@@ -5,7 +5,7 @@
 - clone this project and run the [dotbot]() [install]() script ~~bootstrap script~~ (deprecated)
 
 ```bash
-git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source ./install
+git clone --recurse-submodules https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source ./install
 ```
 
 - Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew/brew.sh)
