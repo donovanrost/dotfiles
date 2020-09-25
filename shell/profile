@@ -8,6 +8,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dev="cd ~/Developer"
 alias doc="cd ~/Documents"
+alias zk="cd ~/zettelkasten"
 alias finder="open ."
 
 # Show/hide hidden files
@@ -131,6 +132,8 @@ alias dark='darkmode'
 alias light='darkmode'
 # Empty the Trash on all mounted volumes and the main HDD, clear Apple’s System Logs to improve shell startup speed, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+# Restart touch bar
+alias touchbar="killall ControlStrip"
 
 # Get week number
 alias week='date +%V'

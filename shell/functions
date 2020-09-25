@@ -80,14 +80,16 @@ jump() {
 }
 
 # Change working directory to the top-most Finder window location
-function cdf() { # short for `cdfinder`
+function cdf() {
 	cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return;
 }
 
+# toggle dark mode
 function darkmode() {
   osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 }
 
+# launch btt console
 function console() {
 	osascript -e 'tell application "BetterTouchTool" to trigger_named_async_without_response "run trigger"'
 }
@@ -103,6 +105,7 @@ function exe() {
 	fi;
 }
 
+# compile applescript files in current directory
 function scpt {
   for f in *.applescript
   do
@@ -580,4 +583,14 @@ function bundleid () {
 # Return random words from dictionary á la TempleOS (RIP Terry)
 function godwords () {
   echo $(shuf -n ${1:-10} /usr/share/dict/words --random-source=/dev/urandom | tr "\n" " ")
+}
+
+# go through the system installed voices
+voices(){
+  say -v '?' | awk -v voice=$1 -F: '$1~voice { print }' | while read line;
+    do
+        voice=$(echo $line | awk '{print $1}');
+        phrase=$(echo $line | awk '{split($0,a,"#"); print a[2]}');
+        say --interactive -v $voice "$voice: $phrase";
+    done
 }
