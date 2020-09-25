@@ -1,4 +1,5 @@
 const workUrls = ['hpm.agency', 'hpm.digital', /.*\.hpm.land/, /.*\.hpm.agency$/]
+const devUrls = ['github.com', 'gitlab.com', 'localhost']
 const videoCalling = ['meet.jit.si']
 module.exports = {
   defaultBrowser: 'Safari',
@@ -8,7 +9,7 @@ module.exports = {
   },
   handlers: [
     {
-      match: ({ keys }) => keys.option,
+      match: ({ keys }) => keys.option && keys.command,
       browser: 'Google Chrome'
     },
     {
@@ -22,7 +23,7 @@ module.exports = {
     },
     {
       // Open in Chrome
-      match: finicky.matchHostnames([...workUrls, ...videoCalling, 'localhost', 'chrome.google.com']),
+      match: finicky.matchHostnames([...workUrls, ...videoCalling, ...devUrls, 'chrome.google.com']),
       browser: {
         name: 'Google Chrome',
         profile: "Profile 1"
