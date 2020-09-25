@@ -8,7 +8,7 @@ alias aliases="alias | sed 's/=.*//'"
 # Git
 alias cdgr='cd "$(git root)"' # cd to git root directory
 
-for method in commit clone checkout pull push; do
+for method in commit clone checkout merge pull push fetch; do
 	alias "${method}"="git '${method}'"
 done
 
@@ -20,6 +20,8 @@ alias locip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias captive="curl -s 'http://captive.apple.com'"
 
+# Java
+alias java_versions="/usr/libexec/java_home -V "
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 alias pi='ssh pi@raspberrypi.local'

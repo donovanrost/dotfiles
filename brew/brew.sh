@@ -56,7 +56,7 @@ declare -a dev=(
   # IDE
   arduino
 	atom
-  eclipse # for school
+  eclipse-jee # for school
   android-studio
   visual-studio-code
   # VCS
@@ -66,6 +66,7 @@ declare -a dev=(
   hyper
   iterm2
   # DB
+  mysqlworkbench
   sequel-pro
   # tools
 	android-platform-tools
@@ -167,9 +168,10 @@ declare -a brew=(
 	git
 	hub
   git-gui
+  git-jump
 	git-lfs
   git-standup
-  github/gh/gh
+  gh
   gibo
 	#dev
   applesimutils
@@ -177,6 +179,7 @@ declare -a brew=(
 	bats
   bit
 	cocoapods
+  mysql
 	react-native-cli
 	watchman
 	yarn
@@ -216,6 +219,7 @@ declare -a brew=(
 	multimarkdown
 	shpotify
 	khanhas/tap/spicetify-cli
+  Rigellute/tap/spotify-tui
 	# web
   googler
 	lynx
@@ -283,6 +287,7 @@ declare -a network=(
 	tcpflow
 	tcpreplay
 	tcptrace
+  telnet
 	ucspi-tcp # `tcpserver` etc.
 	xz
 )
@@ -317,11 +322,11 @@ declare -a fonts=(
 
 # Scripting starts here
 
-echo "Running brewfile"
+echo "Let's brew 🍻"
 
 # Check for homebrew
 if test ! "$(brew -v)"; then
-	echo "installing homebrew"
+	echo "Installing homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
@@ -343,6 +348,7 @@ function brewInstall() {
   brew tap AdoptOpenJDK/openjdk
   brew tap jakehilborn/jakehilborn
   brew tap danielbayley/alfred
+  brew tap mykolaharmash/git-jump
 
 	echo "Installing brew utilities..."
 	for item in "${brew[@]}"; do
@@ -427,7 +433,6 @@ case $1 in
   	brewInstall
   	caskInstall
   	devInstall
-  	# echo "For specific categories, run again with appropriate flags (-h for more info)"
     ;;
 esac
 
