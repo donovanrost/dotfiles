@@ -115,8 +115,6 @@ alias reload!='. ~/.zshrc'
 # source z
 . /usr/local/etc/profile.d/z.sh
 
-. $HOME/.nix-profile/etc/profile.d/nix.sh
-
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
