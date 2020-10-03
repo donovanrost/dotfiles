@@ -94,6 +94,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
+# (useful when executing time-consuming commands)
+alias badge="tput bel"
+
 # info
 alias displays="system_profiler SPDisplaysDataType"
 alias cpuinfo="sysctl -n machdep.cpu.brand_string"
@@ -102,7 +106,6 @@ alias mem='top -o rsize' # Memory
 # Disk
 alias df='df -h'
 alias du='du -h'
-alias disk="df -Tha --total"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
@@ -147,11 +150,6 @@ alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
-done
 
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"

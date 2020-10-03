@@ -24,13 +24,11 @@ fi
 # Useful cask apps
 declare -a cask=(
 	# utility
-	aerial
   alfred
   anybar
   barrier
 	bettertouchtool
 	google-chrome
-	keyboardcleantool
 	touch-bar-simulator
 	# quicklook
 	epubquicklook
@@ -47,24 +45,23 @@ declare -a cask=(
 	webpquicklook
   # alfred
   alfred-theme-simple
-  alfred-sound-Outbank
-  alfred-finder-new-item
 )
 
 # Apps for development (-d)
 declare -a dev=(
+  # communication
+  slack
+  zoomus
   # IDE
   arduino
 	atom
   eclipse-jee # for school
   android-studio
-  visual-studio-code
   # VCS
   github
   sourcetree
   # CLI
   hyper
-  iterm2
   # DB
   mysqlworkbench
   sequel-pro
@@ -79,13 +76,7 @@ declare -a dev=(
   react-native-debugger
   # network
 	postman
-  # communication
-	slack
-	zoomus
 	# design
-  autodesk-fusion360
-	sketch-toolbox
-	skyfonts
 	kap
 	noun-project
   # productivity
@@ -98,8 +89,6 @@ declare -a dev=(
 # Apps that don't have much professional use (mostly entertainment) (-p)
 declare -a personal=(
 	# audio
-	background-music
-	beardedspice
 	boom-3d
 	lyricsx
 	sonic-pi
@@ -110,7 +99,6 @@ declare -a personal=(
 	telegram
 	whatsapp
 	# gaming
-	openemu
 	steam
 	# media
   calibre
@@ -118,22 +106,25 @@ declare -a personal=(
 	emojipedia
 	iina
   obs
+  vnc-viewer
   # screensavers & wallpapers
+  aerial
   brooklyn
 	musaicfm
-  wallpapper
   # utilities
-  apple-juice
-  cakebrew
 	duet
   hazeover
-  ndm
+  keyboardcleantool
 	philips-hue-sync
   blackhole
-  vnc-viewer
 	# storage
   grandperspective
 	dropbox
+)
+
+declare -a making=(
+  autodesk-fusion360
+  ultimaker-cura
 )
 
 declare -a brew=(
@@ -142,14 +133,12 @@ declare -a brew=(
 	findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 	gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
 	# languages & frameworks
-  go
-	lua
+  # go
 	node
 	php
 	python3
   pyenv
   pipenv
-  r
 	ruby
 	rbenv
 	# downloaders & installers
@@ -162,7 +151,6 @@ declare -a brew=(
   bash
   fish
   starship
-	vim
 	zsh
 	# version control
 	git
@@ -181,16 +169,13 @@ declare -a brew=(
 	cocoapods
   mysql
 	react-native-cli
+  redis
 	watchman
 	yarn
 	# GnuPG to enable PGP-signing commits.
 	gnupg
 	pinentry
 	pinentry-mac
-	# font tools
-	sfnt2woff
-	sfnt2woff-zopfli
-	woff2
 	# completion
 	apm-bash-completion
 	bash-completion2
@@ -218,8 +203,6 @@ declare -a brew=(
 	imagemagick
 	multimarkdown
 	shpotify
-	khanhas/tap/spicetify-cli
-  Rigellute/tap/spotify-tui
 	# web
   googler
 	lynx
@@ -280,7 +263,6 @@ declare -a network=(
 	nmap
 	openssh
 	pngcheck
-	redis
 	socat
 	speedtest_cli
 	sqlmap
@@ -295,18 +277,16 @@ declare -a network=(
 # Optional: Mac App Store (-m)
 declare -a mas=(
 	766939888   #1Keyboard
-	424389933   #Final Cut
+	# 424389933   #Final Cut
 	# 402989379   #iStudiez
 	409183694   #Keynote
 	634148309   #Logic
-	634159523   #MainStage
+	# 634159523   #MainStage
 	# 409203825   #Numbers
 	823766827   #OneDrive
 	1094255754  #Outbank
 	# 409201541   #Pages
-	1160374471  #PiPifier
 	445189367   #PopClip
-	# 803453959   #Slack
 	# 1153157709  #Speedtest
 	425424353   #The Unarchiver
 	1284863847  #Unsplash
@@ -339,13 +319,11 @@ brew cask upgrade   # Update any outdated casks
 function brewInstall() {
 	# Taps
 	brew tap homebrew/cask-drivers
-	brew tap bramstein/webfonttools
 	brew tap homebrew/cask-fonts
-  brew tap AdoptOpenJDK/openjdk
   brew tap buo/cask-upgrade
+  brew tap AdoptOpenJDK/openjdk
   brew tap lukakerr/things
   brew tap wix/brew
-  brew tap AdoptOpenJDK/openjdk
   brew tap jakehilborn/jakehilborn
   brew tap danielbayley/alfred
   brew tap mykolaharmash/git-jump
@@ -375,12 +353,18 @@ function devInstall() {
 	for app in "${dev[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
-	# mas install 497799835 # ensure Xcode is installed
 }
 
 function personalInstall() {
 	echo "Installing personal casks..."
 	for app in "${personal[@]}"; do
+		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+	done
+}
+
+function makerInstall() {
+	echo "Installing personal casks..."
+	for app in "${making[@]}"; do
 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
 }
@@ -409,10 +393,11 @@ case $1 in
     networkInstall
     personalInstall
     masInstall
+    makerInstall
     fontInstall
     ;;
   "-d" | "--dev" )
-    echo 'Development install'
+    echo 'Dev install'
     brewInstall
     caskInstall
     devInstall
@@ -439,10 +424,11 @@ esac
 brew cleanup # Remove outdated versions from the cellar.
 
 if [[ "$1" == "-b" ]] || [[ "$1" == "--bundle" ]]; then
+  echo "Taking a dump 💩"
   brew bundle dump --force
 elif [[ "$1" == "--doc" ]] || [[ "$1" == "--doctor" ]]; then
   brew doctor
   brew cask doctor
 else
-  echo "Brewing complete"
+  echo "Brewing complete ✅"
 fi;
