@@ -36,6 +36,9 @@ alias br="brew reinstall "
 alias bu="brew uninstall "
 alias bl="brew link "
 alias bs="brew search "
+alias bsl="brew services list"
+alias bss="brew services start"
+alias bst="brew services stop"
 alias blo="brew link --overwrite "
 alias bcd="brew cask doctor"
 alias bch="brew cask home "
@@ -134,7 +137,7 @@ alias light='darkmode'
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 # Restart touch bar
 alias touchbar="killall ControlStrip"
-
+alias swap="sysctl vm.swapusage"
 # Get week number
 alias week='date +%V'
 alias kw='week'

@@ -407,7 +407,7 @@ function openx(){
 
 # Kill a process at a given port
 killport(){
-sudo kill -9 $(sudo lsof -t -i:$1)
+  sudo kill -9 "$(sudo lsof -t -i:${1:-8080})"
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
