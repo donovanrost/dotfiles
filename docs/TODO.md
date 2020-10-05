@@ -2,10 +2,12 @@
 
 - Install Command Line Tools: `xcode-select --install`
 
-- clone this project and run the [dotbot]() [install]() script ~~bootstrap script~~ (deprecated)
+- [Set up](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ssh keys with [GitHub](https://github.com/settings/ssh)
+
+- clone this project and run the [dotbot](https://github.com/anishathalye/dotbot) [install](https://github.com/anishathalye/dotbot/blob/5294594f5aa9c3affd0d656ba6843c1c0b0bce60/tools/git-submodule/install) script
 
 ```bash
-git clone --recurse-submodules https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source ./install
+git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && ./install
 ```
 
 - Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew/brew.sh)
