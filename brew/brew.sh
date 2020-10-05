@@ -23,6 +23,7 @@ fi
 
 # Useful cask apps
 declare -a cask=(
+  spotify
 	# utility
   alfred
   anybar
@@ -92,7 +93,6 @@ declare -a personal=(
 	boom-3d
 	lyricsx
 	sonic-pi
-	spotify
 	# communication
 	caprine
   flume
@@ -278,7 +278,6 @@ declare -a network=(
 declare -a mas=(
 	766939888   #1Keyboard
 	# 424389933   #Final Cut
-	# 402989379   #iStudiez
 	409183694   #Keynote
 	634148309   #Logic
 	# 634159523   #MainStage
