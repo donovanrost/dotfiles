@@ -17,7 +17,13 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && ./install
 && cd dotfiles && source ./brew/brew.sh
 ```
 
-- Install [BetterTouchTool](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/HydroTouch)
+- Install [BetterTouchTool](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/HydroTouch) ([AquaTouch](https://community.folivora.ai/t/aquatouch-updates-and-downloads/6746/20))
+
+- Symlink Alfred preferences
+
+```sh
+ln -s ~/dotfiles/alfred /Users/dm/Library/Application\ Support/Alfred/Alfred.alfredpreferences
+```
 
 - [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
 
@@ -33,9 +39,8 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && ./install
 
 - [set up ad-blocking](https://jspenguin2017.github.io/uBlockProtector/#extra-installation-steps-for-ublock-origin)
 
-- [Add SSH keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
-
-<!-- * init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage) -->
+- [Add GPG keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
+  - https://github.com/pstadler/keybase-gpg-github
 
 # init
 
