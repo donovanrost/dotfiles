@@ -32,6 +32,7 @@
 - create:
     - ~/.locations
     - ~/.hushlogin
+    - ~/.extra
 
 - shell:
   - git submodule sync --recursive
