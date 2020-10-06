@@ -147,7 +147,6 @@
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
-	template = ~/.gitcommit
 
 [diff]
 
@@ -222,6 +221,6 @@
 [user]
 	name = Dennis Muensterer
 	email = dennismuensterer@gmail.com
-	signingkey = 0xDB6E00827839C2D6
+	signingkey = 505DAA7B12100484
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
