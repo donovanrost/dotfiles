@@ -12,8 +12,8 @@ for method in commit clone checkout merge pull push fetch; do
 	alias "${method}"="git '${method}'"
 done
 
-alias brewfile="source ~/.dotfiles/brew/brew.sh"
-alias npmfile='npm install -g $(cat ~/.dotfiles/node/npmfile)'
+alias brewfile="source ~/dotfiles/brew/brew.sh"
+alias npmfile='npm install -g $(cat ~/dotfiles/node/npmfile)'
 
 alias myip="curl http://ipecho.net/plain; echo"
 alias locip="ipconfig getifaddr en0"

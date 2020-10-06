@@ -29,7 +29,9 @@ declare -a cask=(
   anybar
   barrier
 	bettertouchtool
+	finicky
 	google-chrome
+  karabiner-elements
 	touch-bar-simulator
 	# quicklook
 	epubquicklook
@@ -69,11 +71,10 @@ declare -a dev=(
   # tools
 	android-platform-tools
   adoptopenjdk8
-  java
 	docker
-  fastlane
 	gpg-suite-no-mail
 	isimulator
+	keybase
   react-native-debugger
   # network
 	postman
@@ -133,7 +134,7 @@ declare -a brew=(
 	findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 	gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
 	# languages & frameworks
-  # go
+  go
 	node
 	php
 	python3
@@ -167,6 +168,7 @@ declare -a brew=(
 	bats
   bit
 	cocoapods
+  fastlane
   mysql
 	react-native-cli
   redis
@@ -276,17 +278,16 @@ declare -a network=(
 
 # Optional: Mac App Store (-m)
 declare -a mas=(
-	766939888   #1Keyboard
 	# 424389933   #Final Cut
-	409183694   #Keynote
 	634148309   #Logic
 	# 634159523   #MainStage
+  409183694   #Keynote
+  # 409201541   #Pages
 	# 409203825   #Numbers
 	823766827   #OneDrive
 	1094255754  #Outbank
-	# 409201541   #Pages
 	445189367   #PopClip
-	# 1153157709  #Speedtest
+  766939888   #1Keyboard
 	425424353   #The Unarchiver
 	1284863847  #Unsplash
 	497799835   #Xcode
@@ -312,15 +313,14 @@ fi
 echo "Checking for updates"
 brew update         # Make sure we’re using the latest Homebrew.
 brew upgrade        # Upgrade any already-installed formulae.
-brew cask outdated  # Check for outdated casks
-brew cask upgrade   # Update any outdated casks
+brew outdated --cask  # Check for outdated casks
+brew upgrade --cask   # Update any outdated casks
 
 function brewInstall() {
 	# Taps
 	brew tap homebrew/cask-drivers
 	brew tap homebrew/cask-fonts
   brew tap buo/cask-upgrade
-  brew tap AdoptOpenJDK/openjdk
   brew tap lukakerr/things
   brew tap wix/brew
   brew tap jakehilborn/jakehilborn
