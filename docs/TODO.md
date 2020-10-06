@@ -25,7 +25,7 @@ git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && ./install
 ln -s ~/dotfiles/alfred /Users/dm/Library/Application\ Support/Alfred/Alfred.alfredpreferences
 ```
 
-- [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
+- Configure [karabiner-elements](https://karabiner-elements.pqrs.org/)
 
 - [Create .path and .extra files in your root directory for path variables and confidential configs](../README.md#add-custom-commands-without-creating-a-new-fork)
 
@@ -75,7 +75,7 @@ To maintain the list of your installed apps, add them to their corresponding pla
 
 # Updating
 
-The [`.aliases`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.aliases) include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
+The [`.aliases`](https://github.com/dnnsmnstrr/dotfiles/blob/master/shell/aliases) include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
 Alternative: [`mac update`](https://github.com/guarinogabriel/Mac-CLI#general-commands)
 
 # Troubleshooting
