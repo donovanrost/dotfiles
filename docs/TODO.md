@@ -2,10 +2,12 @@
 
 - Install Command Line Tools: `xcode-select --install`
 
-- clone this project and run the [dotbot]() [install]() script ~~bootstrap script~~ (deprecated)
+- [Set up](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ssh keys with [GitHub](https://github.com/settings/ssh)
+
+- clone this project and run the [dotbot](https://github.com/anishathalye/dotbot) [install](https://github.com/anishathalye/dotbot/blob/5294594f5aa9c3affd0d656ba6843c1c0b0bce60/tools/git-submodule/install) script
 
 ```bash
-git clone --recurse-submodules https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && source ./install
+git clone https://github.com/dnnsmnstrr/dotfiles.git && cd dotfiles && ./install
 ```
 
 - Install [Homebrew](https://brew.sh) and run [brew.sh](https://github.com/dnnsmnstrr/dotfiles/blob/master/brew/brew.sh)
@@ -15,9 +17,15 @@ git clone --recurse-submodules https://github.com/dnnsmnstrr/dotfiles.git && cd 
 && cd dotfiles && source ./brew/brew.sh
 ```
 
-- Install [BetterTouchTool](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/HydroTouch)
+- Install [BetterTouchTool](https://folivora.ai) license and [presets](https://github.com/dnnsmnstrr/HydroTouch) ([AquaTouch](https://community.folivora.ai/t/aquatouch-updates-and-downloads/6746/20))
 
-- [Remap Caps lock to control](https://www.drbunsen.org/remapping-caps-lock/README.md)
+- Symlink Alfred preferences
+
+```sh
+ln -s ~/dotfiles/alfred /Users/dm/Library/Application\ Support/Alfred/Alfred.alfredpreferences
+```
+
+- Configure [karabiner-elements](https://karabiner-elements.pqrs.org/)
 
 - [Create .path and .extra files in your root directory for path variables and confidential configs](../README.md#add-custom-commands-without-creating-a-new-fork)
 
@@ -31,9 +39,10 @@ git clone --recurse-submodules https://github.com/dnnsmnstrr/dotfiles.git && cd 
 
 - [set up ad-blocking](https://jspenguin2017.github.io/uBlockProtector/#extra-installation-steps-for-ublock-origin)
 
-- [Add SSH keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
+- Create local [zettelkasten](https://github.com/dnnsmnstrr/zettelkasten) instance
 
-<!-- * init [`spicetify`](https://github.com/khanhas/spicetify-cli/wiki/Basic-Usage) -->
+- [Add GPG keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
+  - https://github.com/pstadler/keybase-gpg-github
 
 # init
 
@@ -66,7 +75,7 @@ To maintain the list of your installed apps, add them to their corresponding pla
 
 # Updating
 
-The [`.aliases`](https://github.com/dnnsmnstrr/dotfiles/blob/master/.aliases) include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
+The [`.aliases`](https://github.com/dnnsmnstrr/dotfiles/blob/master/shell/aliases) include an `update` alias that will run all kinds of updaters. (even shorter: `ud`)
 Alternative: [`mac update`](https://github.com/guarinogabriel/Mac-CLI#general-commands)
 
 # Troubleshooting
