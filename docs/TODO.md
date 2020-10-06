@@ -39,6 +39,8 @@ ln -s ~/dotfiles/alfred /Users/dm/Library/Application\ Support/Alfred/Alfred.alf
 
 - [set up ad-blocking](https://jspenguin2017.github.io/uBlockProtector/#extra-installation-steps-for-ublock-origin)
 
+- Create local [zettelkasten](https://github.com/dnnsmnstrr/zettelkasten) instance
+
 - [Add GPG keys to GitHub](https://github.com/settings/ssh) and [other](https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html) version control systems (also [GPG](https://gpgtools.org/))
   - https://github.com/pstadler/keybase-gpg-github
 
