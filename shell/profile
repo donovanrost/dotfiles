@@ -105,9 +105,11 @@ alias nhy='npm-home -y'
 # npx
 alias cra='npx create-react-app '
 alias me='npx dnnsmnstrr'
+alias pi="npx pod-install "
+
 
 alias p="pip"
-alias pi="pip install "
+alias pipi="pip install "
 alias pir="pip install -r requirements.txt"
 
 alias gi="gem install"

@@ -46,8 +46,6 @@ declare -a cask=(
 	quicklook-csv
 	quicklook-json
 	webpquicklook
-  # alfred
-  alfred-theme-simple
 )
 
 # Apps for development (-d)
@@ -172,6 +170,7 @@ declare -a brew=(
   mysql
 	react-native-cli
   redis
+  shellcheck
 	watchman
 	yarn
 	# GnuPG to enable PGP-signing commits.
@@ -324,7 +323,6 @@ function brewInstall() {
   brew tap lukakerr/things
   brew tap wix/brew
   brew tap jakehilborn/jakehilborn
-  brew tap danielbayley/alfred
   brew tap mykolaharmash/git-jump
 
 	echo "Installing brew utilities..."

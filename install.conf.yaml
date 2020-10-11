@@ -11,6 +11,7 @@
     ~/bin:
       create: true
     ~/.editorconfig: shell/editor/editorconfig
+    ~/.eslintrc: shell/editor/eslintrc
     ~/.config/fish:
        create: true
        path: shell/fish

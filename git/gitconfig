@@ -98,7 +98,7 @@
 [core]
   editor = atom --wait
 	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = /Users/dennismuensterer/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
