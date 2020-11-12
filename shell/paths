@@ -10,6 +10,9 @@ export PATH="$PATH:$HOME/bin"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
+# python
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
 # ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$PATH:$HOME/.gem/bin"
