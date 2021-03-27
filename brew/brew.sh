@@ -134,6 +134,8 @@ declare -a brew=(
 	pipenv
 	ruby
 	rbenv
+	flutter
+	dart
 	
 	# downloaders & installers
 	wget
@@ -312,6 +314,7 @@ function brewInstall() {
 	brew tap wix/brew
 	brew tap jakehilborn/jakehilborn
 	brew tap mykolaharmash/git-jump
+	brew tap dart-lang/dart
 
 	echo "Installing brew utilities..."
 	for item in "${brew[@]}"; do
