@@ -318,42 +318,48 @@ function brewInstall() {
 
 	echo "Installing brew utilities..."
 	for item in "${brew[@]}"; do
-		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+		echo "${item}"
+# 		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 	done
 }
 
 function networkInstall() {
 	echo "Installing network utilities..."
 	for item in "${network[@]}"; do
-		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
+		echo "${item}"
+# 		brew info "${item}" | grep --quiet 'Not installed' && brew install "${item}"
 	done
 }
 
 function caskInstall() {
 	echo "Installing casks..."
 	for app in "${cask[@]}"; do
-		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+		echo "${item}"	
+# 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
 }
 
 function devInstall() {
 	echo "Installing developer casks..."
 	for app in "${dev[@]}"; do
-		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+		echo "${item}"
+# 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
 }
 
 function personalInstall() {
 	echo "Installing personal casks..."
 	for app in "${personal[@]}"; do
-		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+		echo "${item}"
+# 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
 }
 
 function makerInstall() {
 	echo "Installing personal casks..."
 	for app in "${making[@]}"; do
-		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
+		echo "${item}"
+# 		brew cask info "${app}" | grep --quiet 'Not installed' && brew cask install "${app}"
 	done
 }
 
