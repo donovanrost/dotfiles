@@ -23,16 +23,19 @@ fi
 
 # Useful cask apps
 declare -a cask=(
-  spotify
+  
+	spotify
+	
 	# utility
-  alfred
-  anybar
-  barrier
+	alfred
+	anybar
+	barrier
 	bettertouchtool
 	finicky
 	google-chrome
-  karabiner-elements
+	karabiner-elements
 	touch-bar-simulator
+	
 	# quicklook
 	epubquicklook
 	suspicious-package
@@ -50,80 +53,70 @@ declare -a cask=(
 
 # Apps for development (-d)
 declare -a dev=(
-  # communication
-  slack
-  zoomus
-  # IDE
-  arduino
-	atom
-  eclipse-jee # for school
-  android-studio
-  # VCS
-  github
-  sourcetree
-  # CLI
-  hyper
-  # DB
-  mysqlworkbench
-  sequel-pro
-  # tools
-	android-platform-tools
-  adoptopenjdk8
+	# communication
+	slack
+	zoomus
+
+	# IDE
+	#arduino
+	#atom
+	visual-studio-code
+	#android-studio
+
+	# VCS
+	github
+	gh
+	#sourcetree
+	
+	# CLI
+
+	# DB
+	#mysqlworkbench
+	#sequel-pro
+	
+	# tools
+	#android-platform-tools
+	#adoptopenjdk8
 	docker
-	gpg-suite-no-mail
+	#gpg-suite-no-mail
 	isimulator
 	keybase
-  react-native-debugger
-  # network
+	#react-native-debugger
+
+	# network
 	postman
+
 	# design
-	kap
+	#kap
 	noun-project
-  # productivity
-  pine
-  drawio
-  # resources
-  wwdc
+
+	# productivity
+	pine
+	drawio
+
+	# resources
+	wwdc
 )
 
 # Apps that don't have much professional use (mostly entertainment) (-p)
 declare -a personal=(
-	# audio
-	boom-3d
-	lyricsx
-	sonic-pi
-	# communication
-	caprine
-  flume
-	telegram
-	whatsapp
+
 	# gaming
 	steam
+
 	# media
-  calibre
-	downie
-	emojipedia
+	calibre
 	iina
-  obs
-  vnc-viewer
-  # screensavers & wallpapers
-  aerial
-  brooklyn
-	musaicfm
-  # utilities
-	duet
-  hazeover
-  keyboardcleantool
-	philips-hue-sync
-  blackhole
+	soda-player
+		
+	# utilities
+	
 	# storage
-  grandperspective
-	dropbox
+
 )
 
 declare -a making=(
-  autodesk-fusion360
-  ultimaker-cura
+
 )
 
 declare -a brew=(
@@ -131,52 +124,49 @@ declare -a brew=(
 	moreutils         # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 	findutils         # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 	gnu-sed           # GNU `sed`, overwriting the built-in `sed`.
+	
 	# languages & frameworks
-  go
+	go
 	node
 	php
 	python3
-  pyenv
-  pipenv
+	pyenv
+	pipenv
 	ruby
 	rbenv
+	
 	# downloaders & installers
 	wget
 	cask
 	mas
-  mint
+	mint
 	nvm
+	
 	# editors & shells
-  bash
-  fish
-  starship
+	bash
+	fish
+	starship
 	zsh
+	
 	# version control
 	git
 	hub
-  git-gui
-  git-jump
+	git-gui
+	git-jump
 	git-lfs
-  git-standup
-  gh
-  gibo
+	git-standup
+	gh
+	gibo
+	
 	#dev
-  applesimutils
-  arduino-cli
-	bats
-  bit
 	cocoapods
-  fastlane
-  mysql
-	react-native-cli
-  redis
-  shellcheck
+	fastlane
+	mysql
+	redis
+	shellcheck
 	watchman
 	yarn
-	# GnuPG to enable PGP-signing commits.
-	gnupg
-	pinentry
-	pinentry-mac
+		
 	# completion
 	apm-bash-completion
 	bash-completion2
@@ -188,6 +178,7 @@ declare -a brew=(
 	zsh-completions
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	
 	# other
 	ack
 	gmp
@@ -197,106 +188,103 @@ declare -a brew=(
 	screen
 	ssh-copy-id
 	tree
+	ranger
 	thefuck
 	vbindiff
 	watch
+	
 	# media
 	imagemagick
 	multimarkdown
 	shpotify
+	
 	# web
-  googler
-	lynx
 	youtube-dl
+	
 	# system
-  blueutil
-  dark-mode
-  displayplacer
+	dark-mode
 	dockutil
-  duti
+	duti
 	htop
 	mackup
-	pv
 	switchaudio-osx
-  scrcpy
+	
 	# files
 	p7zip
 	pigz
 	rename
 	zopfli
 	xpdf
+	
 	# tools
-  asciinema
+	asciinema
 	calc
-  figlet
-  m-cli
+	figlet
+	m-cli
 	tldr
 	wifi-password
-  z
+	z
+	
 	# fun
-  asciiquarium
-	cowsay
-  fortune
-  lolcat
-  rtv
+	rtv
 )
 
 # Optional: Network utils (-n)
 declare -a network=(
-	aircrack-ng
-  ask-cli
-  awscli
-	bfg
-	binutils
-	binwalk
-	cifer
-	dex2jar
-	dns2tcp
-	fcrackzip
-	foremost
-	geoip
-	hashpump
-	httpie
-	hydra
-	john
-	knock
-	netpbm
+# 	aircrack-ng
+# 	ask-cli
+	awscli
+# 	bfg
+# 	binutils
+# 	binwalk
+# 	cifer
+# 	dex2jar
+# 	dns2tcp
+# 	fcrackzip
+# 	foremost
+# 	geoip
+# 	hashpump
+# 	httpie
+# 	hydra
+# 	john
+# 	knock
+# 	netpbm
 	nmap
-	openssh
-	pngcheck
-	socat
+# 	openssh
+# 	pngcheck
+# 	socat
 	speedtest_cli
-	sqlmap
-	tcpflow
-	tcpreplay
-	tcptrace
-  telnet
-	ucspi-tcp # `tcpserver` etc.
-	xz
+# 	sqlmap
+# 	tcpflow
+# 	tcpreplay
+# 	tcptrace
+# 	telnet
+# 	ucspi-tcp # `tcpserver` etc.
+# 	xz
 )
 
 # Optional: Mac App Store (-m)
 declare -a mas=(
 	# 424389933   #Final Cut
-	634148309   #Logic
+	# 634148309   #Logic
 	# 634159523   #MainStage
-  409183694   #Keynote
-  # 409201541   #Pages
+	# 409183694   #Keynote
+	# 409201541   #Pages
 	# 409203825   #Numbers
-	823766827   #OneDrive
-	1094255754  #Outbank
-	445189367   #PopClip
-  766939888   #1Keyboard
+	# 823766827   #OneDrive
+	# 1094255754  #Outbank
+	# 445189367   #PopClip
+	# 766939888   #1Keyboard
 	425424353   #The Unarchiver
-	1284863847  #Unsplash
+	# 1284863847  #Unsplash
 	497799835   #Xcode
 )
 
 declare -a fonts=(
 	source-code-pro
-  fontawesome
-  input
-  roboto
+	fontawesome
+	input
+	roboto
 )
 
 # Scripting starts here
@@ -319,11 +307,11 @@ function brewInstall() {
 	# Taps
 	brew tap homebrew/cask-drivers
 	brew tap homebrew/cask-fonts
-  brew tap buo/cask-upgrade
-  brew tap lukakerr/things
-  brew tap wix/brew
-  brew tap jakehilborn/jakehilborn
-  brew tap mykolaharmash/git-jump
+	brew tap buo/cask-upgrade
+	brew tap lukakerr/things
+	brew tap wix/brew
+	brew tap jakehilborn/jakehilborn
+	brew tap mykolaharmash/git-jump
 
 	echo "Installing brew utilities..."
 	for item in "${brew[@]}"; do
