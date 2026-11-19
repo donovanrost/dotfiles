@@ -1,0 +1,35 @@
+# Machine bootstrap — run `mise bootstrap` (preview with `--dry-run`).
+# Docs: https://mise.jdx.dev/bootstrap.html
+
+[bootstrap.user]
+login_shell = "/bin/zsh"
+
+[dotfiles]
+"~/.zshrc" = { source = "../zsh/zshrc" }
+"~/.zprofile" = { source = "../zsh/zprofile" }
+"~/.config/starship.toml" = { source = "../starship/starship.toml" }
+"~/.gitconfig" = { source = "../git/gitconfig" }
+
+[bootstrap.packages]
+# CLI (Homebrew formulae)
+"brew:git" = "latest"
+"brew:gh" = "latest"
+"brew:jq" = "latest"
+"brew:ripgrep" = "latest"
+"brew:fd" = "latest"
+# Shell
+"brew:starship" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+# Apps (casks) — add with: mise bootstrap packages use -g brew-cask:<name>
+
+[tools]
+node = "lts"
+python = "latest"
+uv = "latest"
+rust = "stable"
+erlang = "latest"
+elixir = "latest"
+
+[settings]
+python.uv_venv_auto = true

@@ -1,0 +1,34 @@
+# ---- mise ----
+eval "$(mise activate zsh)"
+
+# ---- history ----
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS EXTENDED_HISTORY
+
+# ---- options ----
+setopt AUTO_CD INTERACTIVE_COMMENTS
+bindkey -e
+
+# ---- completion ----
+autoload -Uz compinit && compinit -C
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select
+
+# ---- plugins (Homebrew) ----
+if [[ -n "$HOMEBREW_PREFIX" ]]; then
+  [[ -r $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] &&
+    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# ---- prompt ----
+command -v starship >/dev/null && eval "$(starship init zsh)"
+
+# ---- aliases ----
+alias ll='ls -lahG'
+
+# syntax highlighting must be sourced last
+[[ -n "$HOMEBREW_PREFIX" && -r $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] &&
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
