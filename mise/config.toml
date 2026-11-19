@@ -9,6 +9,7 @@ login_shell = "/bin/zsh"
 "~/.zprofile" = { source = "../zsh/zprofile" }
 "~/.config/starship.toml" = { source = "../starship/starship.toml" }
 "~/.gitconfig" = { source = "../git/gitconfig" }
+"~/.config/ghostty/config.ghostty" = { source = "../ghostty/config.ghostty" }
 
 [bootstrap.packages]
 # CLI (Homebrew formulae)

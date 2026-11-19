@@ -1,0 +1,5 @@
+# Ghostty config — symlinked to ~/.config/ghostty/config.ghostty by `mise bootstrap`.
+# Only set what differs from the defaults.
+#   ghostty +show-config --default --docs   # all options
+#   https://ghostty.org/docs/config
+# Reload: Cmd+Shift+,

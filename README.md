@@ -19,6 +19,7 @@ mkdir -p ~/.config && ln -sfn ~/dotfiles/mise ~/.config/mise
 - `zsh/zshrc`, `zsh/zprofile` — symlinked to `~/.zshrc`, `~/.zprofile`
 - `starship/starship.toml` — symlinked to `~/.config/starship.toml`
 - `git/gitconfig` — symlinked to `~/.gitconfig` (identity, gh credential helper)
+- `ghostty/config.ghostty` — symlinked to `~/.config/ghostty/config.ghostty`
 
 ## Everyday
 
