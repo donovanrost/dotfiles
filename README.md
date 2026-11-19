@@ -7,7 +7,7 @@ Machine setup driven by [`mise bootstrap`](https://mise.jdx.dev/bootstrap.html).
 ```sh
 xcode-select --install                       # git + compilers
 curl https://mise.run | sh                   # installs ~/.local/bin/mise
-git clone <this repo> ~/dotfiles
+git clone https://github.com/donovanrost/dotfiles.git ~/dotfiles
 mkdir -p ~/.config && ln -sfn ~/dotfiles/mise ~/.config/mise
 ~/.local/bin/mise bootstrap --dry-run        # preview
 ~/.local/bin/mise bootstrap                  # apply, then open a new terminal
