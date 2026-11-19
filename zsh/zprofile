@@ -1,5 +1,12 @@
-# Homebrew on PATH for login shells (installed by `mise bootstrap`)
-[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+# Homebrew prefix. mise bootstrap installs bottles here without the brew CLI,
+# so set this up statically instead of `brew shellenv`.
+export HOMEBREW_PREFIX=/opt/homebrew
+export HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
+export HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
+typeset -U path fpath
+path=($HOMEBREW_PREFIX/bin $HOMEBREW_PREFIX/sbin $path)
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}"
 export PATH="$HOME/.local/bin:$PATH"
 
 # mise shims for non-interactive login shells (IDEs, scripts)
