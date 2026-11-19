@@ -21,6 +21,7 @@ login_shell = "/bin/zsh"
 "brew:starship" = "latest"
 "brew:zsh-autosuggestions" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
+"brew-cask:ghostty" = "latest"
 # Apps (casks) — add with: mise bootstrap packages use -g brew-cask:<name>
 
 [tools]
@@ -30,6 +31,7 @@ uv = "latest"
 rust = "stable"
 erlang = "latest"
 elixir = "latest"
+herdr = "latest"
 
 [settings]
 python.uv_venv_auto = true
